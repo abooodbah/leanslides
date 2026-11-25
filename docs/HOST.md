@@ -96,10 +96,11 @@ On 2026-11-25, on a Windows 11 laptop with WebView2 158.0.4370.33, every case
 passed: no listener connection, no socket of LeanSlides.exe, and only reader
 URLs in the log (12 to 22 per case). In every case the WebView2 browser
 process also opened HTTPS connections to addresses in the range that
-`substrate.office.com` (Microsoft 365) resolves to, about 2.6 to 3.2 seconds
+`substrate.office.com` (Microsoft 365) resolves to, about 2.6 to 3.4 seconds
 after start. The network log does not show them; the runtime makes them on
 its own. LeanMark recorded the same connections on a PC with a work account
-added to Windows. Other PCs have not been measured.
+added to Windows. On the CI runner, with LeanSlides's own arguments, the
+runtime made none. Other PCs have not been measured.
 
 ## Browser arguments
 
