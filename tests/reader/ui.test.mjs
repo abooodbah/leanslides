@@ -143,7 +143,12 @@ test("thumbnails are drawn near the visible strip only and move the stage", asyn
   const deck = longDeck(smoke, 90);
   await showDeck(reader, deck);
   assert.equal(await page.locator("#thumbList > li").count(), 90);
-  await page.waitForFunction(() => document.querySelectorAll('.thumb[data-drawn="yes"]').length > 3);
+  // Wait until every thumbnail asked for is drawn and the count holds still.
+  await page.waitForFunction(() => new Promise((resolve) => {
+    const count = () => document.querySelectorAll('.thumb[data-drawn="yes"]').length;
+    const before = count();
+    setTimeout(() => resolve(before > 3 && !document.querySelector('.thumb[data-drawn="pending"]') && count() === before), 300);
+  }), null, { timeout: 20_000 });
   const drawn = await page.locator('.thumb[data-drawn="yes"]').count();
   assert.ok(drawn < 40, `only the thumbnails near the view are drawn (${drawn} of 90)`);
   // The stage slide is the first, and only, element the host's probe finds.
@@ -287,8 +292,9 @@ test("a link in a slide opens only after the reader confirms it", async () => {
   await page.waitForSelector("#linkDialog:not([hidden])");
   assert.equal(await page.textContent("#linkTarget"), "https://example.com/");
   assert.equal(await page.evaluate(() => document.activeElement.id), "linkCancel");
-  // Slide keys do nothing while the dialog is open.
+  // Slide keys and reader shortcuts do nothing while the dialog is open.
   await page.keyboard.press("ArrowRight");
+  await page.keyboard.press("Control+Shift+T");
   await page.keyboard.press("Escape");
   await page.waitForSelector("#linkDialog", { state: "hidden" });
   assert.deepEqual(await page.evaluate(() => window.__hostPosts), []);
