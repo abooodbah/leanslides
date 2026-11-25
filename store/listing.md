@@ -29,7 +29,13 @@ Paste each field into Partner Center > your app > Submission > Store listings, o
 
 ## Screenshots
 
-Not made yet. The Store needs at least one Desktop screenshot (1920x1080 is the size the other Lean apps use) in every listing language. Put them in `store/screenshots/` with numbered file names and add a caption table here.
+Three Desktop screenshots, 1920x1080, in `store/screenshots/`. They are captures of the real app showing `docs/images/screenshot-source/community-garden-plan.pptx`, made by `node store/screenshots/capture-store.mjs path\to\LeanSlides.exe`. Upload the same three files in every language, with that language's caption.
+
+| File | en-US | ja-JP | zh-CN | zh-TW |
+| --- | --- | --- | --- | --- |
+| `01-slides.png` | Slide thumbnails beside the current slide. | 現在のスライドの横にスライドのサムネイルが表示されます。 | 当前幻灯片旁边显示幻灯片缩略图。 | 目前投影片旁邊會顯示投影片縮圖。 |
+| `02-table.png` | A table with the speaker notes open. | 発表者ノートを開いた状態の表のスライド。 | 打开演讲者备注时的表格幻灯片。 | 開啟備忘稿時的表格投影片。 |
+| `03-present.png` | Press F5 to present full screen. | F5 キーを押すと全画面で発表します。 | 按 F5 全屏放映。 | 按 F5 全螢幕播放。 |
 
 ## English (United States), en-US
 

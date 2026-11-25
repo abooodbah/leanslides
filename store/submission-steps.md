@@ -1,8 +1,8 @@
 # LeanSlides: Microsoft Store submission steps
 
 These are the steps that need the owner's own account. Everything else (the
-MSIX package, the listing text and the age rating answers) is in this folder.
-The Store screenshots are not made yet.
+MSIX package, the listing text, the screenshots and the age rating answers)
+is in this folder.
 
 What is here:
 
