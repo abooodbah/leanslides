@@ -89,6 +89,8 @@ if(BUILD_TESTING AND LEANSLIDES_ENABLE_GUI_TESTS)
   set_tests_properties(leanslides-windows-host leanslides-windows-fallback PROPERTIES
     TIMEOUT 30
     ENVIRONMENT "LEANSLIDES_ASSETS_DIR=${LEANSLIDES_ROOT}/assets")
-  # A file that cannot be shown must make the smoke test fail, not pass.
-  set_tests_properties(leanslides-windows-fallback PROPERTIES WILL_FAIL TRUE)
+  # A file that cannot be shown must make the smoke test fail for that
+  # reason, not pass and not time out.
+  set_tests_properties(leanslides-windows-fallback PROPERTIES
+    PASS_REGULAR_EXPRESSION "smoke: FAIL: the smoke fixture is not a presentation LeanSlides shows")
 endif()
