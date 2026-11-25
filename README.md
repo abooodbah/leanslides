@@ -161,8 +161,9 @@ only its settings (theme, language, and up to 10 recent files) in
 `HKCU\Software\LeanSlides`, and a WebView2 profile folder in
 `%LOCALAPPDATA%\LeanSlides\WebView2`.
 
-This was measured on 2026-11-25 with `tests/hosts/Observe-Network.ps1`, which
-also runs in CI. With no deck, a small deck, a typical deck, and a test deck
+This was measured on 2026-11-25 on one Windows 11 PC with
+`tests/hosts/Observe-Network.ps1`; CI runs it on every push without the
+network log. With no deck, a small deck, a typical deck, and a test deck
 whose every outside reference points at a local listener, the listener got no
 connection, LeanSlides.exe opened no socket, and Chromium's network log named
 only LeanSlides's own reader addresses. In every case the WebView2 runtime
