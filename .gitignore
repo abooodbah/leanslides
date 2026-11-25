@@ -1,0 +1,30 @@
+# Build output
+build/
+dist/
+release/
+*.pdb
+*.ilk
+.vs/
+
+# npm dependencies (package-lock.json stays committed)
+node_modules/
+
+# WebView2 profile data created during local runs
+*.WebView2/
+EBWebView/
+
+# Editor and operating-system noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local QA output and fetched corpora
+artifacts/
+tests/corpus/cache/
+tests/parity/cache/
+__pycache__/
+
+# Session resume notes kept beside the checkout
+PROGRAM_STATE.md

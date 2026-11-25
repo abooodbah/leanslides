@@ -1,0 +1,10 @@
+{
+  "name": "leanslides-runtime-assets",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Build and test scripts for LeanSlides' offline reader assets.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}

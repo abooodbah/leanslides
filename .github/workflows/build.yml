@@ -1,0 +1,45 @@
+name: Build and test
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    name: Windows x64
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Build core, inspect tool, and tests
+        shell: cmd
+        run: scripts\dev-build.cmd Release
+
+      - name: Run core tests
+        shell: pwsh
+        run: ctest --test-dir build/Release --output-on-failure
+
+  linux-core:
+    name: Linux core (portability)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Build and test the portable core
+        run: |
+          sudo apt-get install -y --no-install-recommends ninja-build
+          cmake -S . -B build/linux -G Ninja -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=ON
+          cmake --build build/linux
+          ctest --test-dir build/linux --output-on-failure

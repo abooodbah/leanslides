@@ -1,0 +1,9 @@
+# Keep source checkouts deterministic across Windows and CI.
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.ico binary
+*.png binary
+*.woff2 binary
+
+# Copied byte-for-byte from pinned upstream releases.
+third_party/** -whitespace
