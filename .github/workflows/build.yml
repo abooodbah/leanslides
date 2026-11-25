@@ -43,3 +43,13 @@ jobs:
           cmake -S . -B build/linux -G Ninja -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=ON
           cmake --build build/linux
           ctest --test-dir build/linux --output-on-failure
+
+      - name: Install Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      - name: Fetch the public corpus and run the core over it
+        run: |
+          node tests/corpus/fetch-corpus.mjs
+          node tests/corpus/run-corpus.mjs --inspect build/linux/tools/inspect/leanslides-inspect
