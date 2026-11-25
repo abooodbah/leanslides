@@ -315,6 +315,13 @@ LRESULT LeanSlidesApp::HandleWindowMessage(UINT message, WPARAM wParam, LPARAM l
                 ResizeWebView();
             }
             return 0;
+        case WM_SETFOCUS:
+            // Windows gives focus to the main window when it is activated
+            // (Alt+Tab, a click on the title bar); pass it on to the page.
+            if (controller_ != nullptr) {
+                controller_->MoveFocus(COREWEBVIEW2_MOVE_FOCUS_REASON_PROGRAMMATIC);
+            }
+            return 0;
         case WM_DPICHANGED: {
             const auto* suggested = reinterpret_cast<RECT*>(lParam);
             SetWindowPos(
@@ -430,6 +437,9 @@ void LeanSlidesApp::InitializeWebView() {
                             controller_->get_CoreWebView2(&webView_);
                             ConfigureWebView();
                             ResizeWebView();
+                            // Keys go to the page from the start, not only
+                            // after the first click in it.
+                            controller_->MoveFocus(COREWEBVIEW2_MOVE_FOCUS_REASON_PROGRAMMATIC);
                             if (minimized_) {
                                 controller_->put_IsVisible(FALSE);
                             }
@@ -1546,7 +1556,16 @@ void LeanSlidesApp::CollectSmokeProbe() {
                     return host_json::GetUnsigned(values, key).value_or(0);
                 };
                 const unsigned slides = number("slides");
-                const bool success =
+                // Keys reach the page only when keyboard focus is inside the
+                // WebView, a child of the main window, not on the main window.
+                const HWND focus = GetFocus();
+                bool focusInPage = focus != nullptr && IsChild(window_, focus);
+                // Windows focuses the main window when it is activated again;
+                // the page must get it back.
+                SetFocus(window_);
+                const HWND refocused = GetFocus();
+                focusInPage = focusInPage && refocused != nullptr && IsChild(window_, refocused);
+                const bool success = focusInPage &&
                     host_json::GetString(values, "state").value_or("") == "ready" &&
                     slides >= 1 && number("text") > 0 && number("detailSlides") == slides &&
                     number("notes") >= 1 && number("pictureWidth") > 0 &&
@@ -1555,7 +1574,8 @@ void LeanSlidesApp::CollectSmokeProbe() {
                     host_json::GetString(values, "error").value_or("x").empty() &&
                     host_json::GetUnsigned(values, "offOrigin").value_or(1) == 0 &&
                     host_json::GetUnsigned(values, "csp").value_or(1) == 0;
-                CompleteSmoke(success, inner + " renderMs=" + std::to_string(smokeRenderMs_));
+                CompleteSmoke(success, inner + " focusInPage=" + (focusInPage ? "yes" : "no") +
+                                           " renderMs=" + std::to_string(smokeRenderMs_));
                 return S_OK;
             })
             .Get());
