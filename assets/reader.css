@@ -1,0 +1,42 @@
+:root {
+  --canvas: #faf9f7;
+  --ink: #1c1b19;
+  --muted: #6b6760;
+  color-scheme: light;
+}
+:root[data-theme="dark"] { --canvas: #0e0d0b; --ink: #ece9e4; --muted: #a29d95; color-scheme: dark; }
+:root[data-theme="dim"] { --canvas: #1e2023; --ink: #dcdfe3; --muted: #9aa0a6; color-scheme: dark; }
+:root[data-theme="dusk"] { --canvas: #221e19; --ink: #ece3d6; --muted: #a89c8c; color-scheme: dark; }
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="system"] { --canvas: #0e0d0b; --ink: #ece9e4; --muted: #a29d95; color-scheme: dark; }
+}
+
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  font: 14px/1.4 "Segoe UI", system-ui, sans-serif;
+}
+.stage {
+  box-sizing: border-box;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  overflow: hidden;
+}
+.message { color: var(--muted); }
+.slide {
+  position: relative;
+  background: #fff;
+  color: #000;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+.shape-text {
+  position: absolute;
+  box-sizing: border-box;
+  margin: 0;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
