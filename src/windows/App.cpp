@@ -686,6 +686,8 @@ void LeanSlidesApp::NavigateToReader() {
     if (webView_ == nullptr) {
         return;
     }
+    // A new page starts out of the show, so the window does too.
+    SetPresenting(false);
     readerReady_ = false;
     webView_->Navigate(kReaderUrl);
 }
@@ -726,6 +728,7 @@ void LeanSlidesApp::RecreateWebView() {
     controller_ = nullptr;
     environment_ = nullptr;
     readerReady_ = false;
+    SetPresenting(false);
     ClearDeck();
     InitializeWebView();
 }
@@ -1201,7 +1204,9 @@ void LeanSlidesApp::SendHost() {
     json += EditorKindName(editor_.kind);
     json += "\",\"label\":\"";
     core::AppendJsonString(json, editor_.label);
-    json += "\"},\"tabs\":true}";
+    json += "\"},\"language\":\"";
+    json += settings::LanguageName(language_);
+    json += "\",\"tabs\":true}";
     PostJson(json);
 }
 
@@ -1324,6 +1329,14 @@ void LeanSlidesApp::HandleWebMessage(ICoreWebView2WebMessageReceivedEventArgs* a
             ApplyWindowTheme();
             SendTheme();
         }
+    } else if (*type == "setLanguage") {
+        const auto language = host_json::GetString(*message, "language");
+        if (language && settings::IsLanguageName(*language)) {
+            language_ = settings::ParseLanguage(*language);
+            SaveSettings();
+        }
+    } else if (*type == "present") {
+        SetPresenting(host_json::GetBool(*message, "on").value_or(false));
     } else if (*type == "selectTab") {
         const auto id = host_json::GetUnsigned(*message, "id");
         if (id && *id != activeTab_) {
@@ -1603,6 +1616,11 @@ void LeanSlidesApp::LoadSettings() {
                      &bytes) == ERROR_SUCCESS) {
         theme_ = settings::ParseTheme(WideToUtf8(value));
     }
+    bytes = sizeof(value);
+    if (RegGetValueW(HKEY_CURRENT_USER, kSettingsKey, L"Language", RRF_RT_REG_SZ, nullptr, value,
+                     &bytes) == ERROR_SUCCESS) {
+        language_ = settings::ParseLanguage(WideToUtf8(value));
+    }
     DWORD recentBytes = 0;
     if (RegGetValueW(HKEY_CURRENT_USER, kSettingsKey, L"Recent", RRF_RT_REG_MULTI_SZ, nullptr,
                      nullptr, &recentBytes) == ERROR_SUCCESS &&
@@ -1633,6 +1651,9 @@ void LeanSlidesApp::SaveSettings() const {
     const std::wstring theme = Utf8ToWide(ThemeName());
     RegSetValueExW(key, L"Theme", 0, REG_SZ, reinterpret_cast<const BYTE*>(theme.c_str()),
                    static_cast<DWORD>((theme.size() + 1) * sizeof(wchar_t)));
+    const std::wstring language = Utf8ToWide(settings::LanguageName(language_));
+    RegSetValueExW(key, L"Language", 0, REG_SZ, reinterpret_cast<const BYTE*>(language.c_str()),
+                   static_cast<DWORD>((language.size() + 1) * sizeof(wchar_t)));
     std::wstring multi;
     for (const std::wstring& path : recent_) {
         multi += path;
@@ -1642,6 +1663,38 @@ void LeanSlidesApp::SaveSettings() const {
     RegSetValueExW(key, L"Recent", 0, REG_MULTI_SZ, reinterpret_cast<const BYTE*>(multi.data()),
                    static_cast<DWORD>(multi.size() * sizeof(wchar_t)));
     RegCloseKey(key);
+}
+
+void LeanSlidesApp::SetPresenting(bool presenting) {
+    if (presenting == presenting_ || window_ == nullptr) {
+        return;
+    }
+    if (presenting) {
+        // A borderless window over the whole monitor, restored exactly on Esc.
+        MONITORINFO monitor = {sizeof(monitor)};
+        if (!GetWindowPlacement(window_, &savedPlacement_) ||
+            !GetMonitorInfoW(MonitorFromWindow(window_, MONITOR_DEFAULTTONEAREST), &monitor)) {
+            PostJson("{\"type\":\"presenting\",\"on\":false}");
+            return;
+        }
+        savedStyle_ = GetWindowLongPtrW(window_, GWL_STYLE);
+        presenting_ = true;
+        SetWindowLongPtrW(window_, GWL_STYLE,
+                          (savedStyle_ & ~static_cast<LONG_PTR>(WS_OVERLAPPEDWINDOW)) | WS_POPUP);
+        SetWindowPos(window_, HWND_TOP, monitor.rcMonitor.left, monitor.rcMonitor.top,
+                     monitor.rcMonitor.right - monitor.rcMonitor.left,
+                     monitor.rcMonitor.bottom - monitor.rcMonitor.top,
+                     SWP_NOOWNERZORDER | SWP_FRAMECHANGED);
+    } else {
+        presenting_ = false;
+        SetWindowLongPtrW(window_, GWL_STYLE, savedStyle_);
+        SetWindowPlacement(window_, &savedPlacement_);
+        SetWindowPos(window_, nullptr, 0, 0, 0, 0,
+                     SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_NOOWNERZORDER |
+                         SWP_FRAMECHANGED);
+    }
+    PostJson(presenting_ ? "{\"type\":\"presenting\",\"on\":true}"
+                         : "{\"type\":\"presenting\",\"on\":false}");
 }
 
 void LeanSlidesApp::AddRecent(const std::wstring& path) {
