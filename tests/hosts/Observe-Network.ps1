@@ -20,12 +20,15 @@ param(
 #      50 ms plus the time a read takes. A connection shorter than one
 #      interval can be missed; the largest gap between samples is recorded.
 #   3. Chromium's own network log (--log-net-log, passed through
-#      WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS), from which every URL the page
-#      or the runtime requested is listed.
+#      WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS together with LeanSlides's own
+#      browser arguments, read from src/windows/App.cpp, while the host is
+#      told to set none), from which every URL the page or the runtime
+#      requested is listed.
 #
 # A case fails if the listener gets a connection, if LeanSlides.exe itself
-# has any TCP connection or UDP endpoint, or if the net log names a URL
-# outside https://app.leanslides.invalid/. Connections of the WebView2 runtime
+# has any TCP connection or UDP endpoint, if the net log names a URL outside
+# https://app.leanslides.invalid/, or if the browser process did not get
+# every one of LeanSlides's arguments and the log argument. Connections of the WebView2 runtime
 # processes are recorded by process kind, remote address, and the time they
 # were first seen, and reported, not failed: the runtime can contact Microsoft
 # services on its own, and the net log does not show those connections.
@@ -104,6 +107,15 @@ $running = @(Get-CimInstance Win32_Process -Filter "Name = 'LeanSlides.exe'" | W
 if ($running.Count -gt 0) { throw "This LeanSlides.exe is already running (pid $($running[0].ProcessId)); a launch would join it. Close it first." }
 
 Add-Type -Path (Join-Path $PSScriptRoot 'NetTables.cs')
+
+# The browser arguments LeanSlides sets by default (kBrowserArguments in
+# src/windows/App.cpp), so the measured browser runs exactly as it does for
+# people, whatever the WebView2 version does with the environment variable.
+$appSource = Get-Content -LiteralPath (Join-Path $repoRoot 'src\windows\App.cpp') -Raw
+$definition = [regex]::Match($appSource, 'kBrowserArguments\[\]\s*=\s*((?:\s*L"[^"]*")+)\s*;')
+if (-not $definition.Success) { throw 'kBrowserArguments was not found in src\windows\App.cpp.' }
+$hostArguments = @((([regex]::Matches($definition.Groups[1].Value, 'L"([^"]*)"') | ForEach-Object { $_.Groups[1].Value }) -join '').Split(' ', [StringSplitOptions]::RemoveEmptyEntries))
+if ($hostArguments -notcontains '--disable-background-networking') { throw "Unexpected kBrowserArguments: $hostArguments" }
 $listener = [System.Net.Sockets.TcpListener]::new([System.Net.IPAddress]::Loopback, 47913)
 $listener.Start()
 $results = @()
@@ -120,7 +132,12 @@ try {
         $info.Arguments = if ($case.deck) { '-- "{0}"' -f $case.deck } else { '' }
         $info.UseShellExecute = $false
         $info.WorkingDirectory = Split-Path -Parent $ExePath
-        $info.EnvironmentVariables['WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS'] = ('--log-net-log="{0}" --net-log-capture-mode=Default {1}' -f $netLog, $ExtraBrowserArguments).Trim()
+        # WebView2 157 drops WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS when the
+        # app sets its own arguments; 158 merges them. So the host is told to
+        # set none (LEANSLIDES_BROWSER_PROFILE=plain) and the same arguments,
+        # read from App.cpp, go into the variable with the net log ones.
+        $info.EnvironmentVariables['LEANSLIDES_BROWSER_PROFILE'] = 'plain'
+        $info.EnvironmentVariables['WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS'] = ('{0} --log-net-log="{1}" --net-log-capture-mode=Default {2}' -f ($hostArguments -join ' '), $netLog, $ExtraBrowserArguments).Trim()
         # The connection tables are sampled every 50 ms on their own thread
         # from just before the launch until every process of the tree is gone.
         [LeanSlidesNetTables]::Start(50)
@@ -203,8 +220,8 @@ try {
         # The net log argument must reach the browser on top of LeanSlides'
         # own arguments, or this run would watch a differently configured
         # browser from the one people use.
-        $argumentsKept = ($null -ne $browserCommandLine) -and
-            ($browserCommandLine -match '--disable-background-networking') -and ($browserCommandLine -match '--log-net-log')
+        $argumentsKept = ($null -ne $browserCommandLine) -and ($browserCommandLine -match '--log-net-log') -and
+            (@($hostArguments | Where-Object { -not $browserCommandLine.Contains($_) }).Count -eq 0)
         $passed = ($listenerHits.Count -eq 0) -and ($rootEndpoints.Count -eq 0) -and ($outside.Count -eq 0) -and
             (Test-Path -LiteralPath $netLog) -and $argumentsKept
         $results += [ordered]@{
