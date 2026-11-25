@@ -1,6 +1,6 @@
 # LeanSlides Microsoft Store listing
 
-Paste each field into Partner Center > your app > Submission > Store listings, one block per language: English (United States), Japanese (Japan), Chinese (Simplified) and Chinese (Traditional). The Japanese and Chinese text has not yet been checked by back-translation.
+Paste each field into Partner Center > your app > Submission > Store listings, one block per language: English (United States), Japanese (Japan), Chinese (Simplified) and Chinese (Traditional). On 2026-11-25 the Japanese and Chinese text, search terms and captions were translated back to English with Google Translate, and each read back with the English meaning. In zh-TW, 備忘稿, 佈景主題 and 開啟 came back as "memo", "set themes" and "turn on"; they are the usual Traditional Chinese Windows words for speaker notes, theme and open, so they were kept.
 
 ## Product
 
