@@ -149,6 +149,10 @@ test("thumbnails are drawn near the visible strip only and move the stage", asyn
   // The stage slide is the first, and only, element the host's probe finds.
   assert.equal(await page.locator("[data-rendered-slide]").count(), 1);
   assert.equal(await page.evaluate(() => document.querySelector("[data-rendered-slide]").closest("#stage") !== null), true);
+  // A link in a thumbnail is out of the Tab order and the accessibility tree.
+  const thumbLinks = await page.evaluate(() => [...document.querySelectorAll("#thumbs .slide-link")]
+    .map((link) => link.closest("[inert]") !== null));
+  assert.ok(thumbLinks.length > 0 && thumbLinks.every(Boolean), "thumbnail links are inert");
 
   await clearPosts(page);
   await page.click('.thumb[data-slide="2"] .thumb-button');
@@ -238,6 +242,17 @@ test("notes follow the slide, and find covers slides and notes", async () => {
   await page.waitForSelector("#notesPanel:not([hidden])");
   await page.waitForFunction(() => [...CSS.highlights.get("leanslides-find-current")].some((range) =>
     range.toString() === "memory" && document.querySelector("#notesText").contains(range.startContainer)));
+
+  // A new search starts at the slide being read: "slides" is on slide 1 and
+  // slide 3, and from slide 3 the count starts at its match.
+  await page.keyboard.press("Escape");
+  await page.keyboard.press("End");
+  await waitForRendered(page, 2);
+  await clearPosts(page);
+  await page.fill("#findInput", "slides");
+  await page.waitForFunction(() => document.querySelector("#findCount").textContent === "2 of 2");
+  await page.waitForTimeout(150);
+  assert.deepEqual(await posts(page, "rendered"), [], "the search stays on slide 3");
   await finish(reader);
 });
 
@@ -281,6 +296,16 @@ test("a link in a slide opens only after the reader confirms it", async () => {
   await page.click("#stage .slide-link");
   await page.click("#linkOpen");
   assert.deepEqual(await posts(page, "link"), [{ type: "link", href: "https://example.com/" }]);
+
+  // Only web and mail links are offered; anything else is refused with a
+  // message (the host checks again before Windows opens a link).
+  await clearPosts(page);
+  await page.evaluate(() => { document.querySelector("#stage .slide-link").dataset.href = "file:///C:/Windows/notepad.exe"; });
+  await page.click("#stage .slide-link");
+  await page.waitForSelector("#statusToast:not([hidden])");
+  assert.equal(await page.textContent("#statusToast"), "LeanSlides opens only web and mail links.");
+  assert.equal(await page.isVisible("#linkDialog"), false);
+  assert.deepEqual(await page.evaluate(() => window.__hostPosts), []);
   await finish(reader);
 });
 
