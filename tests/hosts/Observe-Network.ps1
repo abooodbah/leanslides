@@ -156,6 +156,11 @@ try {
                 Start-Sleep -Milliseconds 100
             }
         } finally {
+            # What ran, so a failure on a machine without a browser process
+            # (for example a runner where WebView2 did not start) says why.
+            $process.Refresh()
+            $exitedEarly = if ($process.HasExited) { 'exited with {0}' -f $process.ExitCode } else { 'running' }
+            $treeText = (@($allIds) | ForEach-Object { if ($names.ContainsKey($_)) { $names[$_] } else { "pid $_" } }) -join ', '
             Stop-Tree $process $start
             $rows = [LeanSlidesNetTables]::Stop()
         }
@@ -213,6 +218,7 @@ try {
         Write-Host ('{0}: {1}; listener {2}, LeanSlides.exe endpoints {3}, runtime remote TCP {4}, net-log URLs {5} ({6} outside the reader), browser arguments kept {7}, {8} samples, largest gap {9} ms' -f
             $case.name, $(if ($passed) { 'PASS' } else { 'FAIL' }), $listenerHits.Count, $rootEndpoints.Count, $runtimeRemote.Count,
             $urls.Count, $outside.Count, $argumentsKept, $samples, $largestGap)
+        if (-not $passed) { Write-Host ('    LeanSlides.exe {0} at the end of the watch; processes: {1}' -f $exitedEarly, $treeText) }
         foreach ($u in $outside) { Write-Host "    outside: $u" }
         foreach ($r in $runtimeRemote) { Write-Host ('    runtime: {0} -> {1} {2}, first seen at {3} ms' -f $r.process, $r.remote, $r.state, $r.firstSeenMs) }
     }
