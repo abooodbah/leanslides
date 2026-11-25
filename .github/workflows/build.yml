@@ -33,6 +33,21 @@ jobs:
         shell: pwsh
         run: ctest --test-dir build/Release --output-on-failure
 
+      - name: Install Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      - name: Draw every corpus slide in Edge and compare it with its model
+        shell: pwsh
+        env:
+          LEANSLIDES_INSPECT: build/Release/tools/inspect/leanslides-inspect.exe
+          LEANSLIDES_REQUIRE_CORPUS: "1"
+        run: |
+          npm ci --ignore-scripts
+          node tests/corpus/fetch-corpus.mjs
+          node --test "tests/reader/*.test.mjs"
+
   linux-core:
     name: Linux core (portability)
     runs-on: ubuntu-24.04
@@ -60,3 +75,11 @@ jobs:
 
       - name: Compare slide models with PowerPoint's measurements
         run: node tests/model/check-model.mjs --inspect build/linux/tools/inspect/leanslides-inspect
+
+      - name: Test the shape geometry
+        run: node --test tests/reader/geometry.test.mjs
+
+      - name: Check that assets/presets.json matches the pinned source
+        run: |
+          node tools/presets/convert-presets.mjs
+          git diff --exit-code assets/presets.json
