@@ -258,7 +258,10 @@ std::string Slide1() {
 
 std::string Slide2() {
     // An untyped placeholder with no idx is idx 0: the layout's title.
-    const std::string shapes = Sp(2, "<p:ph/>", "", "<a:p><a:r><a:rPr lang=\"en-US\"/><a:t>Untyped</a:t></a:r></a:p>");
+    // A typed body with no idx is also idx 0, but keeps to the layout's body.
+    const std::string shapes =
+        Sp(2, "<p:ph/>", "", "<a:p><a:r><a:rPr lang=\"en-US\"/><a:t>Untyped</a:t></a:r></a:p>") +
+        Sp(3, "<p:ph type=\"body\"/>", "", "<a:p><a:r><a:rPr lang=\"en-US\"/><a:t>Typed body</a:t></a:r></a:p>");
     return Part("sld", "<p:cSld>" + Tree(shapes) + "</p:cSld>", " show=\"0\"");
 }
 
@@ -429,6 +432,9 @@ void TestDeck() {
     const std::string untyped = ShapeJson(second, 2);
     ExpectContains(untyped, "\"ph\":\"title\"", "an untyped placeholder with no idx takes the title (idx 0)");
     ExpectContains(untyped, "\"size\":44", "and the title style");
+    const std::string typed = ShapeJson(second, 3);
+    ExpectContains(typed, "\"x\":127000,\"y\":1524000", "a typed body with idx 0 keeps the body box, not the title's");
+    ExpectContains(typed, "\"t\":\"Typed body\",\"size\":32", "and the body style");
 
     std::string json;
     std::string code;

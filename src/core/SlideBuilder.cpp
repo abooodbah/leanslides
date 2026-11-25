@@ -305,12 +305,18 @@ bool SameFamily(std::string_view left, std::string_view right) {
 
 const Placeholder* FindPlaceholder(
     const std::vector<Placeholder>& list, std::string_view type, long long idx, bool byIndex) {
+    // The same type first, then the same family (a body may sit in an
+    // untyped layout placeholder).
     const Placeholder* byType = nullptr;
     for (const Placeholder& placeholder : list) {
         if (placeholder.type == type) {
             byType = &placeholder;
             break;
         }
+    }
+    for (const Placeholder& placeholder : list) {
+        if (byType != nullptr) break;
+        if (SameFamily(placeholder.type, type)) byType = &placeholder;
     }
     if (byIndex && idx >= 0) {
         for (const Placeholder& placeholder : list) {
@@ -323,15 +329,7 @@ const Placeholder* FindPlaceholder(
             break;
         }
     }
-    if (byType != nullptr) {
-        return byType;
-    }
-    for (const Placeholder& placeholder : list) {
-        if (SameFamily(placeholder.type, type)) {
-            return &placeholder;
-        }
-    }
-    return nullptr;
+    return byType;
 }
 
 std::string MediaStatus(const ContentTypes& types, const std::string& partName) {
