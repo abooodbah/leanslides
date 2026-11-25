@@ -48,6 +48,10 @@ jobs:
           node tests/corpus/fetch-corpus.mjs
           node --test "tests/reader/*.test.mjs"
 
+      - name: Watch the network while decks are open
+        shell: pwsh
+        run: ./tests/hosts/Observe-Network.ps1 -ExePath build/Release/LeanSlides.exe
+
   linux-core:
     name: Linux core (portability)
     runs-on: ubuntu-24.04

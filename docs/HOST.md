@@ -61,7 +61,37 @@ Content Security Policy reported nothing. ctest runs it on
 `tests/hosts/fixtures/smoke.pptx`, and on `fallback.odp`, where it must fail.
 
 The resource check covers what the page loaded. It is not a network
-measurement; that is a separate test.
+measurement; that is the next section.
+
+## Network
+
+`tests/hosts/Observe-Network.ps1` launches LeanSlides with no deck,
+`smoke.pptx`, `network.pptm`, and a typical corpus deck, watches each for 8
+seconds, and closes it. `network.pptm` (written by
+`tests/hosts/fixtures/make-network-fixtures.py`) points every outside
+reference a deck can hold at a listener on `127.0.0.1:47913`: a linked
+picture, a linked picture fill, an external picture, a linked video, a
+linked OLE object, a linked background, and hyperlinks on a slide and in the
+notes. It also carries a macro project. The script watches three things:
+
+- connections to that listener;
+- every TCP connection and UDP endpoint of LeanSlides.exe and its WebView2
+  processes, read from the IP helper tables about every 65 ms;
+- every URL in Chromium's network log (`--log-net-log`).
+
+A case fails if the listener gets a connection, if LeanSlides.exe has any
+socket, if the log names a URL outside `https://app.leanslides.invalid/`, or
+if the browser did not get LeanSlides's own arguments together with the log
+argument. CI runs it on every push.
+
+On 2026-11-25, on a Windows 11 laptop with WebView2 158.0.4370.33, every case
+passed: no listener connection, no socket of LeanSlides.exe, and only reader
+URLs in the log (12 to 22 per case). In every case the WebView2 browser
+process also opened HTTPS connections to addresses in the range that
+`substrate.office.com` (Microsoft 365) resolves to, about 2.6 to 3.2 seconds
+after start. The network log does not show them; the runtime makes them on
+its own. LeanMark recorded the same connections on a PC with a work account
+added to Windows. Other PCs have not been measured.
 
 ## Browser arguments
 
