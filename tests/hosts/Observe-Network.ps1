@@ -4,7 +4,12 @@ param(
     [string]$OutputDirectory = 'artifacts/network-windows',
     [ValidateRange(2000, 60000)][int]$WatchMilliseconds = 8000,
     # More browser arguments for an experiment, added after the net log ones.
-    [string]$ExtraBrowserArguments = ''
+    [string]$ExtraBrowserArguments = '',
+    # Watch only the listener and the connection tables, with LeanSlides
+    # setting its own browser arguments and no net log. For machines whose
+    # WebView2 ignores WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS, such as the
+    # GitHub Windows runner.
+    [switch]$SocketsOnly
 )
 
 # What LeanSlides and its WebView2 processes do on the network while a deck is
@@ -28,7 +33,10 @@ param(
 # A case fails if the listener gets a connection, if LeanSlides.exe itself
 # has any TCP connection or UDP endpoint, if the net log names a URL outside
 # https://app.leanslides.invalid/, or if the browser process did not get
-# every one of LeanSlides's arguments and the log argument. Connections of the WebView2 runtime
+# every one of LeanSlides's arguments and the log argument. With -SocketsOnly
+# there is no net log: the host sets its own arguments, and the case fails on
+# the listener, on LeanSlides.exe endpoints, or if the browser process lacks
+# one of those arguments. Connections of the WebView2 runtime
 # processes are recorded by process kind, remote address, and the time they
 # were first seen, and reported, not failed: the runtime can contact Microsoft
 # services on its own, and the net log does not show those connections.
@@ -132,12 +140,20 @@ try {
         $info.Arguments = if ($case.deck) { '-- "{0}"' -f $case.deck } else { '' }
         $info.UseShellExecute = $false
         $info.WorkingDirectory = Split-Path -Parent $ExePath
-        # WebView2 157 drops WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS when the
-        # app sets its own arguments; 158 merges them. So the host is told to
-        # set none (LEANSLIDES_BROWSER_PROFILE=plain) and the same arguments,
-        # read from App.cpp, go into the variable with the net log ones.
-        $info.EnvironmentVariables['LEANSLIDES_BROWSER_PROFILE'] = 'plain'
-        $info.EnvironmentVariables['WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS'] = ('{0} --log-net-log="{1}" --net-log-capture-mode=Default {2}' -f ($hostArguments -join ' '), $netLog, $ExtraBrowserArguments).Trim()
+        # The host is told to set no arguments (LEANSLIDES_BROWSER_PROFILE=plain)
+        # and the same arguments, read from App.cpp, go into the variable with
+        # the net log ones. The host's own arguments would also merge with the
+        # variable on WebView2 158, but they would not show whether the
+        # variable arrived. On the GitHub runner (WebView2 157) the browser
+        # never got the variable's arguments, with or without the host's own;
+        # the cause is not known, so CI runs -SocketsOnly.
+        if (-not $SocketsOnly) {
+            $info.EnvironmentVariables['LEANSLIDES_BROWSER_PROFILE'] = 'plain'
+            $info.EnvironmentVariables['WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS'] = ('{0} --log-net-log="{1}" --net-log-capture-mode=Default {2}' -f ($hostArguments -join ' '), $netLog, $ExtraBrowserArguments).Trim()
+        } else {
+            [void]$info.EnvironmentVariables.Remove('LEANSLIDES_BROWSER_PROFILE')
+            [void]$info.EnvironmentVariables.Remove('WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS')
+        }
         # The connection tables are sampled every 50 ms on their own thread
         # from just before the launch until every process of the tree is gone.
         [LeanSlidesNetTables]::Start(50)
@@ -220,10 +236,10 @@ try {
         # The net log argument must reach the browser on top of LeanSlides'
         # own arguments, or this run would watch a differently configured
         # browser from the one people use.
-        $argumentsKept = ($null -ne $browserCommandLine) -and ($browserCommandLine -match '--log-net-log') -and
+        $argumentsKept = ($null -ne $browserCommandLine) -and ($SocketsOnly -or $browserCommandLine -match '--log-net-log') -and
             (@($hostArguments | Where-Object { -not $browserCommandLine.Contains($_) }).Count -eq 0)
         $passed = ($listenerHits.Count -eq 0) -and ($rootEndpoints.Count -eq 0) -and ($outside.Count -eq 0) -and
-            (Test-Path -LiteralPath $netLog) -and $argumentsKept
+            ($SocketsOnly -or (Test-Path -LiteralPath $netLog)) -and $argumentsKept
         $results += [ordered]@{
             name = $case.name; deck = if ($case.deck) { Split-Path -Leaf $case.deck } else { $null }
             passed = $passed; listenerConnections = @($listenerHits); leanSlidesEndpoints = @($rootEndpoints)
@@ -232,9 +248,10 @@ try {
             browserArgumentsKept = $argumentsKept; browserCommandLine = $browserCommandLine
             samples = $samples; largestGapMs = $largestGap
         }
-        Write-Host ('{0}: {1}; listener {2}, LeanSlides.exe endpoints {3}, runtime remote TCP {4}, net-log URLs {5} ({6} outside the reader), browser arguments kept {7}, {8} samples, largest gap {9} ms' -f
+        $netLogText = if ($SocketsOnly) { 'no net log (-SocketsOnly)' } else { 'net-log URLs {0} ({1} outside the reader)' -f $urls.Count, $outside.Count }
+        Write-Host ('{0}: {1}; listener {2}, LeanSlides.exe endpoints {3}, runtime remote TCP {4}, {5}, browser arguments kept {6}, {7} samples, largest gap {8} ms' -f
             $case.name, $(if ($passed) { 'PASS' } else { 'FAIL' }), $listenerHits.Count, $rootEndpoints.Count, $runtimeRemote.Count,
-            $urls.Count, $outside.Count, $argumentsKept, $samples, $largestGap)
+            $netLogText, $argumentsKept, $samples, $largestGap)
         if (-not $passed) {
             Write-Host ('    LeanSlides.exe {0} at the end of the watch; processes: {1}' -f $exitedEarly, $treeText)
             Write-Host ('    browser command line: {0}' -f $(if ($browserCommandLine) { $browserCommandLine } else { '(not readable)' }))
@@ -245,6 +262,6 @@ try {
 } finally {
     $listener.Stop()
 }
-$report = [ordered]@{ exe = $ExePath; watchMilliseconds = $WatchMilliseconds; cases = $results }
+$report = [ordered]@{ exe = $ExePath; watchMilliseconds = $WatchMilliseconds; socketsOnly = [bool]$SocketsOnly; cases = $results }
 $report | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath (Join-Path $out 'network-windows.json') -Encoding utf8
 if (@($results | Where-Object { -not $_.passed }).Count -gt 0) { exit 1 }

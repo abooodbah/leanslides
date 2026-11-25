@@ -76,13 +76,21 @@ notes. It also carries a macro project. The script watches three things:
 
 - connections to that listener;
 - every TCP connection and UDP endpoint of LeanSlides.exe and its WebView2
-  processes, read from the IP helper tables about every 65 ms;
+  processes, read from the IP helper tables every 50 ms plus the time a read
+  takes (the largest gap between reads is in each result);
 - every URL in Chromium's network log (`--log-net-log`).
 
 A case fails if the listener gets a connection, if LeanSlides.exe has any
 socket, if the log names a URL outside `https://app.leanslides.invalid/`, or
 if the browser did not get LeanSlides's own arguments together with the log
-argument. CI runs it on every push.
+argument.
+
+CI runs it on every push with `-SocketsOnly`: the listener and the
+connection tables, with LeanSlides setting its own browser arguments, and no
+network log. On the GitHub Windows runner (WebView2 157.0.4341.46 and .60)
+the browser process did not receive `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS`, with
+or without LeanSlides's own arguments, so the log could not be turned on
+there. The cause is not known. The log check runs on a PC.
 
 On 2026-11-25, on a Windows 11 laptop with WebView2 158.0.4370.33, every case
 passed: no listener connection, no socket of LeanSlides.exe, and only reader

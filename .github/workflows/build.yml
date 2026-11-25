@@ -48,9 +48,11 @@ jobs:
           node tests/corpus/fetch-corpus.mjs
           node --test "tests/reader/*.test.mjs"
 
+      # The runner's WebView2 ignores WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS,
+      # so the net log cannot be turned on here; see docs/HOST.md#network.
       - name: Watch the network while decks are open
         shell: pwsh
-        run: ./tests/hosts/Observe-Network.ps1 -ExePath build/Release/LeanSlides.exe
+        run: ./tests/hosts/Observe-Network.ps1 -ExePath build/Release/LeanSlides.exe -SocketsOnly
 
   linux-core:
     name: Linux core (portability)
