@@ -79,6 +79,9 @@ jobs:
       - name: Test the shape geometry
         run: node --test tests/reader/geometry.test.mjs
 
+      - name: Test the parity scores
+        run: node --test tests/parity/score.test.mjs
+
       - name: Check that assets/presets.json matches the pinned source
         run: |
           node tools/presets/convert-presets.mjs
