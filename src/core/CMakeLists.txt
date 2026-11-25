@@ -24,6 +24,7 @@ set(LEANSLIDES_CORE_SOURCES
   Color.cpp
   Deck.cpp
   Opc.cpp
+  SlideBuilder.cpp
   SlideCore.cpp
   Xml.cpp
   XmlUtil.cpp
