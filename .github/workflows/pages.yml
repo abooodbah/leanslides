@@ -1,0 +1,68 @@
+name: Deploy GitHub Pages
+
+# Validates and deploys site/ when it changes on main, and by hand. The site
+# is deployed from main, which the github-pages environment allows.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      # The upload step takes ./site wholesale, so anything under it must
+      # redeploy, or the live page lags main.
+      - 'site/**'
+      # The deployment definition itself, so a correction deploys under its
+      # own new rules.
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      # configure-pages reads the repository's Pages settings.
+      pages: read
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Install Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      # Reads package.json at the repository root for the version.
+      - name: Validate site
+        run: node site/validate.mjs
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
