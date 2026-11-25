@@ -44,6 +44,7 @@
           </div>
 
           <button id="notesButton" class="button button-ghost doc-control" type="button" aria-pressed="false" aria-controls="notesPanel"></button>
+          <button id="presentButton" class="button button-ghost doc-control" type="button"></button>
           <button id="themeButton" class="button button-ghost theme-button" type="button"><span id="themeSwatch" class="theme-swatch" data-swatch="system" aria-hidden="true"></span><span id="themeLabel"></span></button>
           <button id="settingsButton" class="button button-ghost button-icon" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="settingsPanel">
             <svg viewBox="0 0 16 16" aria-hidden="true">
@@ -125,6 +126,13 @@
         <label class="settings-choice"><input type="radio" name="settings-theme" value="dark" /><span class="theme-swatch" data-swatch="dark" aria-hidden="true"></span><span data-i18n="theme.dark"></span></label>
         <label class="settings-choice"><input type="radio" name="settings-theme" value="dim" /><span class="theme-swatch" data-swatch="dim" aria-hidden="true"></span><span data-i18n="theme.dim"></span></label>
         <label class="settings-choice"><input type="radio" name="settings-theme" value="dusk" /><span class="theme-swatch" data-swatch="dusk" aria-hidden="true"></span><span data-i18n="theme.dusk"></span></label>
+      </fieldset>
+      <fieldset class="settings-group">
+        <legend data-i18n="settings.language"></legend>
+        <label class="settings-choice"><input type="radio" name="settings-language" value="auto" /><span data-i18n="language.auto"></span></label>
+        <label class="settings-choice"><input type="radio" name="settings-language" value="en" /><span lang="en">English</span></label>
+        <label class="settings-choice"><input type="radio" name="settings-language" value="zh-CN" /><span lang="zh-CN">简体中文</span></label>
+        <label class="settings-choice"><input type="radio" name="settings-language" value="ja" /><span lang="ja">日本語</span></label>
       </fieldset>
       <h3 class="settings-label" data-i18n="settings.shortcuts"></h3>
       <div id="shortcutList" class="shortcut-list"></div>
