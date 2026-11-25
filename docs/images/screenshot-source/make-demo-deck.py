@@ -22,6 +22,18 @@ CLAY = RGBColor(0xC8, 0x6B, 0x3C)
 deck = Presentation()
 deck.slide_width = Emu(12192000)
 deck.slide_height = Emu(6858000)
+# The default template is 4:3 (9144000 wide). Widen its placeholders to the
+# 16:9 slide, or titles sit left of centre. Layouts go first: a layout
+# placeholder without its own position reads the master's.
+for part in [*deck.slide_layouts, deck.slide_master]:
+    for shape in part.placeholders:
+        # Read all four first: setting one on a placeholder that inherits its
+        # position writes a new position with the others at zero.
+        left, top, width, height = shape.left, shape.top, shape.width, shape.height
+        shape.left = Emu(round(left * 12192000 / 9144000))
+        shape.top = top
+        shape.width = Emu(round(width * 12192000 / 9144000))
+        shape.height = height
 title_layout = deck.slide_layouts[0]
 content_layout = deck.slide_layouts[1]
 title_only = deck.slide_layouts[5]
@@ -85,11 +97,12 @@ background(slide, SAND)
 slide.shapes.title.text = "From soil to harvest"
 style_title(slide.shapes.title)
 steps = ["Test the soil", "Build the beds", "Plant seedlings", "Water rota", "Harvest day"]
-width, height, gap = Emu(1960000), Emu(1100000), Emu(260000)
+# Low, wide arrows leave room for "seedlings" on one line.
+width, height, gap = Emu(2100000), Emu(900000), Emu(120000)
 left = Emu((12192000 - (5 * width + 4 * gap)) // 2)
 for index, step in enumerate(steps):
     x = left + index * (width + gap)
-    shape = slide.shapes.add_shape(MSO_SHAPE.CHEVRON if index else MSO_SHAPE.PENTAGON, x, Emu(2900000), width, height)
+    shape = slide.shapes.add_shape(MSO_SHAPE.CHEVRON if index else MSO_SHAPE.PENTAGON, x, Emu(3000000), width, height)
     shape.fill.solid()
     shape.fill.fore_color.rgb = GREEN if index % 2 == 0 else CLAY
     shape.line.fill.background()
@@ -97,7 +110,7 @@ for index, step in enumerate(steps):
     frame.text = step
     frame.paragraphs[0].alignment = PP_ALIGN.CENTER
     for run in frame.paragraphs[0].runs:
-        run.font.size = Pt(18)
+        run.font.size = Pt(16)
         run.font.bold = True
         run.font.color.rgb = RGBColor(0xFF, 0xFF, 0xFF)
 notes(slide, "Soil test results come back in two weeks. Beds go in the weekend after.")

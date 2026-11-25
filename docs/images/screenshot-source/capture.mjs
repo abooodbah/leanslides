@@ -48,6 +48,16 @@ try {
   await preview.close();
   console.log("wrote site/assets/leanslides-window.png and site/assets/social-preview.png");
 } finally {
-  app.kill();
+  await closeApp(app);
 }
 process.exit(0);
+
+// taskkill without /F asks the window to close, as its close button does, so
+// WebView2 shuts its own processes down. A forced kill leaves them running on
+// the profile folder, and the next start cannot use it.
+async function closeApp(child) {
+  if (child.exitCode !== null) return;
+  const exited = new Promise((done) => child.once("exit", () => done(true)));
+  spawn("taskkill", ["/PID", String(child.pid)], { stdio: "ignore" });
+  if (!(await Promise.race([exited, new Promise((done) => setTimeout(() => done(false), 10000))]))) child.kill();
+}
