@@ -11,6 +11,7 @@ Their licenses apply to those components only.
 | ECMA-376 preset shape definitions, from Apache POI | POI commit 4793c3e | ECMA-376 (no restriction); Apache-2.0 for the POI copy | converted to assets/presets.json | https://github.com/apache/poi/blob/4793c3e741c2858bf29e728f13f617ee784243f4/poi/src/main/resources/org/apache/poi/sl/draw/geom/presetShapeDefinitions.xml |
 | IBM Plex Sans | @fontsource/ibm-plex-sans 5.3.0 | OFL-1.1 | `assets/fonts/ibm-plex-sans-latin-{400,500,600}-normal.woff2` | https://github.com/IBM/plex |
 | IBM Plex Serif | @fontsource/ibm-plex-serif 5.3.0 | OFL-1.1 | `assets/fonts/ibm-plex-serif-latin-600-normal.woff2` | https://github.com/IBM/plex |
+| IBM Plex Mono (website only) | @fontsource/ibm-plex-mono 5.3.0 | OFL-1.1 | `site/assets/fonts/ibm-plex-mono-latin-400-normal.woff2` | https://github.com/IBM/plex |
 
 ## miniz 3.1.2
 
@@ -351,7 +352,10 @@ package WOFF2 files unchanged (SHA-256):
 | `ibm-plex-serif-latin-600-normal.woff2` | `e279e4f8baa0d4634d98868092f2198ae0dcd9e142c935822c385b9843352a9b` |
 
 They are used only for LeanSlides' own interface, never in place of a
-presentation's fonts.
+presentation's fonts. The website in `site/assets/fonts/` uses the same four
+files and IBM Plex Mono (@fontsource/ibm-plex-mono 5.3.0, copyright 2017 IBM
+Corp., same licence), `ibm-plex-mono-latin-400-normal.woff2` with SHA-256
+`08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7`.
 
 ```text
 This Font Software is licensed under the SIL Open Font License, Version 1.1.

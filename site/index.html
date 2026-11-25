@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0d0b" media="(prefers-color-scheme: dark)">
+  <title>LeanSlides: free PowerPoint (.pptx) viewer for Windows</title>
+  <meta name="description" content="Open and present PowerPoint files without Office. LeanSlides is a free, MIT-licensed, read-only .pptx viewer for Windows 10 and 11. Macros never run; nothing linked is fetched.">
+  <link rel="canonical" href="https://abooodbah.github.io/leanslides/">
+  <link rel="icon" href="assets/leanslides-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/leanslides-icon.png" sizes="256x256" type="image/png">
+  <link rel="apple-touch-icon" href="assets/leanslides-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="alternate" type="application/atom+xml" title="LeanSlides releases" href="https://github.com/abooodbah/leanslides/releases.atom">
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-serif-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LeanSlides: free PowerPoint (.pptx) viewer for Windows">
+  <meta property="og:description" content="Open and present PowerPoint files without Office. LeanSlides is a free, MIT-licensed, read-only .pptx viewer for Windows 10 and 11. Macros never run; nothing linked is fetched.">
+  <meta property="og:url" content="https://abooodbah.github.io/leanslides/">
+  <meta property="og:image" content="https://abooodbah.github.io/leanslides/assets/social-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="LeanSlides, a PowerPoint presentation viewer for Windows, showing a presentation. Show the slides, not the office suite.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "LeanSlides",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Windows 10, Windows 11",
+    "softwareVersion": "0.1.0",
+    "license": "https://opensource.org/license/mit",
+    "downloadUrl": "https://github.com/abooodbah/leanslides/releases/tag/v0.1.0",
+    "description": "A free, read-only PowerPoint (.pptx) viewer for Windows. It never runs macros, OLE objects or ActiveX controls, and never fetches what a presentation links from outside the file.",
+    "url": "https://abooodbah.github.io/leanslides/",
+    "image": "https://abooodbah.github.io/leanslides/assets/social-preview.png",
+    "screenshot": "https://abooodbah.github.io/leanslides/assets/leanslides-window.png",
+    "sameAs": [
+      "https://github.com/abooodbah/leanslides"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Abdulfatah Bahbouh",
+      "url": "https://abooodbah.github.io/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="#top" aria-label="LeanSlides home">
+        <img src="assets/leanslides-icon.svg" width="36" height="36" alt="">
+        <span>LeanSlides</span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#fidelity">Fidelity</a>
+        <a href="#speed">Speed</a>
+        <a href="#safety">Safety</a>
+        <a href="#download">Download</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://github.com/abooodbah/leanslides">Source</a>
+      </nav>
+      <a class="button button-small button-primary header-download" href="#download">
+        Download
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">A read-only .pptx viewer</p>
+          <h1>A free PowerPoint presentation viewer for Windows</h1>
+          <p class="hero-slogan">Show the slides, not the office suite.</p>
+          <p class="hero-lead">
+            LeanSlides opens a <code>.pptx</code> as slides you can page
+            through, search, and present. It never runs macros or embedded
+            objects, and never fetches anything the file links to.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-large button-primary"
+               href="https://github.com/abooodbah/leanslides/releases/download/v0.1.0/LeanSlides-v0.1.0-windows-x64.zip">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v12m0 0 5-5m-5 5-5-5M5 20h14"/>
+              </svg>
+              Download for Windows
+            </a>
+            <a class="button button-large button-secondary"
+               href="https://github.com/abooodbah/leanslides/releases/tag/v0.1.0">
+              Release page
+            </a>
+          </div>
+          <p class="release-meta">
+            v0.1.0 · Windows 10 and 11, x64 · MIT licensed
+          </p>
+          <p class="unsigned-note">
+            <strong>Signing status:</strong> the Windows build is not
+            code-signed, so SmartScreen may warn before it starts. Compare the
+            ZIP with its <code>.sha256</code> file on the
+            <a href="https://github.com/abooodbah/leanslides/releases/tag/v0.1.0">release page</a>,
+            or check its <a href="#download">build provenance</a>.
+          </p>
+        </div>
+
+        <figure class="product-shot">
+          <img src="assets/leanslides-window.png"
+               width="1440"
+               height="900"
+               alt="The LeanSlides window on Windows with a presentation open: slide thumbnails beside the current slide."
+               fetchpriority="high">
+          <figcaption>LeanSlides v0.1.0 on Windows.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="proof-strip" aria-labelledby="proof-heading">
+      <div class="container">
+        <h2 class="visually-hidden" id="proof-heading">Release facts</h2>
+        <dl class="proof-list">
+          <div>
+            <dt>0.9 MB</dt>
+            <dd>About the size of the Windows ZIP. It bundles no browser.</dd>
+          </div>
+          <div>
+            <dt>95.6%</dt>
+            <dd>Of PowerPoint's text lines written the same way, on 550 slides</dd>
+          </div>
+          <div>
+            <dt>455 ms</dt>
+            <dd>To the first slide of a typical 23-slide deck, the median of 10 launches</dd>
+          </div>
+          <div>
+            <dt>MIT</dt>
+            <dd>Free to use, inspect, and improve</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="audiences" aria-labelledby="audiences-heading">
+      <div class="container">
+        <div class="section-copy section-intro">
+          <p class="eyebrow">Who it is for</p>
+          <h2 id="audiences-heading">Open a .pptx without PowerPoint.</h2>
+          <p class="section-lead">
+            LeanSlides is for people who only need to read or show a
+            presentation. It opens <code>.pptx</code>, <code>.ppsx</code>,
+            <code>.potx</code>, <code>.pptm</code>, <code>.ppsm</code>, and
+            <code>.potm</code> files.
+          </p>
+        </div>
+        <ol class="audience-list">
+          <li>
+            <span class="audience-number">01</span>
+            <h3>People without PowerPoint</h3>
+            <p>Open the deck someone emailed you on a PC without Office. No account and no office suite.</p>
+          </li>
+          <li>
+            <span class="audience-number">02</span>
+            <h3>People who present from a file</h3>
+            <p>Page through the slides, read the speaker notes, and press F5 to present. Esc leaves the presentation.</p>
+          </li>
+          <li>
+            <span class="audience-number">03</span>
+            <h3>People opening attachments they do not trust</h3>
+            <p>Macros, OLE objects, and ActiveX controls never run, and nothing linked from outside the file is fetched.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="features" aria-labelledby="features-heading">
+      <div class="container split-section">
+        <div class="section-copy">
+          <p class="eyebrow">The reading workflow</p>
+          <h2 id="features-heading">A presentation opens as slides.</h2>
+          <p class="section-lead">
+            Page through with the slide thumbnails or the keyboard. Fit the
+            slide to the window, or zoom in.
+          </p>
+          <ul class="check-list">
+            <li>Slide thumbnails, fit to window, and zoom</li>
+            <li>Presentation mode with F5; Esc leaves it</li>
+            <li>Speaker notes</li>
+            <li>Find across all slides, and copy the text of a slide</li>
+            <li>Tabs, so several presentations stay open in one window</li>
+            <li>Five themes, and a settings page that lists the keyboard shortcuts</li>
+            <li>The interface in English, Simplified Chinese, and Japanese</li>
+          </ul>
+        </div>
+        <div class="editor-order shortcut-card" aria-labelledby="shortcuts-heading">
+          <h3 id="shortcuts-heading">Keyboard</h3>
+          <p>The settings page lists every shortcut. The main ones:</p>
+          <dl class="shortcut-list">
+            <div>
+              <dt><kbd>←</kbd> <kbd>→</kbd> <kbd>Page Up</kbd> <kbd>Page Down</kbd></dt>
+              <dd>Move between slides</dd>
+            </div>
+            <div>
+              <dt><kbd>Home</kbd> <kbd>End</kbd></dt>
+              <dd>First or last slide</dd>
+            </div>
+            <div>
+              <dt><kbd>F5</kbd> <kbd>Esc</kbd></dt>
+              <dd>Start or leave the presentation</dd>
+            </div>
+            <div>
+              <dt><kbd>Ctrl+F</kbd></dt>
+              <dd>Find across slides</dd>
+            </div>
+            <div>
+              <dt><kbd>Ctrl+Tab</kbd> <kbd>Ctrl+W</kbd></dt>
+              <dd>Next tab, close tab</dd>
+            </div>
+            <div>
+              <dt><kbd>Ctrl+1</kbd> to <kbd>Ctrl+9</kbd></dt>
+              <dd>Go to a tab</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fidelity" aria-labelledby="fidelity-heading">
+      <div class="container fidelity-layout">
+        <div class="section-copy">
+          <p class="eyebrow">Fidelity</p>
+          <h2 id="fidelity-heading">Measured against PowerPoint's own export.</h2>
+          <p class="section-lead">
+            On 2026-11-25, each slide LeanSlides drew was compared with the
+            picture PowerPoint 16.0 exports for the same slide: 550 slides from
+            145 public decks.
+          </p>
+          <p>Known gaps in this release:</p>
+          <ul class="check-list gap-list">
+            <li>Charts, SmartArt, and ActiveX controls are shown as labelled boxes</li>
+            <li>A few decks draw text about 20 px lower than PowerPoint</li>
+            <li>Vertical text in table cells is drawn horizontally</li>
+            <li>Some table-style header text colours differ</li>
+            <li>Fonts that are not installed are replaced with others</li>
+          </ul>
+        </div>
+        <div class="editor-order measure-card" aria-labelledby="measure-heading">
+          <h3 id="measure-heading">The numbers</h3>
+          <dl class="measure-list">
+            <div>
+              <dt>95.6%</dt>
+              <dd>Of PowerPoint's 3,130 text lines, LeanSlides wrote 2,992 the same way on one line.</dd>
+            </div>
+            <div>
+              <dt>0.88</dt>
+              <dd>Median SSIM, a picture similarity score, against 0.74 for an empty slide with the right background.</dd>
+            </div>
+            <div>
+              <dt>0.41</dt>
+              <dd>Median gain: how far the drawing moves the score from the empty slide towards identical.</dd>
+            </div>
+            <div>
+              <dt>63 of 531</dt>
+              <dd>Slides that score below their empty slide.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="speed" aria-labelledby="speed-heading">
+      <div class="container">
+        <div class="section-copy section-intro">
+          <p class="eyebrow">Start-up and memory</p>
+          <h2 id="speed-heading">Measured on one laptop.</h2>
+          <p class="section-lead">
+            Measured on 2026-11-25 on an Intel Core i7-13620H laptop with
+            Windows 11 and WebView2 158. Each figure is the median of 10
+            launches. Memory is the private memory of
+            <code>LeanSlides.exe</code> and all its WebView2 processes once
+            they settle.
+          </p>
+        </div>
+        <div class="table-wrap">
+          <table class="platform-table">
+            <caption class="visually-hidden">LeanSlides v0.1.0 start-up time and memory</caption>
+            <thead>
+              <tr>
+                <th scope="col">What is open</th>
+                <th scope="col">Time</th>
+                <th scope="col">Memory</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">No presentation</th>
+                <td data-label="Time">Window in 114 ms, page ready in 424 ms</td>
+                <td data-label="Memory">89.4 MiB</td>
+              </tr>
+              <tr>
+                <th scope="row">A typical deck: 23 slides, 0.9 MB</th>
+                <td data-label="Time">First slide in 455 ms</td>
+                <td data-label="Memory">99.0 MiB</td>
+              </tr>
+              <tr>
+                <th scope="row">A large deck: 240 slides, 46 MB</th>
+                <td data-label="Time">First slide in 513 ms</td>
+                <td data-label="Memory">150.8 MiB; 294.4 MiB after paging through every slide</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="inline-alert speed-gap" role="note">
+          <strong>Known gap.</strong>
+          Memory keeps growing when the same large deck is paged through again
+          and again: 523 MiB after five walks through it.
+        </div>
+      </div>
+    </section>
+
+    <section class="security-section" id="safety" aria-labelledby="safety-heading">
+      <div class="container security-layout">
+        <div>
+          <p class="eyebrow eyebrow-inverse">Untrusted presentations</p>
+          <h2 id="safety-heading">Macros and embedded objects never run.</h2>
+          <p class="security-lead">
+            LeanSlides reads a presentation and draws it. These are facts about
+            LeanSlides's own code, not a guarantee about the Microsoft Edge
+            WebView2 Runtime that draws the page.
+          </p>
+          <p class="security-lead">
+            LeanSlides's own code makes no network requests and has no
+            telemetry, account, or ads. The WebView2 Runtime is a Microsoft
+            component and may contact Microsoft on its own.
+          </p>
+          <a class="button button-large button-inverse"
+             href="https://github.com/abooodbah/leanslides">
+            Read the source
+          </a>
+        </div>
+        <ul class="security-list">
+          <li><strong>No macros run</strong><span>Macros never run, in any of the file types LeanSlides opens.</span></li>
+          <li><strong>No embedded programs</strong><span>OLE objects and ActiveX controls never run.</span></li>
+          <li><strong>Nothing is fetched</strong><span>Pictures, video, backgrounds, and objects linked from outside the file are never fetched. A labelled placeholder shows instead.</span></li>
+          <li><strong>Stored pictures only</strong><span>Charts, SmartArt, video, audio, 3D models, ink, and similar content show the picture the file stores for them, or a labelled box.</span></li>
+          <li><strong>Read-only</strong><span>LeanSlides is a viewer. It opens presentations for reading and presenting.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="download" aria-labelledby="download-heading">
+      <div class="container">
+        <div class="section-copy section-intro">
+          <p class="eyebrow">Download</p>
+          <h2 id="download-heading">One package for Windows.</h2>
+          <p class="section-lead">
+            The ZIP is attached to the
+            <a href="https://github.com/abooodbah/leanslides/releases/tag/v0.1.0">v0.1.0 release</a>
+            with a <code>.sha256</code> file beside it.
+          </p>
+        </div>
+        <div class="table-wrap">
+          <table class="platform-table">
+            <caption class="visually-hidden">LeanSlides v0.1.0 downloads</caption>
+            <thead>
+              <tr>
+                <th scope="col">Platform</th>
+                <th scope="col">Package</th>
+                <th scope="col">Runtime and status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Windows 10 and 11, x64</th>
+                <td>
+                  <a href="https://github.com/abooodbah/leanslides/releases/download/v0.1.0/LeanSlides-v0.1.0-windows-x64.zip"><code>LeanSlides-v0.1.0-windows-x64.zip</code></a>,
+                  about 0.9 MB, and its checksum
+                  <a href="https://github.com/abooodbah/leanslides/releases/download/v0.1.0/LeanSlides-v0.1.0-windows-x64.zip.sha256"><code>LeanSlides-v0.1.0-windows-x64.zip.sha256</code></a>
+                </td>
+                <td>Uses the Microsoft Edge WebView2 Runtime that Windows already has; it bundles no browser. Not code-signed.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="install-grid">
+          <div class="inline-alert" role="note">
+            <strong>Trust status, before you install.</strong>
+            LeanSlides is not code-signed, so Windows may show an
+            unknown-publisher or SmartScreen warning. Compare the ZIP with its
+            <code>.sha256</code> file. The checksum proves the bytes match the
+            release asset; it does not prove who published them. The build
+            provenance check below ties the ZIP to this repository.
+          </div>
+          <div class="installer-note">
+            <p class="winget-label">Install or run portable</p>
+            <p>Unzip the download. To install LeanSlides for your Windows user, run <code>installer\install.ps1</code> from the unzipped folder. It needs no admin rights.</p>
+            <p>To use it portable, run <code>LeanSlides.exe</code> from the unzipped folder instead.</p>
+          </div>
+          <div class="install-side">
+            <div class="winget-note">
+              <p class="winget-label">Checksum</p>
+              <pre><code>Get-FileHash LeanSlides-v0.1.0-windows-x64.zip -Algorithm SHA256</code></pre>
+              <p>Run it in PowerShell and compare the hash with the one in the <code>.sha256</code> file.</p>
+            </div>
+            <div class="winget-note">
+              <p class="winget-label">Build provenance</p>
+              <pre><code>gh attestation verify LeanSlides-v0.1.0-windows-x64.zip --repo abooodbah/leanslides</code></pre>
+              <p>The GitHub CLI checks the ZIP against the build provenance attestation that this repository published for it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-copy section-intro">
+          <p class="eyebrow">Questions</p>
+          <h2 id="faq-heading">Reading presentations without PowerPoint</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>How do I open a .pptx file without PowerPoint?</h3>
+            <p>Download the ZIP from <a href="https://github.com/abooodbah/leanslides/releases">GitHub Releases</a>, unzip it, and run <code>LeanSlides.exe</code> or the per-user installer. Then open the presentation in LeanSlides. No Office install and no account are needed.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Is LeanSlides free?</h3>
+            <p>Yes. It is MIT licensed and free on GitHub.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I edit presentations?</h3>
+            <p>No. LeanSlides is a read-only viewer. Use PowerPoint or another editor to change a presentation.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I present with it?</h3>
+            <p>Yes. Press F5 to start the presentation and Esc to leave it. LeanSlides also shows the speaker notes.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I open an attachment without running its macros?</h3>
+            <p>Yes. Macros, OLE objects, and ActiveX controls never run. Pictures, video, backgrounds, and objects linked from outside the file are never fetched; a labelled placeholder shows instead.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Which file types does it open?</h3>
+            <p><code>.pptx</code>, <code>.ppsx</code>, <code>.potx</code>, <code>.pptm</code>, <code>.ppsm</code>, and <code>.potm</code>. Charts, SmartArt, video, audio, 3D models, and ink show the picture the file stores for them, or a labelled box.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Why does Windows warn me when I start it?</h3>
+            <p>The build is not code-signed, so SmartScreen may show a warning. Compare the ZIP with its <code>.sha256</code> file, or check its build provenance with <code>gh attestation verify</code>, as shown in <a href="#download">Download</a>.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Does it work on Mac or Linux?</h3>
+            <p>No. LeanSlides v0.1.0 is for Windows 10 and 11 on x64 only.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Which languages does the interface use?</h3>
+            <p>The interface is in English, Simplified Chinese, and Japanese.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Does LeanSlides collect data?</h3>
+            <p>No. It has no telemetry, no account, and no ads, and its own code makes no network requests. The WebView2 Runtime that draws the page is a Microsoft component and may contact Microsoft on its own.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="family" aria-labelledby="family-heading">
+      <div class="container">
+        <div class="section-copy section-intro">
+          <p class="eyebrow">The Lean family</p>
+          <h2 id="family-heading">Small viewers for local files.</h2>
+          <p class="section-lead">
+            LeanSlides is the fourth read-only viewer in the family. Each one
+            opens one kind of file for reading.
+          </p>
+        </div>
+        <ul class="family-list">
+          <li>
+            <h3><a href="https://abooodbah.github.io/leanmark/">LeanMark</a></h3>
+            <p>A Markdown viewer.</p>
+          </li>
+          <li>
+            <h3><a href="https://abooodbah.github.io/leandoc/">LeanDoc</a></h3>
+            <p>A Word document viewer.</p>
+          </li>
+          <li>
+            <h3><a href="https://abooodbah.github.io/leanrows/">LeanRows</a></h3>
+            <p>A viewer for large CSV files.</p>
+          </li>
+          <li class="family-current">
+            <h3>LeanSlides</h3>
+            <p>A PowerPoint presentation viewer, this one.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="privacy-policy" aria-labelledby="privacy-policy-heading">
+      <div class="container">
+        <div class="section-copy section-intro policy-copy">
+          <p class="eyebrow">Privacy</p>
+          <h2 id="privacy-policy-heading">Privacy policy</h2>
+          <p>
+            This program will not transfer any information to other networked systems unless specifically requested by the user or the person installing or operating it.
+          </p>
+          <p>
+            LeanSlides's own code makes no network requests. It has no
+            telemetry, no account, and no ads, and it never fetches pictures,
+            video, backgrounds, or objects that a presentation links from
+            outside the file. The slides are drawn by the Microsoft Edge
+            WebView2 Runtime, a Microsoft component that is installed and
+            updated separately and is not part of LeanSlides. That runtime may
+            contact Microsoft on its own, under Microsoft's terms.
+          </p>
+          <h3>Uninstall</h3>
+          <p>
+            To remove an installed copy, use Settings &gt; Apps &gt; Installed
+            apps &gt; LeanSlides; it also removes LeanSlides's settings and its
+            WebView2 folder. To remove a portable copy, delete its folder; its
+            settings in <code>HKCU\Software\LeanSlides</code> and the folder
+            <code>%LOCALAPPDATA%\LeanSlides</code> stay until you delete them.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-section">
+      <div class="container closing-layout">
+        <div>
+          <p class="eyebrow">Built in public</p>
+          <h2>Real presentations make it better.</h2>
+        </div>
+        <div>
+          <p>
+            LeanSlides is early, public, and MIT licensed. Reports about slides
+            that look different from PowerPoint are welcome. Never attach a
+            private presentation: make a small file that shows the problem.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-large button-primary"
+               href="https://github.com/abooodbah/leanslides/issues/new">
+              Report an issue
+            </a>
+            <a class="button button-large button-secondary"
+               href="https://github.com/abooodbah/leanslides">
+              Read the source
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <a class="brand" href="#top">
+        <img src="assets/leanslides-icon.svg" width="32" height="32" alt="">
+        <span>LeanSlides</span>
+      </a>
+      <p>MIT-licensed open source software for Windows.</p>
+      <nav aria-label="Footer navigation">
+        <a href="https://github.com/abooodbah/leanslides">GitHub</a>
+        <a href="https://github.com/abooodbah/leanslides/releases">Releases</a>
+        <a href="https://github.com/abooodbah/leanslides/blob/main/THIRD_PARTY_NOTICES.md">Notices</a>
+        <a href="https://github.com/abooodbah/leanslides/blob/main/LICENSE">License</a>
+        <a href="https://abooodbah.github.io/">Author</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
