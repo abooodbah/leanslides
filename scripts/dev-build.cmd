@@ -11,5 +11,9 @@ if "%VSROOT%"=="" (
 )
 call "%VSROOT%\VC\Auxiliary\Build\vcvars64.bat" >nul || exit /b 1
 set BUILD=%~dp0..\build\%CONFIG%
-cmake -S "%~dp0.." -B "%BUILD%" -G Ninja -DCMAKE_BUILD_TYPE=%CONFIG% -DBUILD_TESTING=ON %2 %3 %4 || exit /b 1
+rem Everything after the configuration goes to cmake as typed. %%2 would split
+rem -DNAME=VALUE at the equals sign.
+set EXTRA=
+for /f "tokens=1,*" %%a in ("%*") do set EXTRA=%%b
+cmake -S "%~dp0.." -B "%BUILD%" -G Ninja -DCMAKE_BUILD_TYPE=%CONFIG% -DBUILD_TESTING=ON %EXTRA% || exit /b 1
 cmake --build "%BUILD%" || exit /b 1

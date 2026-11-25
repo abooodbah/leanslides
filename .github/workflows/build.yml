@@ -21,11 +21,15 @@ jobs:
       - name: Check out source
         uses: actions/checkout@v7
 
-      - name: Build core, inspect tool, and tests
-        shell: cmd
-        run: scripts\dev-build.cmd Release
+      - name: Fetch the pinned WebView2 SDK
+        shell: pwsh
+        run: ./scripts/Get-WebView2Sdk.ps1
 
-      - name: Run core tests
+      - name: Build core, inspect tool, Windows host, and tests
+        shell: cmd
+        run: scripts\dev-build.cmd Release -DLEANSLIDES_ENABLE_GUI_TESTS=ON
+
+      - name: Run core, host logic, and WebView2 smoke tests
         shell: pwsh
         run: ctest --test-dir build/Release --output-on-failure
 

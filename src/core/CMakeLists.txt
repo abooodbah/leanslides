@@ -23,6 +23,7 @@ set(LEANSLIDES_CORE_SOURCES
   Cfb.cpp
   Color.cpp
   Deck.cpp
+  Links.cpp
   Opc.cpp
   SlideBuilder.cpp
   SlideCore.cpp

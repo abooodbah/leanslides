@@ -28,3 +28,6 @@ __pycache__/
 
 # Session resume notes kept beside the checkout
 PROGRAM_STATE.md
+
+# Fetched WebView2 SDK
+obj/
