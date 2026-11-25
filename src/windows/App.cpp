@@ -315,6 +315,13 @@ LRESULT LeanSlidesApp::HandleWindowMessage(UINT message, WPARAM wParam, LPARAM l
                 ResizeWebView();
             }
             return 0;
+        case WM_SETFOCUS:
+            // Windows gives focus to the main window when it is activated
+            // (Alt+Tab, a click on the title bar); pass it on to the page.
+            if (controller_ != nullptr) {
+                controller_->MoveFocus(COREWEBVIEW2_MOVE_FOCUS_REASON_PROGRAMMATIC);
+            }
+            return 0;
         case WM_DPICHANGED: {
             const auto* suggested = reinterpret_cast<RECT*>(lParam);
             SetWindowPos(
@@ -430,6 +437,9 @@ void LeanSlidesApp::InitializeWebView() {
                             controller_->get_CoreWebView2(&webView_);
                             ConfigureWebView();
                             ResizeWebView();
+                            // Keys go to the page from the start, not only
+                            // after the first click in it.
+                            controller_->MoveFocus(COREWEBVIEW2_MOVE_FOCUS_REASON_PROGRAMMATIC);
                             if (minimized_) {
                                 controller_->put_IsVisible(FALSE);
                             }
