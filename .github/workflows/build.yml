@@ -38,6 +38,9 @@ jobs:
         with:
           node-version: "22"
 
+      - name: Check that the executables import no C runtime DLL
+        run: node tests/hosts/check-imports.mjs build/Release/LeanSlides.exe build/Release/tools/inspect/leanslides-inspect.exe
+
       - name: Draw every corpus slide in Edge and compare it with its model
         shell: pwsh
         env:

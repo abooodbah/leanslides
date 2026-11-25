@@ -3,6 +3,14 @@ cmake_minimum_required(VERSION 3.22)
 file(READ "${CMAKE_CURRENT_SOURCE_DIR}/package.json" LEANSLIDES_PACKAGE_JSON)
 string(JSON LEANSLIDES_MANIFEST_VERSION GET "${LEANSLIDES_PACKAGE_JSON}" version)
 
+# The static C and C++ runtimes keep LeanSlides.exe and leanslides-inspect.exe
+# free of the Visual C++ Redistributable, as LeanMark and LeanDoc do. It is set
+# before any target is created, so every target uses it;
+# tests/hosts/check-imports.mjs checks the result in CI.
+if(NOT DEFINED CMAKE_MSVC_RUNTIME_LIBRARY)
+  set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+endif()
+
 project(
   LeanSlides
   VERSION "${LEANSLIDES_MANIFEST_VERSION}"
