@@ -70,4 +70,8 @@ test("quantile reads the sorted values and ignores missing ones", () => {
   assert.equal(quantile([3, 1, 2, 5, 4], 0), 1);
   assert.equal(quantile([3, 1, 2, 5, 4], 1), 5);
   assert.equal(quantile([], 0.5), null);
+  // A missing value is left out, not read as 0 (null - 10 sorts as 0 - 10).
+  assert.equal(quantile([null, 10, 20], 0), 10);
+  // Between two ranks the nearer one is taken, rounding half up.
+  assert.equal(quantile([1, 2, 3, 4], 0.5), 3);
 });
