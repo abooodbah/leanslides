@@ -3,7 +3,7 @@
 Open a .pptx without an office suite. LeanSlides shows the slides, presents
 them full screen, never runs macros, and never fetches anything the file
 points to. MIT licensed, no telemetry. The 0.1.0 Windows download is a ZIP of
-about 0.7 MB.
+about 0.9 MB.
 
 [Website](https://abooodbah.github.io/leanslides/) · [Releases](https://github.com/abooodbah/leanslides/releases) · [Releases feed (Atom)](https://github.com/abooodbah/leanslides/releases.atom) · [All Lean apps](https://abooodbah.github.io/)
 
