@@ -1,0 +1,8002 @@
+{
+ "versions": {
+  "edge": "158.0.4370.33",
+  "powerpoint": [
+   "16.0"
+  ]
+ },
+ "summary": {
+  "decks": {
+   "inManifest": 164,
+   "exportedByPowerPoint": 145,
+   "powerpointFailed": [
+    "poi/au.asn.aes.www_conferences_2011_presentations_Fri_20Room4Level4_20930_20Maloney.pptx",
+    "poi/bug60499.pptx",
+    "poi/bug62513.pptx",
+    "poi/bug65551.pptx",
+    "poi/ca.ubc.cs.people_~emhill_presentations_HowWeRefactor.pptx",
+    "poi/keyframes.pptx",
+    "libreoffice/predefined-table-style.pptx"
+   ],
+   "scored": 145,
+   "readerFailed": []
+  },
+  "slidesScored": 550,
+  "slidesWithError": 0,
+  "ssimMedian": 0.8784,
+  "ssimP10": 0.6051,
+  "blankMedian": 0.7384,
+  "gainSlides": 531,
+  "gainMedian": 0.406,
+  "gainP10": -0.0173,
+  "lines": {
+   "total": 3130,
+   "matched": 2992
+  },
+  "buckets": {
+   "clean": {
+    "slides": 469,
+    "gainMedian": 0.4491,
+    "gainP10": 0
+   },
+   "notDrawn": {
+    "slides": 54,
+    "gainMedian": 0.0889,
+    "gainP10": -0.2274
+   },
+   "fontMissing": {
+    "slides": 14,
+    "gainMedian": 0.4824,
+    "gainP10": -0.2484
+   }
+  },
+  "worst": [
+   {
+    "deck": "libreoffice/smartart-chevron.pptx",
+    "slide": 1,
+    "gain": -0.6108,
+    "ssim": 0.8721,
+    "blank": 0.9206,
+    "tags": [
+     "not-drawn"
+    ]
+   },
+   {
+    "deck": "libreoffice/chart_pt_color_bg1.pptx",
+    "slide": 1,
+    "gain": -0.5393,
+    "ssim": 0.7531,
+    "blank": 0.8396,
+    "tags": [
+     "not-drawn"
+    ]
+   },
+   {
+    "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+    "slide": 19,
+    "gain": -0.5128,
+    "ssim": 0.751,
+    "blank": 0.8354,
+    "tags": []
+   },
+   {
+    "deck": "libreoffice/activex_checkbox.pptx",
+    "slide": 1,
+    "gain": -0.5027,
+    "ssim": 0.9166,
+    "blank": 0.9445,
+    "tags": [
+     "not-drawn"
+    ]
+   },
+   {
+    "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+    "slide": 16,
+    "gain": -0.4878,
+    "ssim": 0.9451,
+    "blank": 0.9631,
+    "tags": []
+   },
+   {
+    "deck": "poi/table_test2.pptx",
+    "slide": 1,
+    "gain": -0.4848,
+    "ssim": 0.6083,
+    "blank": 0.7362,
+    "tags": []
+   },
+   {
+    "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+    "slide": 28,
+    "gain": -0.478,
+    "ssim": 0.9462,
+    "blank": 0.9636,
+    "tags": []
+   },
+   {
+    "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+    "slide": 3,
+    "gain": -0.47,
+    "ssim": 0.6203,
+    "blank": 0.7417,
+    "tags": []
+   },
+   {
+    "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+    "slide": 10,
+    "gain": -0.4653,
+    "ssim": 0.9241,
+    "blank": 0.9482,
+    "tags": []
+   },
+   {
+    "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+    "slide": 6,
+    "gain": -0.4419,
+    "ssim": 0.9181,
+    "blank": 0.9432,
+    "tags": []
+   }
+  ]
+ },
+ "slides": [
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9437,
+   "blank": 0.8809,
+   "gain": 0.5273,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.974,
+   "blank": 0.7907,
+   "gain": 0.8758,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9979,
+   "blank": 0.7717,
+   "gain": 0.9908,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.939,
+   "blank": 0.9129,
+   "gain": 0.2997,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9976,
+   "blank": 0.9759,
+   "gain": 0.9004,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9638,
+   "blank": 0.953,
+   "gain": 0.2298,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.809,
+   "blank": 0.7995,
+   "gain": 0.0474,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8625,
+   "blank": 0.8533,
+   "gain": 0.0627,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8784,
+   "blank": 0.8672,
+   "gain": 0.0843,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 10,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9551,
+   "blank": 0.5878,
+   "gain": 0.8911,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 11,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9067,
+   "blank": 0.8757,
+   "gain": 0.2494,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 12,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9721,
+   "blank": 0.6022,
+   "gain": 0.9299,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 13,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9257,
+   "blank": 0.6193,
+   "gain": 0.8048,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 14,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9256,
+   "blank": 0.7442,
+   "gain": 0.7091,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 15,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9008,
+   "blank": 0.8971,
+   "gain": 0.036,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 16,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8318,
+   "blank": 0.8155,
+   "gain": 0.0883,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 17,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7297,
+   "blank": 0.459,
+   "gain": 0.5004,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 18,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7542,
+   "blank": 0.766,
+   "gain": -0.0504,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 19,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9606,
+   "blank": 0.519,
+   "gain": 0.9181,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 20,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9109,
+   "blank": 0.869,
+   "gain": 0.3198,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 21,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8164,
+   "blank": 0.7932,
+   "gain": 0.1122,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 22,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.868,
+   "blank": 0.8562,
+   "gain": 0.0821,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 23,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [
+    "Monaco"
+   ],
+   "notDrawn": 0,
+   "ssim": 0.8335,
+   "blank": 0.8121,
+   "gain": 0.1139,
+   "tags": [
+    "font-missing"
+   ]
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 24,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7348,
+   "blank": 0.7391,
+   "gain": -0.0165,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 25,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8196,
+   "blank": 0.8015,
+   "gain": 0.0912,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 26,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7743,
+   "blank": 0.7654,
+   "gain": 0.0379,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 27,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7038,
+   "blank": 0.7101,
+   "gain": -0.0217,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 28,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.985,
+   "blank": 0.5747,
+   "gain": 0.9647,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 29,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8679,
+   "blank": 0.8551,
+   "gain": 0.0883,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 30,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7537,
+   "blank": 0.7579,
+   "gain": -0.0173,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 31,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.841,
+   "blank": 0.7892,
+   "gain": 0.2457,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 32,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.728,
+   "blank": 0.7087,
+   "gain": 0.0663,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 33,
+   "lines": {
+    "total": 12,
+    "matched": 12
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7022,
+   "blank": 0.6923,
+   "gain": 0.0322,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 34,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8612,
+   "blank": 0.8413,
+   "gain": 0.1254,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 35,
+   "lines": {
+    "total": 7,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.697,
+   "blank": 0.7506,
+   "gain": -0.2149,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 36,
+   "lines": {
+    "total": 11,
+    "matched": 11
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7736,
+   "blank": 0.7562,
+   "gain": 0.0714,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 37,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7694,
+   "blank": 0.7644,
+   "gain": 0.0212,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 38,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7724,
+   "blank": 0.7685,
+   "gain": 0.0168,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 39,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7966,
+   "blank": 0.7839,
+   "gain": 0.0588,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 40,
+   "lines": {
+    "total": 12,
+    "matched": 12
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8539,
+   "blank": 0.7894,
+   "gain": 0.3063,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 41,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8901,
+   "blank": 0.8528,
+   "gain": 0.2534,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 42,
+   "lines": {
+    "total": 11,
+    "matched": 11
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8409,
+   "blank": 0.787,
+   "gain": 0.2531,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 43,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8822,
+   "blank": 0.8819,
+   "gain": 0.0025,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 44,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9961,
+   "blank": 0.9878,
+   "gain": 0.6803,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 45,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8694,
+   "blank": 0.8241,
+   "gain": 0.2575,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 46,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9521,
+   "blank": 0.9307,
+   "gain": 0.3088,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 47,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9816,
+   "blank": 0.9763,
+   "gain": 0.2236,
+   "tags": []
+  },
+  {
+   "deck": "poi/2411-Performance_Up.pptx",
+   "slide": 48,
+   "lines": {
+    "total": 15,
+    "matched": 13
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7031,
+   "blank": 0.556,
+   "gain": 0.3313,
+   "tags": []
+  },
+  {
+   "deck": "poi/45541_Footer.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [
+    "Plain"
+   ],
+   "notDrawn": 1,
+   "ssim": 0.8357,
+   "blank": 0.6826,
+   "gain": 0.4824,
+   "tags": [
+    "not-drawn",
+    "font-missing"
+   ]
+  },
+  {
+   "deck": "poi/45541_Footer.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8769,
+   "blank": 0.8028,
+   "gain": 0.3758,
+   "tags": []
+  },
+  {
+   "deck": "poi/45541_Footer.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8724,
+   "blank": 0.6944,
+   "gain": 0.5825,
+   "tags": []
+  },
+  {
+   "deck": "poi/45541_Footer.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4904,
+   "blank": 0.5246,
+   "gain": -0.0719,
+   "tags": []
+  },
+  {
+   "deck": "poi/45541_Footer.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4413,
+   "blank": 0.434,
+   "gain": 0.0129,
+   "tags": []
+  },
+  {
+   "deck": "poi/45541_Footer.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 11,
+    "matched": 11
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4502,
+   "blank": 0.4542,
+   "gain": -0.0073,
+   "tags": []
+  },
+  {
+   "deck": "poi/45541_Footer.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6696,
+   "blank": 0.6592,
+   "gain": 0.0305,
+   "tags": []
+  },
+  {
+   "deck": "poi/45541_Footer.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.324,
+   "blank": 0.1958,
+   "gain": 0.1594,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/45541_Footer.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7829,
+   "blank": 0.7354,
+   "gain": 0.1795,
+   "tags": []
+  },
+  {
+   "deck": "poi/45541_Footer.pptx",
+   "slide": 10,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7091,
+   "blank": 0.6523,
+   "gain": 0.1634,
+   "tags": []
+  },
+  {
+   "deck": "poi/45541_Footer.pptx",
+   "slide": 11,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [
+    "Plain"
+   ],
+   "notDrawn": 1,
+   "ssim": 0.8357,
+   "blank": 0.6836,
+   "gain": 0.4807,
+   "tags": [
+    "not-drawn",
+    "font-missing"
+   ]
+  },
+  {
+   "deck": "poi/45541_Header.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [
+    "Plain"
+   ],
+   "notDrawn": 1,
+   "ssim": 0.8359,
+   "blank": 0.6827,
+   "gain": 0.4828,
+   "tags": [
+    "not-drawn",
+    "font-missing"
+   ]
+  },
+  {
+   "deck": "poi/45541_Header.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8771,
+   "blank": 0.803,
+   "gain": 0.3761,
+   "tags": []
+  },
+  {
+   "deck": "poi/45541_Header.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8724,
+   "blank": 0.6944,
+   "gain": 0.5825,
+   "tags": []
+  },
+  {
+   "deck": "poi/45541_Header.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4904,
+   "blank": 0.5246,
+   "gain": -0.0719,
+   "tags": []
+  },
+  {
+   "deck": "poi/45541_Header.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4413,
+   "blank": 0.434,
+   "gain": 0.0129,
+   "tags": []
+  },
+  {
+   "deck": "poi/45541_Header.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 11,
+    "matched": 11
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4502,
+   "blank": 0.4542,
+   "gain": -0.0073,
+   "tags": []
+  },
+  {
+   "deck": "poi/45541_Header.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6696,
+   "blank": 0.6592,
+   "gain": 0.0305,
+   "tags": []
+  },
+  {
+   "deck": "poi/45541_Header.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.324,
+   "blank": 0.1958,
+   "gain": 0.1594,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/45541_Header.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7829,
+   "blank": 0.7354,
+   "gain": 0.1795,
+   "tags": []
+  },
+  {
+   "deck": "poi/45541_Header.pptx",
+   "slide": 10,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7091,
+   "blank": 0.6523,
+   "gain": 0.1634,
+   "tags": []
+  },
+  {
+   "deck": "poi/45541_Header.pptx",
+   "slide": 11,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [
+    "Plain"
+   ],
+   "notDrawn": 1,
+   "ssim": 0.8359,
+   "blank": 0.6836,
+   "gain": 0.4814,
+   "tags": [
+    "not-drawn",
+    "font-missing"
+   ]
+  },
+  {
+   "deck": "poi/45545_Comment.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [
+    "Plain"
+   ],
+   "notDrawn": 1,
+   "ssim": 0.8359,
+   "blank": 0.6827,
+   "gain": 0.4828,
+   "tags": [
+    "not-drawn",
+    "font-missing"
+   ]
+  },
+  {
+   "deck": "poi/45545_Comment.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.896,
+   "blank": 0.8162,
+   "gain": 0.4342,
+   "tags": []
+  },
+  {
+   "deck": "poi/45545_Comment.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8724,
+   "blank": 0.6944,
+   "gain": 0.5825,
+   "tags": []
+  },
+  {
+   "deck": "poi/45545_Comment.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4904,
+   "blank": 0.5246,
+   "gain": -0.0719,
+   "tags": []
+  },
+  {
+   "deck": "poi/45545_Comment.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4413,
+   "blank": 0.434,
+   "gain": 0.0129,
+   "tags": []
+  },
+  {
+   "deck": "poi/45545_Comment.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 11,
+    "matched": 11
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4502,
+   "blank": 0.4542,
+   "gain": -0.0073,
+   "tags": []
+  },
+  {
+   "deck": "poi/45545_Comment.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6696,
+   "blank": 0.6592,
+   "gain": 0.0305,
+   "tags": []
+  },
+  {
+   "deck": "poi/45545_Comment.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.324,
+   "blank": 0.1958,
+   "gain": 0.1594,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/45545_Comment.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7829,
+   "blank": 0.7354,
+   "gain": 0.1795,
+   "tags": []
+  },
+  {
+   "deck": "poi/45545_Comment.pptx",
+   "slide": 10,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7091,
+   "blank": 0.6523,
+   "gain": 0.1634,
+   "tags": []
+  },
+  {
+   "deck": "poi/45545_Comment.pptx",
+   "slide": 11,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [
+    "Plain"
+   ],
+   "notDrawn": 1,
+   "ssim": 0.8357,
+   "blank": 0.6836,
+   "gain": 0.4807,
+   "tags": [
+    "not-drawn",
+    "font-missing"
+   ]
+  },
+  {
+   "deck": "poi/49386-null_dates.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9997,
+   "blank": 0.9888,
+   "gain": 0.9732,
+   "tags": []
+  },
+  {
+   "deck": "poi/51187.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 0.9982,
+   "gain": 1,
+   "tags": []
+  },
+  {
+   "deck": "poi/54542_cropped_bitmap.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9758,
+   "blank": 0.5414,
+   "gain": 0.9472,
+   "tags": []
+  },
+  {
+   "deck": "poi/56812.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.9723,
+   "blank": 0.882,
+   "gain": 0.7653,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/60042.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "poi/60042.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 10,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8122,
+   "blank": 0.7837,
+   "gain": 0.1318,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 15,
+    "matched": 12
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4711,
+   "blank": 0.4944,
+   "gain": -0.0461,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 11,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7725,
+   "blank": 0.6601,
+   "gain": 0.3307,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 11,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7768,
+   "blank": 0.6487,
+   "gain": 0.3646,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 15,
+    "matched": 11
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4561,
+   "blank": 0.4227,
+   "gain": 0.0579,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 32,
+    "matched": 31
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.926,
+   "blank": 0.2987,
+   "gain": 0.8945,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 12,
+    "matched": 11
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6825,
+   "blank": 0.6101,
+   "gain": 0.1857,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 60,
+    "matched": 59
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8369,
+   "blank": 0.3428,
+   "gain": 0.7518,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 16,
+    "matched": 15
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.563,
+   "blank": 0.5644,
+   "gain": -0.0032,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 10,
+   "lines": {
+    "total": 15,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6626,
+   "blank": 0.5202,
+   "gain": 0.2968,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 11,
+   "lines": {
+    "total": 1,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8587,
+   "blank": 0.3919,
+   "gain": 0.7676,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 12,
+   "lines": {
+    "total": 15,
+    "matched": 14
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9502,
+   "blank": 0.5152,
+   "gain": 0.8973,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 13,
+   "lines": {
+    "total": 3,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7068,
+   "blank": 0.1986,
+   "gain": 0.6341,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 14,
+   "lines": {
+    "total": 1,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9561,
+   "blank": 0.574,
+   "gain": 0.8969,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 15,
+   "lines": {
+    "total": 14,
+    "matched": 13
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.5359,
+   "blank": 0.6026,
+   "gain": -0.1678,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 16,
+   "lines": {
+    "total": 13,
+    "matched": 12
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4577,
+   "blank": 0.5176,
+   "gain": -0.1242,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 17,
+   "lines": {
+    "total": 11,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6916,
+   "blank": 0.5562,
+   "gain": 0.3051,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 18,
+   "lines": {
+    "total": 11,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.5829,
+   "blank": 0.5643,
+   "gain": 0.0427,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 19,
+   "lines": {
+    "total": 15,
+    "matched": 14
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4221,
+   "blank": 0.489,
+   "gain": -0.1309,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 20,
+   "lines": {
+    "total": 11,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6386,
+   "blank": 0.4965,
+   "gain": 0.2822,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 21,
+   "lines": {
+    "total": 2,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9969,
+   "blank": 0.9753,
+   "gain": 0.8745,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 22,
+   "lines": {
+    "total": 1,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.438,
+   "blank": 0.3556,
+   "gain": 0.1279,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 23,
+   "lines": {
+    "total": 1,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9941,
+   "blank": 0.5597,
+   "gain": 0.9866,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 24,
+   "lines": {
+    "total": 2,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9852,
+   "blank": 0.5256,
+   "gain": 0.9688,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 25,
+   "lines": {
+    "total": 1,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8587,
+   "blank": 0.3919,
+   "gain": 0.7676,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 26,
+   "lines": {
+    "total": 2,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9758,
+   "blank": 0.6269,
+   "gain": 0.9351,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 27,
+   "lines": {
+    "total": 15,
+    "matched": 14
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7774,
+   "blank": 0.656,
+   "gain": 0.3529,
+   "tags": []
+  },
+  {
+   "deck": "poi/60810.pptx",
+   "slide": 28,
+   "lines": {
+    "total": 15,
+    "matched": 11
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8927,
+   "blank": 0.3675,
+   "gain": 0.8304,
+   "tags": []
+  },
+  {
+   "deck": "poi/61515.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "poi/63200.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8495,
+   "blank": 0.7836,
+   "gain": 0.3045,
+   "tags": []
+  },
+  {
+   "deck": "poi/ArtisticEffectSample.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 3,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9654,
+   "blank": 0.8083,
+   "gain": 0.8195,
+   "tags": []
+  },
+  {
+   "deck": "poi/ArtisticEffectSample.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.4904,
+   "blank": 0.4253,
+   "gain": 0.1133,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/EmbeddedAudio.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9999,
+   "blank": 0.9951,
+   "gain": 0.9796,
+   "tags": []
+  },
+  {
+   "deck": "poi/EmbeddedVideo.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9987,
+   "blank": 0.8426,
+   "gain": 0.9917,
+   "tags": []
+  },
+  {
+   "deck": "poi/KEY02.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.8511,
+   "blank": 0.8223,
+   "gain": 0.1621,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/LIBRE_OFFICE-100610-0.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9914,
+   "blank": 0.6512,
+   "gain": 0.9753,
+   "tags": []
+  },
+  {
+   "deck": "poi/LIBRE_OFFICE-100610-0.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 2,
+   "ssim": 0.6837,
+   "blank": 0.6342,
+   "gain": 0.1353,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/LIBRE_OFFICE-100610-0.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9735,
+   "blank": 0.6595,
+   "gain": 0.9222,
+   "tags": []
+  },
+  {
+   "deck": "poi/LIBRE_OFFICE-100610-0.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 2,
+   "ssim": 0.6832,
+   "blank": 0.6573,
+   "gain": 0.0756,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/LIBRE_OFFICE-100610-0.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9867,
+   "blank": 0.9155,
+   "gain": 0.8426,
+   "tags": []
+  },
+  {
+   "deck": "poi/LIBRE_OFFICE-100610-0.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 2,
+   "ssim": 0.6855,
+   "blank": 0.6548,
+   "gain": 0.0889,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/LIBRE_OFFICE-100610-0.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9897,
+   "blank": 0.9283,
+   "gain": 0.8563,
+   "tags": []
+  },
+  {
+   "deck": "poi/LIBRE_OFFICE-100610-0.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 2,
+   "ssim": 0.5522,
+   "blank": 0.6265,
+   "gain": -0.1989,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/LIBRE_OFFICE-100610-0.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9866,
+   "blank": 0.8049,
+   "gain": 0.9313,
+   "tags": []
+  },
+  {
+   "deck": "poi/LIBRE_OFFICE-100610-0.pptx",
+   "slide": 10,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 2,
+   "ssim": 0.6968,
+   "blank": 0.6763,
+   "gain": 0.0633,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/LIBRE_OFFICE-100610-0.pptx",
+   "slide": 11,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9881,
+   "blank": 0.7206,
+   "gain": 0.9574,
+   "tags": []
+  },
+  {
+   "deck": "poi/LIBRE_OFFICE-100610-0.pptx",
+   "slide": 12,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9998,
+   "blank": 0.9944,
+   "gain": 0.9643,
+   "tags": []
+  },
+  {
+   "deck": "poi/LIBRE_OFFICE-100610-0.pptx",
+   "slide": 13,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "poi/LIBRE_OFFICE-100610-0.pptx",
+   "slide": 14,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "poi/LIBRE_OFFICE-100610-0.pptx",
+   "slide": 15,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "poi/LIBRE_OFFICE-100610-0.pptx",
+   "slide": 16,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "poi/LIBRE_OFFICE-100610-0.pptx",
+   "slide": 17,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "poi/OverlappingRelations.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9995,
+   "blank": 0.9615,
+   "gain": 0.987,
+   "tags": []
+  },
+  {
+   "deck": "poi/OverlappingRelations.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9352,
+   "blank": 0.9419,
+   "gain": -0.1153,
+   "tags": []
+  },
+  {
+   "deck": "poi/OverlappingRelations.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9791,
+   "blank": 0.9804,
+   "gain": -0.0663,
+   "tags": []
+  },
+  {
+   "deck": "poi/OverlappingRelations.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9741,
+   "blank": 0.9763,
+   "gain": -0.0928,
+   "tags": []
+  },
+  {
+   "deck": "poi/PPTWithAttachments.pptm",
+   "slide": 1,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.8364,
+   "blank": 0.7246,
+   "gain": 0.406,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/PPTWithAttachments.pptm",
+   "slide": 2,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 4,
+   "ssim": 0.7452,
+   "blank": 0.737,
+   "gain": 0.0312,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/SampleShow.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9479,
+   "blank": 0.9097,
+   "gain": 0.423,
+   "tags": []
+  },
+  {
+   "deck": "poi/SampleShow.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8756,
+   "blank": 0.8574,
+   "gain": 0.1276,
+   "tags": []
+  },
+  {
+   "deck": "poi/SimpleMacro.pptm",
+   "slide": 1,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9897,
+   "blank": 0.9401,
+   "gain": 0.828,
+   "tags": []
+  },
+  {
+   "deck": "poi/SmartArt.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9963,
+   "blank": 0.7945,
+   "gain": 0.982,
+   "tags": []
+  },
+  {
+   "deck": "poi/WithMaster.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9703,
+   "blank": 0.8986,
+   "gain": 0.7071,
+   "tags": []
+  },
+  {
+   "deck": "poi/WithMaster.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.966,
+   "blank": 0.9247,
+   "gain": 0.5485,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_hbcu_leadershipsummit_cooper_.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9855,
+   "blank": 0.8449,
+   "gain": 0.9065,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_hbcu_leadershipsummit_cooper_.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 15,
+    "matched": 13
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6844,
+   "blank": 0.6603,
+   "gain": 0.0709,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_hbcu_leadershipsummit_cooper_.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9907,
+   "blank": 0.9149,
+   "gain": 0.8907,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_hbcu_leadershipsummit_cooper_.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 12,
+    "matched": 12
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.962,
+   "blank": 0.6615,
+   "gain": 0.8877,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_hbcu_leadershipsummit_cooper_.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9568,
+   "blank": 0.5896,
+   "gain": 0.8947,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_hbcu_leadershipsummit_cooper_.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.6284,
+   "blank": 0.6104,
+   "gain": 0.0462,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/aascu.org_hbcu_leadershipsummit_cooper_.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.6836,
+   "blank": 0.6543,
+   "gain": 0.0848,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/aascu.org_hbcu_leadershipsummit_cooper_.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 16,
+    "matched": 16
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9507,
+   "blank": 0.7041,
+   "gain": 0.8334,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_hbcu_leadershipsummit_cooper_.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 15,
+    "matched": 15
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8493,
+   "blank": 0.7126,
+   "gain": 0.4756,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_hbcu_leadershipsummit_cooper_.pptx",
+   "slide": 10,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9146,
+   "blank": 0.7802,
+   "gain": 0.6115,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_hbcu_leadershipsummit_cooper_.pptx",
+   "slide": 11,
+   "lines": {
+    "total": 19,
+    "matched": 19
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.7994,
+   "blank": 0.4935,
+   "gain": 0.6039,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/aascu.org_hbcu_leadershipsummit_cooper_.pptx",
+   "slide": 12,
+   "lines": {
+    "total": 17,
+    "matched": 17
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9519,
+   "blank": 0.6409,
+   "gain": 0.8661,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_hbcu_leadershipsummit_cooper_.pptx",
+   "slide": 13,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7038,
+   "blank": 0.5124,
+   "gain": 0.3925,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_hbcu_leadershipsummit_cooper_.pptx",
+   "slide": 14,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6333,
+   "blank": 0.5108,
+   "gain": 0.2504,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_hbcu_leadershipsummit_cooper_.pptx",
+   "slide": 15,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6792,
+   "blank": 0.5162,
+   "gain": 0.3369,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_hbcu_leadershipsummit_cooper_.pptx",
+   "slide": 16,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7149,
+   "blank": 0.5198,
+   "gain": 0.4063,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7266,
+   "blank": 0.562,
+   "gain": 0.3758,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7148,
+   "blank": 0.6515,
+   "gain": 0.1816,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 12,
+    "matched": 12
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.475,
+   "blank": 0.4208,
+   "gain": 0.0936,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9206,
+   "blank": 0.8594,
+   "gain": 0.4353,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.3287,
+   "blank": 0.303,
+   "gain": 0.0369,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 13,
+    "matched": 13
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4686,
+   "blank": 0.3958,
+   "gain": 0.1205,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.194,
+   "blank": 0.1844,
+   "gain": 0.0118,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.5195,
+   "blank": 0.4961,
+   "gain": 0.0464,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.7198,
+   "blank": 0.6268,
+   "gain": 0.2492,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 10,
+   "lines": {
+    "total": 11,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.6467,
+   "blank": 0.4773,
+   "gain": 0.3241,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 11,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.3657,
+   "blank": 0.3967,
+   "gain": -0.0514,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 12,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8257,
+   "blank": 0.7257,
+   "gain": 0.3646,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 13,
+   "lines": {
+    "total": 23,
+    "matched": 23
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7202,
+   "blank": 0.2735,
+   "gain": 0.6149,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 14,
+   "lines": {
+    "total": 13,
+    "matched": 13
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7781,
+   "blank": 0.5912,
+   "gain": 0.4572,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 15,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9915,
+   "blank": 0.7608,
+   "gain": 0.9645,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 16,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 3,
+   "ssim": 0.4595,
+   "blank": 0.421,
+   "gain": 0.0665,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 17,
+   "lines": {
+    "total": 14,
+    "matched": 12
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4802,
+   "blank": 0.3776,
+   "gain": 0.1648,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 18,
+   "lines": {
+    "total": 13,
+    "matched": 13
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8528,
+   "blank": 0.7348,
+   "gain": 0.4449,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 19,
+   "lines": {
+    "total": 13,
+    "matched": 13
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.982,
+   "blank": 0.7272,
+   "gain": 0.934,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 20,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.977,
+   "blank": 0.8409,
+   "gain": 0.8554,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 21,
+   "lines": {
+    "total": 10,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.91,
+   "blank": 0.5209,
+   "gain": 0.8121,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 22,
+   "lines": {
+    "total": 22,
+    "matched": 22
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.627,
+   "blank": 0.4675,
+   "gain": 0.2995,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 23,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.3336,
+   "blank": 0.0678,
+   "gain": 0.2851,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 24,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9885,
+   "blank": 0.8444,
+   "gain": 0.9261,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 25,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7111,
+   "blank": 0.4284,
+   "gain": 0.4946,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 26,
+   "lines": {
+    "total": 20,
+    "matched": 20
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9618,
+   "blank": 0.6602,
+   "gain": 0.8876,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 27,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9931,
+   "blank": 0.9062,
+   "gain": 0.9264,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 28,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9926,
+   "blank": 0.8952,
+   "gain": 0.9294,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 29,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.985,
+   "blank": 0.8426,
+   "gain": 0.9047,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 30,
+   "lines": {
+    "total": 11,
+    "matched": 11
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9828,
+   "blank": 0.7438,
+   "gain": 0.9329,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 31,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9901,
+   "blank": 0.7674,
+   "gain": 0.9574,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 32,
+   "lines": {
+    "total": 11,
+    "matched": 11
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9433,
+   "blank": 0.1278,
+   "gain": 0.935,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 33,
+   "lines": {
+    "total": 84,
+    "matched": 82
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9754,
+   "blank": 0.4151,
+   "gain": 0.9579,
+   "tags": []
+  },
+  {
+   "deck": "poi/aascu.org_workarea_downloadasset.aspx_id=5864.pptx",
+   "slide": 34,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.3473,
+   "blank": 0.3835,
+   "gain": -0.0587,
+   "tags": []
+  },
+  {
+   "deck": "poi/ae.ac.uaeu.faculty_nafaachbili_GeomLec1.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4307,
+   "blank": 0.3071,
+   "gain": 0.1784,
+   "tags": []
+  },
+  {
+   "deck": "poi/ae.ac.uaeu.faculty_nafaachbili_GeomLec1.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6924,
+   "blank": 0.5303,
+   "gain": 0.3451,
+   "tags": []
+  },
+  {
+   "deck": "poi/ae.ac.uaeu.faculty_nafaachbili_GeomLec1.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 12,
+    "matched": 12
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6509,
+   "blank": 0.5038,
+   "gain": 0.2965,
+   "tags": []
+  },
+  {
+   "deck": "poi/ae.ac.uaeu.faculty_nafaachbili_GeomLec1.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8751,
+   "blank": 0.8727,
+   "gain": 0.0189,
+   "tags": []
+  },
+  {
+   "deck": "poi/ae.ac.uaeu.faculty_nafaachbili_GeomLec1.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7334,
+   "blank": 0.7388,
+   "gain": -0.0207,
+   "tags": []
+  },
+  {
+   "deck": "poi/ae.ac.uaeu.faculty_nafaachbili_GeomLec1.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7721,
+   "blank": 0.7731,
+   "gain": -0.0044,
+   "tags": []
+  },
+  {
+   "deck": "poi/ae.ac.uaeu.faculty_nafaachbili_GeomLec1.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 11,
+    "matched": 11
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.5066,
+   "blank": 0.5342,
+   "gain": -0.0593,
+   "tags": []
+  },
+  {
+   "deck": "poi/ae.ac.uaeu.faculty_nafaachbili_GeomLec1.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7134,
+   "blank": 0.7049,
+   "gain": 0.0288,
+   "tags": []
+  },
+  {
+   "deck": "poi/ae.ac.uaeu.faculty_nafaachbili_GeomLec1.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7181,
+   "blank": 0.5535,
+   "gain": 0.3686,
+   "tags": []
+  },
+  {
+   "deck": "poi/ae.ac.uaeu.faculty_nafaachbili_GeomLec1.pptx",
+   "slide": 10,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.6039,
+   "blank": 0.6821,
+   "gain": -0.246,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/ae.ac.uaeu.faculty_nafaachbili_GeomLec1.pptx",
+   "slide": 11,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.573,
+   "blank": 0.6444,
+   "gain": -0.2008,
+   "tags": []
+  },
+  {
+   "deck": "poi/ae.ac.uaeu.faculty_nafaachbili_GeomLec1.pptx",
+   "slide": 12,
+   "lines": {
+    "total": 11,
+    "matched": 11
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.5667,
+   "blank": 0.5906,
+   "gain": -0.0584,
+   "tags": []
+  },
+  {
+   "deck": "poi/ae.ac.uaeu.faculty_nafaachbili_GeomLec1.pptx",
+   "slide": 13,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6971,
+   "blank": 0.6579,
+   "gain": 0.1146,
+   "tags": []
+  },
+  {
+   "deck": "poi/ae.ac.uaeu.faculty_nafaachbili_GeomLec1.pptx",
+   "slide": 14,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7429,
+   "blank": 0.7318,
+   "gain": 0.0414,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8603,
+   "blank": 0.5333,
+   "gain": 0.7007,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 13,
+    "matched": 13
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6626,
+   "blank": 0.4839,
+   "gain": 0.3463,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 12,
+    "matched": 12
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6123,
+   "blank": 0.4744,
+   "gain": 0.2624,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 20,
+    "matched": 20
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.804,
+   "blank": 0.51,
+   "gain": 0.6,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 20,
+    "matched": 20
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7849,
+   "blank": 0.5005,
+   "gain": 0.5694,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 11,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6187,
+   "blank": 0.4888,
+   "gain": 0.2541,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6148,
+   "blank": 0.5308,
+   "gain": 0.179,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7672,
+   "blank": 0.6404,
+   "gain": 0.3526,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 8,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7358,
+   "blank": 0.6315,
+   "gain": 0.283,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 10,
+   "lines": {
+    "total": 15,
+    "matched": 15
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8921,
+   "blank": 0.5368,
+   "gain": 0.7671,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 11,
+   "lines": {
+    "total": 17,
+    "matched": 17
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.3958,
+   "blank": 0.3445,
+   "gain": 0.0783,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 12,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9597,
+   "blank": 0.6624,
+   "gain": 0.8806,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 13,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6721,
+   "blank": 0.5294,
+   "gain": 0.3032,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 14,
+   "lines": {
+    "total": 13,
+    "matched": 13
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.5626,
+   "blank": 0.4461,
+   "gain": 0.2103,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 15,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.978,
+   "blank": 0.4358,
+   "gain": 0.961,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 16,
+   "lines": {
+    "total": 15,
+    "matched": 15
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.7243,
+   "blank": 0.5515,
+   "gain": 0.3853,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 17,
+   "lines": {
+    "total": 14,
+    "matched": 14
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7823,
+   "blank": 0.4545,
+   "gain": 0.6009,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 18,
+   "lines": {
+    "total": 16,
+    "matched": 16
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.5572,
+   "blank": 0.3929,
+   "gain": 0.2706,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 19,
+   "lines": {
+    "total": 13,
+    "matched": 13
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.65,
+   "blank": 0.4692,
+   "gain": 0.3406,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 20,
+   "lines": {
+    "total": 13,
+    "matched": 13
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6054,
+   "blank": 0.435,
+   "gain": 0.3016,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 21,
+   "lines": {
+    "total": 14,
+    "matched": 14
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6461,
+   "blank": 0.5239,
+   "gain": 0.2567,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 22,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8334,
+   "blank": 0.7368,
+   "gain": 0.367,
+   "tags": []
+  },
+  {
+   "deck": "poi/alterman_security.pptx",
+   "slide": 23,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7568,
+   "blank": 0.7045,
+   "gain": 0.177,
+   "tags": []
+  },
+  {
+   "deck": "poi/aptia.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 4,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8497,
+   "blank": 0.8838,
+   "gain": -0.2935,
+   "tags": []
+  },
+  {
+   "deck": "poi/aptia.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8012,
+   "blank": 0.7264,
+   "gain": 0.2734,
+   "tags": []
+  },
+  {
+   "deck": "poi/aptia.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 13,
+    "matched": 13
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7721,
+   "blank": 0.6221,
+   "gain": 0.3969,
+   "tags": []
+  },
+  {
+   "deck": "poi/aptia.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7027,
+   "blank": 0.6827,
+   "gain": 0.063,
+   "tags": []
+  },
+  {
+   "deck": "poi/aptia.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.5875,
+   "blank": 0.5345,
+   "gain": 0.1139,
+   "tags": []
+  },
+  {
+   "deck": "poi/aptia.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 12,
+    "matched": 12
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6307,
+   "blank": 0.5012,
+   "gain": 0.2596,
+   "tags": []
+  },
+  {
+   "deck": "poi/aptia.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 16,
+    "matched": 16
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4506,
+   "blank": 0.4572,
+   "gain": -0.0122,
+   "tags": []
+  },
+  {
+   "deck": "poi/aptia.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7209,
+   "blank": 0.5872,
+   "gain": 0.3239,
+   "tags": []
+  },
+  {
+   "deck": "poi/aptia.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9923,
+   "blank": 0.3626,
+   "gain": 0.9879,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7476,
+   "blank": 0.762,
+   "gain": -0.0605,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.891,
+   "blank": 0.9215,
+   "gain": -0.3885,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6203,
+   "blank": 0.7417,
+   "gain": -0.47,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9926,
+   "blank": 0.6648,
+   "gain": 0.9779,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7047,
+   "blank": 0.6353,
+   "gain": 0.1903,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9181,
+   "blank": 0.9432,
+   "gain": -0.4419,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8837,
+   "blank": 0.6212,
+   "gain": 0.693,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8562,
+   "blank": 0.5099,
+   "gain": 0.7066,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7491,
+   "blank": 0.6714,
+   "gain": 0.2365,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 10,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9241,
+   "blank": 0.9482,
+   "gain": -0.4653,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 11,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6837,
+   "blank": 0.6804,
+   "gain": 0.0103,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 12,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7587,
+   "blank": 0.4421,
+   "gain": 0.5675,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 13,
+   "lines": {
+    "total": 12,
+    "matched": 12
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.5447,
+   "blank": 0.4887,
+   "gain": 0.1095,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 14,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6098,
+   "blank": 0.5514,
+   "gain": 0.1302,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 15,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.904,
+   "blank": 0.6267,
+   "gain": 0.7428,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 16,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9451,
+   "blank": 0.9631,
+   "gain": -0.4878,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 17,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7752,
+   "blank": 0.6996,
+   "gain": 0.2517,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 18,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7995,
+   "blank": 0.7377,
+   "gain": 0.2356,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 19,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.751,
+   "blank": 0.8354,
+   "gain": -0.5128,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 20,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9919,
+   "blank": 0.9198,
+   "gain": 0.899,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 21,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.7104,
+   "blank": 0.4888,
+   "gain": 0.4335,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 22,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9044,
+   "blank": 0.7243,
+   "gain": 0.6532,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 23,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.6051,
+   "blank": 0.5921,
+   "gain": 0.0319,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 24,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8133,
+   "blank": 0.3673,
+   "gain": 0.7049,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 25,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.7291,
+   "blank": 0.7095,
+   "gain": 0.0675,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 26,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.781,
+   "blank": 0.6556,
+   "gain": 0.3641,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 27,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8493,
+   "blank": 0.7764,
+   "gain": 0.326,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 28,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9462,
+   "blank": 0.9636,
+   "gain": -0.478,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 29,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.5436,
+   "blank": 0.5177,
+   "gain": 0.0537,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 30,
+   "lines": {
+    "total": 8,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7512,
+   "blank": 0.5005,
+   "gain": 0.5019,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 31,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.683,
+   "blank": 0.6619,
+   "gain": 0.0624,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 32,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6682,
+   "blank": 0.6644,
+   "gain": 0.0113,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 33,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6885,
+   "blank": 0.6621,
+   "gain": 0.0781,
+   "tags": []
+  },
+  {
+   "deck": "poi/at.ecodesign.www_downloads_Vertiefungsvortrag_elektronik.pptx",
+   "slide": 34,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9055,
+   "blank": 0.4389,
+   "gain": 0.8316,
+   "tags": []
+  },
+  {
+   "deck": "poi/backgrounds.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9463,
+   "blank": 0.8739,
+   "gain": 0.5741,
+   "tags": []
+  },
+  {
+   "deck": "poi/backgrounds.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9737,
+   "blank": 0.8306,
+   "gain": 0.8447,
+   "tags": []
+  },
+  {
+   "deck": "poi/backgrounds.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7165,
+   "blank": 0.5974,
+   "gain": 0.2958,
+   "tags": []
+  },
+  {
+   "deck": "poi/backgrounds.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7489,
+   "blank": 0.4252,
+   "gain": 0.5632,
+   "tags": []
+  },
+  {
+   "deck": "poi/bar-chart.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.8171,
+   "blank": 0.8397,
+   "gain": -0.141,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/bug54570.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.7463,
+   "blank": 0.7933,
+   "gain": -0.2274,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/bug58144-headers-footers-2007.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9595,
+   "blank": 0.9401,
+   "gain": 0.3239,
+   "tags": []
+  },
+  {
+   "deck": "poi/bug59273.potx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4692,
+   "blank": 0.4692,
+   "gain": 0,
+   "tags": []
+  },
+  {
+   "deck": "poi/bug60715.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9868,
+   "blank": 0.9138,
+   "gain": 0.8469,
+   "tags": []
+  },
+  {
+   "deck": "poi/bug60993.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9686,
+   "blank": 0.8558,
+   "gain": 0.7822,
+   "tags": []
+  },
+  {
+   "deck": "poi/bug62736.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9621,
+   "blank": 0.9014,
+   "gain": 0.6156,
+   "tags": []
+  },
+  {
+   "deck": "poi/bug63290.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9967,
+   "blank": 0.9408,
+   "gain": 0.9443,
+   "tags": []
+  },
+  {
+   "deck": "poi/bug64693.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.9654,
+   "blank": 0.9497,
+   "gain": 0.3121,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/bug65228.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 3,
+    "matched": 2
+   },
+   "missingFonts": [
+    "Graphik"
+   ],
+   "notDrawn": 0,
+   "ssim": 0.9758,
+   "blank": 0.9397,
+   "gain": 0.5987,
+   "tags": [
+    "font-missing"
+   ]
+  },
+  {
+   "deck": "poi/bug65523.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.998,
+   "blank": 0.9269,
+   "gain": 0.9726,
+   "tags": []
+  },
+  {
+   "deck": "poi/bug65673.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9826,
+   "blank": 0.9659,
+   "gain": 0.4897,
+   "tags": []
+  },
+  {
+   "deck": "poi/bug68703.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4812,
+   "blank": 0.4491,
+   "gain": 0.0583,
+   "tags": []
+  },
+  {
+   "deck": "poi/chart-picture-bg.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.4689,
+   "blank": 0.4484,
+   "gain": 0.0372,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/chart-slide-bg.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.4942,
+   "blank": 0.4703,
+   "gain": 0.0451,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/chart-texture-bg.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.6931,
+   "blank": 0.6474,
+   "gain": 0.1296,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/copy-slide-demo.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9787,
+   "blank": 0.9738,
+   "gain": 0.187,
+   "tags": []
+  },
+  {
+   "deck": "poi/crop-to-0.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "poi/crop-to-0.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "poi/crop-to-0.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 0.9894,
+   "gain": 1,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7656,
+   "blank": 0.7035,
+   "gain": 0.2094,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8431,
+   "blank": 0.7125,
+   "gain": 0.4543,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9931,
+   "blank": 0.5895,
+   "gain": 0.9832,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 12,
+    "matched": 12
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8667,
+   "blank": 0.711,
+   "gain": 0.5388,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 10,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6554,
+   "blank": 0.5153,
+   "gain": 0.289,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 23,
+    "matched": 23
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6713,
+   "blank": 0.5525,
+   "gain": 0.2655,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8715,
+   "blank": 0.5496,
+   "gain": 0.7147,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8277,
+   "blank": 0.5274,
+   "gain": 0.6354,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7811,
+   "blank": 0.4548,
+   "gain": 0.5985,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 10,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8541,
+   "blank": 0.5844,
+   "gain": 0.6489,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 11,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8256,
+   "blank": 0.5929,
+   "gain": 0.5716,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 12,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8216,
+   "blank": 0.659,
+   "gain": 0.4768,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 13,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7859,
+   "blank": 0.4305,
+   "gain": 0.6241,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 14,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7386,
+   "blank": 0.3562,
+   "gain": 0.594,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 15,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8366,
+   "blank": 0.3593,
+   "gain": 0.745,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 16,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7839,
+   "blank": 0.7294,
+   "gain": 0.2014,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 17,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9549,
+   "blank": 0.7384,
+   "gain": 0.8276,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 18,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9477,
+   "blank": 0.7395,
+   "gain": 0.7992,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 19,
+   "lines": {
+    "total": 12,
+    "matched": 12
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7516,
+   "blank": 0.6455,
+   "gain": 0.2993,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 20,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6996,
+   "blank": 0.6486,
+   "gain": 0.1451,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 21,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7458,
+   "blank": 0.5598,
+   "gain": 0.4225,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 22,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7327,
+   "blank": 0.5345,
+   "gain": 0.4258,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 23,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6809,
+   "blank": 0.5655,
+   "gain": 0.2656,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 24,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8615,
+   "blank": 0.5888,
+   "gain": 0.6632,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 25,
+   "lines": {
+    "total": 15,
+    "matched": 15
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7253,
+   "blank": 0.5036,
+   "gain": 0.4466,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 26,
+   "lines": {
+    "total": 1,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9642,
+   "blank": 0.8418,
+   "gain": 0.7737,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 27,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8046,
+   "blank": 0.7157,
+   "gain": 0.3127,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 28,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.7415,
+   "blank": 0.3469,
+   "gain": 0.6042,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 29,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8362,
+   "blank": 0.6269,
+   "gain": 0.561,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 30,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.3879,
+   "blank": 0.4835,
+   "gain": -0.1851,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 31,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8349,
+   "blank": 0.679,
+   "gain": 0.4857,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 32,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6164,
+   "blank": 0.5703,
+   "gain": 0.1073,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 33,
+   "lines": {
+    "total": 12,
+    "matched": 12
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8687,
+   "blank": 0.7177,
+   "gain": 0.5349,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 34,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4253,
+   "blank": 0.4645,
+   "gain": -0.0732,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 35,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8608,
+   "blank": 0.6028,
+   "gain": 0.6495,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 36,
+   "lines": {
+    "total": 11,
+    "matched": 11
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8548,
+   "blank": 0.423,
+   "gain": 0.7484,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 37,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9292,
+   "blank": 0.7226,
+   "gain": 0.7448,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 38,
+   "lines": {
+    "total": 11,
+    "matched": 11
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.691,
+   "blank": 0.5957,
+   "gain": 0.2357,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 39,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9236,
+   "blank": 0.637,
+   "gain": 0.7895,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 40,
+   "lines": {
+    "total": 12,
+    "matched": 12
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.944,
+   "blank": 0.7102,
+   "gain": 0.8068,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 41,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6552,
+   "blank": 0.6455,
+   "gain": 0.0274,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 42,
+   "lines": {
+    "total": 24,
+    "matched": 24
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.5725,
+   "blank": 0.5225,
+   "gain": 0.1047,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 43,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9972,
+   "blank": 0.4188,
+   "gain": 0.9952,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 44,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6949,
+   "blank": 0.7075,
+   "gain": -0.0431,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 45,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8936,
+   "blank": 0.6752,
+   "gain": 0.6724,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 46,
+   "lines": {
+    "total": 4,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8748,
+   "blank": 0.7836,
+   "gain": 0.4214,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 47,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7433,
+   "blank": 0.4347,
+   "gain": 0.5459,
+   "tags": []
+  },
+  {
+   "deck": "poi/customGeo.pptx",
+   "slide": 48,
+   "lines": {
+    "total": 11,
+    "matched": 11
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.75,
+   "blank": 0.7209,
+   "gain": 0.1043,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8887,
+   "blank": 0.8103,
+   "gain": 0.4133,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.871,
+   "blank": 0.7527,
+   "gain": 0.4784,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8144,
+   "blank": 0.7787,
+   "gain": 0.1613,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.806,
+   "blank": 0.6432,
+   "gain": 0.4563,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.815,
+   "blank": 0.7113,
+   "gain": 0.3592,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8563,
+   "blank": 0.7406,
+   "gain": 0.446,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8467,
+   "blank": 0.6926,
+   "gain": 0.5013,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8043,
+   "blank": 0.6835,
+   "gain": 0.3817,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8168,
+   "blank": 0.7273,
+   "gain": 0.3282,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 10,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8408,
+   "blank": 0.7505,
+   "gain": 0.3619,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 11,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8622,
+   "blank": 0.7273,
+   "gain": 0.4947,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 12,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8346,
+   "blank": 0.7054,
+   "gain": 0.4386,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 13,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8373,
+   "blank": 0.7377,
+   "gain": 0.3797,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 14,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8957,
+   "blank": 0.6388,
+   "gain": 0.7112,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 15,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9042,
+   "blank": 0.8372,
+   "gain": 0.4115,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 16,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8359,
+   "blank": 0.7438,
+   "gain": 0.3595,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 17,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8166,
+   "blank": 0.2189,
+   "gain": 0.7652,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 18,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8576,
+   "blank": 0.7106,
+   "gain": 0.5079,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 19,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8552,
+   "blank": 0.7062,
+   "gain": 0.5071,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 20,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.864,
+   "blank": 0.7147,
+   "gain": 0.5233,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 21,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8833,
+   "blank": 0.7988,
+   "gain": 0.42,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 22,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9004,
+   "blank": 0.8804,
+   "gain": 0.1672,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 23,
+   "lines": {
+    "total": 5,
+    "matched": 5
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8855,
+   "blank": 0.8186,
+   "gain": 0.3688,
+   "tags": []
+  },
+  {
+   "deck": "poi/ececapstonespring2012.pptx",
+   "slide": 24,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8966,
+   "blank": 0.8436,
+   "gain": 0.3389,
+   "tags": []
+  },
+  {
+   "deck": "poi/highlight-test-case.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.976,
+   "blank": 0.8815,
+   "gain": 0.7975,
+   "tags": []
+  },
+  {
+   "deck": "poi/layouts.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9907,
+   "blank": 0.9636,
+   "gain": 0.7445,
+   "tags": []
+  },
+  {
+   "deck": "poi/layouts.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9245,
+   "blank": 0.9263,
+   "gain": -0.0244,
+   "tags": []
+  },
+  {
+   "deck": "poi/layouts.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 2,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.999,
+   "blank": 0.9617,
+   "gain": 0.9739,
+   "tags": []
+  },
+  {
+   "deck": "poi/layouts.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 12,
+    "matched": 12
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9322,
+   "blank": 0.9184,
+   "gain": 0.1691,
+   "tags": []
+  },
+  {
+   "deck": "poi/layouts.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9508,
+   "blank": 0.9315,
+   "gain": 0.2818,
+   "tags": []
+  },
+  {
+   "deck": "poi/layouts.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9988,
+   "blank": 0.9783,
+   "gain": 0.9447,
+   "tags": []
+  },
+  {
+   "deck": "poi/layouts.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.989,
+   "blank": 0.9157,
+   "gain": 0.8695,
+   "tags": []
+  },
+  {
+   "deck": "poi/layouts.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9475,
+   "blank": 0.9439,
+   "gain": 0.0642,
+   "tags": []
+  },
+  {
+   "deck": "poi/layouts.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9938,
+   "blank": 0.9045,
+   "gain": 0.9351,
+   "tags": []
+  },
+  {
+   "deck": "poi/layouts.pptx",
+   "slide": 10,
+   "lines": {
+    "total": 8,
+    "matched": 8
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8978,
+   "blank": 0.8568,
+   "gain": 0.2863,
+   "tags": []
+  },
+  {
+   "deck": "poi/line-chart.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.7879,
+   "blank": 0.8052,
+   "gain": -0.0888,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/minimal-gradient-fill-issue.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 12,
+    "matched": 12
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9857,
+   "blank": 0.817,
+   "gain": 0.9219,
+   "tags": []
+  },
+  {
+   "deck": "poi/missing-blip-fill.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.9663,
+   "blank": 0.9626,
+   "gain": 0.0989,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/picture-transparency.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 0.9974,
+   "gain": 1,
+   "tags": []
+  },
+  {
+   "deck": "poi/picture-transparency.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 0.9975,
+   "gain": 1,
+   "tags": []
+  },
+  {
+   "deck": "poi/picture-transparency.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 0.9978,
+   "gain": 1,
+   "tags": []
+  },
+  {
+   "deck": "poi/picture-transparency.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "poi/pie-chart.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.8417,
+   "blank": 0.8635,
+   "gain": -0.1597,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/placeholder-layout-color.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9848,
+   "blank": 0.9634,
+   "gain": 0.5847,
+   "tags": []
+  },
+  {
+   "deck": "poi/pptx2svg.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 12,
+    "matched": 5
+   },
+   "missingFonts": [
+    "Andale Mono"
+   ],
+   "notDrawn": 0,
+   "ssim": 0.3912,
+   "blank": 0.3936,
+   "gain": -0.004,
+   "tags": [
+    "font-missing"
+   ]
+  },
+  {
+   "deck": "poi/prProps.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9871,
+   "blank": 0.942,
+   "gain": 0.7776,
+   "tags": []
+  },
+  {
+   "deck": "poi/present1.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9923,
+   "blank": 0.9499,
+   "gain": 0.8463,
+   "tags": []
+  },
+  {
+   "deck": "poi/radar-chart.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.8716,
+   "blank": 0.8897,
+   "gain": -0.1641,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/rain.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9962,
+   "blank": 0.9893,
+   "gain": 0.6449,
+   "tags": []
+  },
+  {
+   "deck": "poi/sample.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9388,
+   "blank": 0.8874,
+   "gain": 0.4565,
+   "tags": []
+  },
+  {
+   "deck": "poi/sample.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9543,
+   "blank": 0.9025,
+   "gain": 0.5313,
+   "tags": []
+  },
+  {
+   "deck": "poi/sample_pptx_grouping_issues.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9942,
+   "blank": 0.8678,
+   "gain": 0.9561,
+   "tags": []
+  },
+  {
+   "deck": "poi/scatter-chart.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.8029,
+   "blank": 0.8169,
+   "gain": -0.0765,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/shapes.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.96,
+   "blank": 0.8457,
+   "gain": 0.7408,
+   "tags": []
+  },
+  {
+   "deck": "poi/shapes.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9642,
+   "blank": 0.9046,
+   "gain": 0.6247,
+   "tags": []
+  },
+  {
+   "deck": "poi/shapes.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9986,
+   "blank": 0.954,
+   "gain": 0.9696,
+   "tags": []
+  },
+  {
+   "deck": "poi/shapes.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8435,
+   "blank": 0.8138,
+   "gain": 0.1595,
+   "tags": []
+  },
+  {
+   "deck": "poi/shapes.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9219,
+   "blank": 0.7961,
+   "gain": 0.617,
+   "tags": []
+  },
+  {
+   "deck": "poi/shapes.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9994,
+   "blank": 0.8938,
+   "gain": 0.9944,
+   "tags": []
+  },
+  {
+   "deck": "poi/smartart-rotated-text.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9154,
+   "blank": 0.8167,
+   "gain": 0.5385,
+   "tags": []
+  },
+  {
+   "deck": "poi/smartart-simple.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 10,
+    "matched": 10
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7255,
+   "blank": 0.656,
+   "gain": 0.202,
+   "tags": []
+  },
+  {
+   "deck": "poi/table-with-different-font-colors.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9127,
+   "blank": 0.8369,
+   "gain": 0.4647,
+   "tags": []
+  },
+  {
+   "deck": "poi/table-with-different-font-colors.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.902,
+   "blank": 0.857,
+   "gain": 0.3147,
+   "tags": []
+  },
+  {
+   "deck": "poi/table-with-no-theme.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9222,
+   "blank": 0.9157,
+   "gain": 0.0771,
+   "tags": []
+  },
+  {
+   "deck": "poi/table-with-theme.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9756,
+   "blank": 0.9085,
+   "gain": 0.7333,
+   "tags": []
+  },
+  {
+   "deck": "poi/table_test.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9514,
+   "blank": 0.876,
+   "gain": 0.6081,
+   "tags": []
+  },
+  {
+   "deck": "poi/table_test2.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.6083,
+   "blank": 0.7362,
+   "gain": -0.4848,
+   "tags": []
+  },
+  {
+   "deck": "poi/templatePPTWithOnlyOneText.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [
+    "等线"
+   ],
+   "notDrawn": 0,
+   "ssim": 0.9954,
+   "blank": 0.9892,
+   "gain": 0.5741,
+   "tags": [
+    "font-missing"
+   ]
+  },
+  {
+   "deck": "poi/testPPT.ppsx",
+   "slide": 1,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9921,
+   "blank": 0.9624,
+   "gain": 0.7899,
+   "tags": []
+  },
+  {
+   "deck": "poi/testPPT.ppsx",
+   "slide": 2,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8459,
+   "blank": 0.8257,
+   "gain": 0.1159,
+   "tags": []
+  },
+  {
+   "deck": "poi/testPPT.ppsx",
+   "slide": 3,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9161,
+   "blank": 0.9,
+   "gain": 0.161,
+   "tags": []
+  },
+  {
+   "deck": "poi/testPPT.pptm",
+   "slide": 1,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9921,
+   "blank": 0.9624,
+   "gain": 0.7899,
+   "tags": []
+  },
+  {
+   "deck": "poi/testPPT.pptm",
+   "slide": 2,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8459,
+   "blank": 0.8257,
+   "gain": 0.1159,
+   "tags": []
+  },
+  {
+   "deck": "poi/testPPT.pptm",
+   "slide": 3,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9161,
+   "blank": 0.9,
+   "gain": 0.161,
+   "tags": []
+  },
+  {
+   "deck": "poi/testPPT.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9921,
+   "blank": 0.9624,
+   "gain": 0.7899,
+   "tags": []
+  },
+  {
+   "deck": "poi/testPPT.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8459,
+   "blank": 0.8257,
+   "gain": 0.1159,
+   "tags": []
+  },
+  {
+   "deck": "poi/testPPT.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9161,
+   "blank": 0.9,
+   "gain": 0.161,
+   "tags": []
+  },
+  {
+   "deck": "poi/text-highlight.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [
+    "Aptos"
+   ],
+   "notDrawn": 0,
+   "ssim": 0.9824,
+   "blank": 0.941,
+   "gain": 0.7017,
+   "tags": [
+    "font-missing"
+   ]
+  },
+  {
+   "deck": "poi/themes.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9832,
+   "blank": 0.8854,
+   "gain": 0.8534,
+   "tags": []
+  },
+  {
+   "deck": "poi/themes.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9453,
+   "blank": 0.9123,
+   "gain": 0.3763,
+   "tags": []
+  },
+  {
+   "deck": "poi/themes.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9853,
+   "blank": 0.919,
+   "gain": 0.8185,
+   "tags": []
+  },
+  {
+   "deck": "poi/themes.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9501,
+   "blank": 0.7466,
+   "gain": 0.8031,
+   "tags": []
+  },
+  {
+   "deck": "poi/themes.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8823,
+   "blank": 0.5484,
+   "gain": 0.7394,
+   "tags": []
+  },
+  {
+   "deck": "poi/themes.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9582,
+   "blank": 0.8039,
+   "gain": 0.7868,
+   "tags": []
+  },
+  {
+   "deck": "poi/themes.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9233,
+   "blank": 0.923,
+   "gain": 0.0039,
+   "tags": []
+  },
+  {
+   "deck": "poi/themes.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 2,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7733,
+   "blank": 0.7347,
+   "gain": 0.1455,
+   "tags": []
+  },
+  {
+   "deck": "poi/themes.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 2,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4407,
+   "blank": 0.4482,
+   "gain": -0.0136,
+   "tags": []
+  },
+  {
+   "deck": "poi/themes.pptx",
+   "slide": 10,
+   "lines": {
+    "total": 3,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9357,
+   "blank": 0.9069,
+   "gain": 0.3093,
+   "tags": []
+  },
+  {
+   "deck": "poi/tika-2605.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9992,
+   "blank": 0.6706,
+   "gain": 0.9976,
+   "tags": []
+  },
+  {
+   "deck": "poi/tika-2605.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9992,
+   "blank": 0.6595,
+   "gain": 0.9977,
+   "tags": []
+  },
+  {
+   "deck": "poi/tika-2605.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9992,
+   "blank": 0.6817,
+   "gain": 0.9975,
+   "tags": []
+  },
+  {
+   "deck": "poi/tika-2605.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9992,
+   "blank": 0.6705,
+   "gain": 0.9976,
+   "tags": []
+  },
+  {
+   "deck": "poi/tika-2605.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.7836,
+   "blank": 0.6626,
+   "gain": 0.3586,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "poi/tika-2605.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9982,
+   "blank": 0.6607,
+   "gain": 0.9947,
+   "tags": []
+  },
+  {
+   "deck": "poi/tika-2605.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9991,
+   "blank": 0.637,
+   "gain": 0.9975,
+   "tags": []
+  },
+  {
+   "deck": "poi/tika-2605.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9991,
+   "blank": 0.6259,
+   "gain": 0.9976,
+   "tags": []
+  },
+  {
+   "deck": "poi/tika-2605.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9992,
+   "blank": 0.6747,
+   "gain": 0.9975,
+   "tags": []
+  },
+  {
+   "deck": "poi/tika-2605.pptx",
+   "slide": 10,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9992,
+   "blank": 0.6637,
+   "gain": 0.9976,
+   "tags": []
+  },
+  {
+   "deck": "poi/tika-2605.pptx",
+   "slide": 11,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9992,
+   "blank": 0.7223,
+   "gain": 0.9971,
+   "tags": []
+  },
+  {
+   "deck": "poi/tika-2605.pptx",
+   "slide": 12,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9992,
+   "blank": 0.7108,
+   "gain": 0.9972,
+   "tags": []
+  },
+  {
+   "deck": "poi/tika-2605.pptx",
+   "slide": 13,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9991,
+   "blank": 0.7712,
+   "gain": 0.9961,
+   "tags": []
+  },
+  {
+   "deck": "poi/tika-2605.pptx",
+   "slide": 14,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9993,
+   "blank": 0.8344,
+   "gain": 0.9958,
+   "tags": []
+  },
+  {
+   "deck": "poi/with_japanese.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 27,
+    "matched": 25
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8791,
+   "blank": 0.8643,
+   "gain": 0.1091,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/3columns.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 48,
+    "matched": 16
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7163,
+   "blank": 0.7036,
+   "gain": 0.0428,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/Bar_List.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9192,
+   "blank": 0.7307,
+   "gain": 0.7,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/Horizontal_Organization_Chart.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8419,
+   "blank": 0.713,
+   "gain": 0.4491,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/NumberedList-12ab-ab-34.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [
+    "Aptos"
+   ],
+   "notDrawn": 0,
+   "ssim": 0.8286,
+   "blank": 0.871,
+   "gain": -0.3287,
+   "tags": [
+    "font-missing"
+   ]
+  },
+  {
+   "deck": "libreoffice/ShapeLineProperties.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8381,
+   "blank": 0.6482,
+   "gain": 0.5398,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/ShapePlusImage.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9302,
+   "blank": 0.8424,
+   "gain": 0.5571,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/ShapeTextInflateTop.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9228,
+   "blank": 0.8653,
+   "gain": 0.4269,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/TextFittingStored.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9708,
+   "blank": 0.9302,
+   "gain": 0.5817,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/TextFittingStored.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9499,
+   "blank": 0.8958,
+   "gain": 0.5192,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/TextFittingStored.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.95,
+   "blank": 0.8958,
+   "gain": 0.5202,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/TextFittingStored.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.95,
+   "blank": 0.8958,
+   "gain": 0.5202,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/TextFittingStored.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9497,
+   "blank": 0.8958,
+   "gain": 0.5173,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/TextFittingStored.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9495,
+   "blank": 0.8958,
+   "gain": 0.5154,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/TextFittingStored.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9503,
+   "blank": 0.8958,
+   "gain": 0.523,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/TextFittingStored.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9501,
+   "blank": 0.8957,
+   "gain": 0.5216,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/TextFittingStored.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.95,
+   "blank": 0.8958,
+   "gain": 0.5202,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/TextFittingStored.pptx",
+   "slide": 10,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9504,
+   "blank": 0.8958,
+   "gain": 0.524,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/TextFittingStored.pptx",
+   "slide": 11,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9504,
+   "blank": 0.8958,
+   "gain": 0.524,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/TextFittingStored.pptx",
+   "slide": 12,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9501,
+   "blank": 0.8958,
+   "gain": 0.5211,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/TextFittingStored.pptx",
+   "slide": 13,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9507,
+   "blank": 0.8958,
+   "gain": 0.5269,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/TextFittingStored.pptx",
+   "slide": 14,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8824,
+   "blank": 0.8051,
+   "gain": 0.3966,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/TextFittingStored.pptx",
+   "slide": 15,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8815,
+   "blank": 0.805,
+   "gain": 0.3923,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/TextFittingStored.pptx",
+   "slide": 16,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.882,
+   "blank": 0.805,
+   "gain": 0.3949,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/TextFittingStored.pptx",
+   "slide": 17,
+   "lines": {
+    "total": 7,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8827,
+   "blank": 0.805,
+   "gain": 0.3985,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/accent-color.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9976,
+   "blank": 0.8548,
+   "gain": 0.9835,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/accent-color.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9204,
+   "blank": 0.7089,
+   "gain": 0.7266,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/activex_checkbox.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 3,
+   "ssim": 0.9166,
+   "blank": 0.9445,
+   "gain": -0.5027,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "libreoffice/altdescription.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9948,
+   "blank": 0.7874,
+   "gain": 0.9755,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/arc-validiert.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9811,
+   "blank": 0.9811,
+   "gain": 0,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/bullet-indent.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9252,
+   "blank": 0.9388,
+   "gain": -0.2222,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/bulletColor.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 3,
+    "matched": 3
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9977,
+   "blank": 0.9865,
+   "gain": 0.8296,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/bulletMarginAndIndent.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 2,
+    "matched": 2
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9959,
+   "blank": 0.9872,
+   "gain": 0.6797,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/chart_pt_color_bg1.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.7531,
+   "blank": 0.8396,
+   "gain": -0.5393,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "libreoffice/connectors.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9717,
+   "blank": 0.8767,
+   "gain": 0.7705,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/content-placeholder-cases.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9786,
+   "blank": 0.9503,
+   "gain": 0.5694,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/content-placeholder-cases.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9786,
+   "blank": 0.9503,
+   "gain": 0.5694,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/content-placeholder-cases.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9426,
+   "blank": 0.9293,
+   "gain": 0.1881,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/content-placeholder-cases.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9786,
+   "blank": 0.9503,
+   "gain": 0.5694,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/crop-position.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9906,
+   "blank": 0.9092,
+   "gain": 0.8965,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/crop-to-shape.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9993,
+   "blank": 0.4056,
+   "gain": 0.9988,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/croppedTo0.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9721,
+   "blank": 0.9478,
+   "gain": 0.4655,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/cshapes.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.4265,
+   "blank": 0.3133,
+   "gain": 0.1648,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/custgeom-nofill-path.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.999,
+   "blank": 0.9149,
+   "gain": 0.9882,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/custgeom-overlapping-contours.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9453,
+   "blank": 0.8815,
+   "gain": 0.5384,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/custgeom-placeholder.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9967,
+   "blank": 0.8126,
+   "gain": 0.9824,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/customshape-bitmapfill-srcrect.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9879,
+   "blank": 0.8122,
+   "gain": 0.9356,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/empty-title-placeholder.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9983,
+   "blank": 0.8932,
+   "gain": 0.9841,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/fill-color-list.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.7425,
+   "blank": 0.7947,
+   "gain": -0.2543,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "libreoffice/font-scale.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 10,
+    "matched": 7
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.5908,
+   "blank": 0.6974,
+   "gain": -0.3523,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/formatting-bullet-indent.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9767,
+   "blank": 0.9029,
+   "gain": 0.76,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/group-rot.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9928,
+   "blank": 0.9343,
+   "gain": 0.8904,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/group.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 41,
+    "matched": 36
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9252,
+   "blank": 0.7047,
+   "gain": 0.7467,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/group.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 9,
+    "matched": 9
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9083,
+   "blank": 0.6626,
+   "gain": 0.7282,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/hidden_group_shape.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/hyperlinktest.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9862,
+   "blank": 0.9819,
+   "gain": 0.2376,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/layout-clrmap-override.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 6,
+    "matched": 6
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9814,
+   "blank": 0.7993,
+   "gain": 0.9073,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/layout-own-background.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/lineStyle.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9965,
+   "blank": 0.9648,
+   "gain": 0.9006,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/master-and-eleven-layouts.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/master-bg-color.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/master-bg-color.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/media-placeholder.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/mirrored-graphic.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9986,
+   "blank": 0.8314,
+   "gain": 0.9917,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/multicol.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 28,
+    "matched": 28
+   },
+   "missingFonts": [
+    "Work Sans Light"
+   ],
+   "notDrawn": 0,
+   "ssim": 0.9618,
+   "blank": 0.9694,
+   "gain": -0.2484,
+   "tags": [
+    "font-missing"
+   ]
+  },
+  {
+   "deck": "libreoffice/multiplelayoutfooter.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [
+    "Labil Grotesk 50"
+   ],
+   "notDrawn": 0,
+   "ssim": 0.9999,
+   "blank": 0.9979,
+   "gain": 0.9524,
+   "tags": [
+    "font-missing"
+   ]
+  },
+  {
+   "deck": "libreoffice/narrow-placeholder-no-wrap.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9979,
+   "blank": 0.9918,
+   "gain": 0.7439,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/numfmt.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.998,
+   "blank": 0.9961,
+   "gain": 0.4872,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/numfmt.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 1,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9992,
+   "blank": 0.9965,
+   "gain": 0.7714,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/numfmt.pptx",
+   "slide": 3,
+   "lines": {
+    "total": 2,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9888,
+   "blank": 0.992,
+   "gain": -0.4,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/numfmt.pptx",
+   "slide": 4,
+   "lines": {
+    "total": 1,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9986,
+   "blank": 0.9967,
+   "gain": 0.5758,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/numfmt.pptx",
+   "slide": 5,
+   "lines": {
+    "total": 1,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9989,
+   "blank": 0.9977,
+   "gain": 0.5217,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/numfmt.pptx",
+   "slide": 6,
+   "lines": {
+    "total": 1,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9987,
+   "blank": 0.9971,
+   "gain": 0.5517,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/numfmt.pptx",
+   "slide": 7,
+   "lines": {
+    "total": 1,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.999,
+   "blank": 0.9961,
+   "gain": 0.7436,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/numfmt.pptx",
+   "slide": 8,
+   "lines": {
+    "total": 1,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9975,
+   "blank": 0.9963,
+   "gain": 0.3243,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/numfmt.pptx",
+   "slide": 9,
+   "lines": {
+    "total": 1,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9984,
+   "blank": 0.9966,
+   "gain": 0.5294,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/ole-emf_min.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.9278,
+   "blank": 0.9104,
+   "gain": 0.1942,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "libreoffice/ole.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.9827,
+   "blank": 0.9315,
+   "gain": 0.7474,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "libreoffice/paraMarginAndIndentation.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9954,
+   "blank": 0.9949,
+   "gain": 0.098,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/pic-placeholder-with-text.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9599,
+   "blank": 0.9696,
+   "gain": -0.3191,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/pres-with-notes.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/pres-with-notes.pptx",
+   "slide": 2,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 1,
+   "gain": null,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/presetDashDot.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.8845,
+   "blank": 0.7266,
+   "gain": 0.5775,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/rightToLeftParagraph.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9901,
+   "blank": 0.9922,
+   "gain": -0.2692,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/shape-text-rotate.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9995,
+   "blank": 0.9783,
+   "gain": 0.977,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/slidenum_field.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 1,
+   "blank": 0.9992,
+   "gain": 1,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/smartart-chevron.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.8721,
+   "blank": 0.9206,
+   "gain": -0.6108,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "libreoffice/smartart-org-chart.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7974,
+   "blank": 0.7974,
+   "gain": 0,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/smartart1.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 1,
+   "ssim": 0.8112,
+   "blank": 0.8435,
+   "gain": -0.2064,
+   "tags": [
+    "not-drawn"
+   ]
+  },
+  {
+   "deck": "libreoffice/table-list.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.7456,
+   "blank": 0.7456,
+   "gain": 0,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/tableBorderLineStyle.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9034,
+   "blank": 0.7909,
+   "gain": 0.538,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/tablescale.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9849,
+   "blank": 0.962,
+   "gain": 0.6026,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/testShapeAutofit.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 4,
+    "matched": 4
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9945,
+   "blank": 0.8988,
+   "gain": 0.9457,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/trailing-paragraphs.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 1,
+    "matched": 1
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9885,
+   "blank": 0.9836,
+   "gain": 0.2988,
+   "tags": []
+  },
+  {
+   "deck": "libreoffice/vertical-bracket-list.pptx",
+   "slide": 1,
+   "lines": {
+    "total": 0,
+    "matched": 0
+   },
+   "missingFonts": [],
+   "notDrawn": 0,
+   "ssim": 0.9241,
+   "blank": 0.9241,
+   "gain": 0,
+   "tags": []
+  }
+ ]
+}
