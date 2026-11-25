@@ -343,6 +343,26 @@ void TestReaderSettings() {
           "System paints Dark or Light");
 }
 
+// The interface language the host saves and sends to the page.
+void TestLanguages() {
+    namespace rs = leanslides::settings;
+    using rs::Language;
+    Check(std::string(rs::LanguageName(Language::Auto)) == "auto" &&
+              std::string(rs::LanguageName(Language::English)) == "en" &&
+              std::string(rs::LanguageName(Language::ChineseSimplified)) == "zh-CN" &&
+              std::string(rs::LanguageName(Language::Japanese)) == "ja",
+          "languages save as auto, en, zh-CN and ja");
+    Check(rs::ParseLanguage("ja") == Language::Japanese &&
+              rs::ParseLanguage("zh-cn") == Language::ChineseSimplified &&
+              rs::ParseLanguage("EN") == Language::English,
+          "saved languages read back, ignoring ASCII case");
+    Check(rs::ParseLanguage("fr") == Language::Auto && rs::ParseLanguage("") == Language::Auto,
+          "an unknown or missing language reads as auto");
+    Check(rs::IsLanguageName("auto") && rs::IsLanguageName("zh-CN") && !rs::IsLanguageName("zh-TW") &&
+              !rs::IsLanguageName(""),
+          "only the four names are languages");
+}
+
 // The rule the host applies before Windows sees a link from a slide.
 void TestLinks() {
     using leanslides::core::NormalizeExternalLink;
@@ -384,6 +404,7 @@ void TestLinks() {
 int main() {
     TestLinks();
     TestReaderSettings();
+    TestLanguages();
     TestHooks();
     TestContextMenu();
     TestEditorOrder();

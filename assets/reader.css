@@ -1453,3 +1453,38 @@ body {
 .slide .slide-table { border-collapse: collapse; table-layout: fixed; width: 100%; }
 .slide .slide-table td { box-sizing: border-box; overflow: hidden; }
 .slide .cell-body { display: block; white-space: pre-wrap; overflow-wrap: break-word; }
+
+/* Presenting: the slide alone, fitted to a black screen. */
+:root[data-presenting] .chrome,
+:root[data-presenting] .thumbs,
+:root[data-presenting] .notes,
+:root[data-presenting] .status,
+:root[data-presenting] .settings-panel {
+  display: none !important;
+}
+
+:root[data-presenting] .viewer {
+  background: #000;
+}
+
+:root[data-presenting] .stage {
+  padding: 0;
+  overflow: hidden;
+  outline: none;
+}
+
+:root[data-presenting] .slide-frame {
+  box-shadow: none;
+}
+
+/* Chinese and Japanese text in the interface uses the Windows UI font for
+   that script; IBM Plex has Latin only. */
+:root:lang(zh-CN) {
+  --font-sans: "IBM Plex Sans", "Microsoft YaHei UI", "Microsoft YaHei", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+:root:lang(ja) {
+  --font-sans: "IBM Plex Sans", "Yu Gothic UI", "Meiryo UI", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}

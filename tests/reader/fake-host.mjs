@@ -227,8 +227,10 @@ export async function launch() {
 }
 
 // A page with the reader loaded. `state` holds the deck the page may read.
-export async function openReader(browser, { width = 1280, height = 800 } = {}) {
-  const context = await browser.newContext({ viewport: { width, height }, serviceWorkers: "block" });
+// The page language is en-US unless a test asks for another, so "Same as
+// Windows" gives English whatever the machine running the tests uses.
+export async function openReader(browser, { width = 1280, height = 800, locale = "en-US" } = {}) {
+  const context = await browser.newContext({ viewport: { width, height }, locale, serviceWorkers: "block" });
   const page = await context.newPage();
   const state = { deck: null, tab: 0, generation: 0, offOrigin: [], refused: [], unservable: [] };
   await page.addInitScript(BRIDGE);

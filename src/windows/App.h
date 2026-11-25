@@ -124,6 +124,7 @@ private:
 
     void StartSmokeProbe();
     void CollectSmokeProbe();
+    void SetPresenting(bool presenting);
     void CompleteSmoke(bool success, const std::string& detail);
 
     void LoadSettings();
@@ -142,6 +143,12 @@ private:
     bool smokeComplete_ = false;
     bool smokeProbeStarted_ = false;
     unsigned smokeProbePolls_ = 0;
+
+    // A slide show fills the monitor with a borderless window; the style and
+    // placement it had come back when the show ends.
+    bool presenting_ = false;
+    LONG_PTR savedStyle_ = 0;
+    WINDOWPLACEMENT savedPlacement_ = {sizeof(WINDOWPLACEMENT)};
     int exitCode_ = 0;
     unsigned smokeRenderMs_ = 0;
     bool firstRenderSeen_ = false;
@@ -169,6 +176,8 @@ private:
     unsigned recoveriesInWindow_ = 0;
 
     ThemeMode theme_ = ThemeMode::System;
+
+    settings::Language language_ = settings::Language::Auto;
     std::vector<std::wstring> recent_;
     EditorChoice editor_;
 };

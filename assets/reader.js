@@ -26,6 +26,7 @@
     linkTarget: byId("linkTarget"),
     liveStatus: byId("liveStatus"),
     notesButton: byId("notesButton"),
+    presentButton: byId("presentButton"),
     notesPanel: byId("notesPanel"),
     notesText: byId("notesText"),
     notice: byId("notice"),
@@ -69,7 +70,8 @@
   var SEARCH_PAUSE_MS = 120;
   var THEMES = ["system", "light", "dark", "dim", "dusk"];
 
-  var language = "en";
+  var LANGUAGES = ["auto", "en", "zh-CN", "ja"];
+  var language = resolveLanguage("auto");
   var host = { platform: "", version: "", editorKind: "", editorLabel: "", tabs: false };
   var isMac = /Mac/.test(navigator.platform || "");
   var currentTheme = "system";
@@ -88,6 +90,8 @@
   var zoomMode = "fit";
   var zoomFactor = 1;
   var notesOpen = false;
+  var presenting = false;
+  var languageSetting = "auto";
   var search = { query: "", matches: [], index: -1 };
   var searchTimer = 0;
   var toastTimer = 0;
@@ -164,6 +168,8 @@
     elements.zoomValue.title = shortcut(t("zoom.fitTitle"));
     elements.notesButton.textContent = t("notes.button");
     elements.notesButton.title = shortcut(t("notes.title"));
+    elements.presentButton.textContent = t("present.button");
+    elements.presentButton.title = t("present.title");
     elements.openButton.textContent = t("open.button");
     elements.openButton.title = shortcut(t("open.presentation") + " (Ctrl+O)");
     elements.settingsButton.setAttribute("aria-label", t("settings.buttonLabel"));
@@ -174,6 +180,7 @@
     elements.noticeClose.title = t("notice.close");
     elements.findInput.title = shortcut(t("find.label") + " (Ctrl+F, F3)");
     applyTheme(currentTheme);
+    updateSettingsPanel();
     updateEditorButtons();
     updateZoomLabel();
     renderTabs();
@@ -243,7 +250,30 @@
     host.tabs = data.tabs === true;
     isMac = host.platform === "macos" || (!host.platform && isMac);
     root.dataset.platform = host.platform;
+    if (typeof data.language === "string") {
+      languageSetting = LANGUAGES.indexOf(data.language) >= 0 ? data.language : "auto";
+      language = resolveLanguage(languageSetting);
+    }
     applyStrings();
+  }
+
+  // "auto" follows the browser's first language, which WebView2 takes from
+  // Windows. Chinese in Traditional script stays English: only Simplified
+  // Chinese is translated.
+  function resolveLanguage(setting) {
+    if (setting !== "auto" && LANGUAGES.indexOf(setting) > 0) return setting;
+    var wanted = String((navigator.languages && navigator.languages[0]) || navigator.language || "en").toLowerCase();
+    if (/^ja\b/.test(wanted)) return "ja";
+    if (/^zh\b/.test(wanted) && !/^zh-(tw|hk|mo|hant)\b/.test(wanted)) return "zh-CN";
+    return "en";
+  }
+
+  function setLanguage(setting) {
+    languageSetting = LANGUAGES.indexOf(setting) >= 0 ? setting : "auto";
+    language = resolveLanguage(languageSetting);
+    applyStrings();
+    if (!elements.settingsPanel.hidden) renderShortcutList();
+    post({ type: "setLanguage", language: languageSetting });
   }
 
   function openInEditor() {
@@ -317,6 +347,7 @@
       deck.details.then(function (details) {
         if (deck !== current) return;
         deck.detailText = Array.isArray(details.slides) ? details.slides : [];
+        renderThumbLabels();
         showNotes();
         if (search.query) runSearch(false);
       }, function () {});
@@ -366,14 +397,15 @@
   function fitScale() {
     var frame = elements.stage.firstElementChild;
     if (!frame || !frame.dataset.width) return 1;
-    var availableW = Math.max(1, elements.stage.clientWidth - 2 * STAGE_MARGIN);
-    var availableH = Math.max(1, elements.stage.clientHeight - 2 * STAGE_MARGIN);
+    var margin = presenting ? 0 : STAGE_MARGIN;
+    var availableW = Math.max(1, elements.stage.clientWidth - 2 * margin);
+    var availableH = Math.max(1, elements.stage.clientHeight - 2 * margin);
     return Math.min(availableW / Number(frame.dataset.width), availableH / Number(frame.dataset.height));
   }
 
   // The scale from points to CSS pixels on the stage.
   function stageScale() {
-    return zoomMode === "fit" ? fitScale() : zoomFactor * PX_PER_POINT;
+    return zoomMode === "fit" || presenting ? fitScale() : zoomFactor * PX_PER_POINT;
   }
 
   function layoutStage() {
@@ -450,6 +482,64 @@
     if (!current) return;
     var target = Math.max(0, Math.min(current.count - 1, number));
     if (target !== current.slide) showSlide(target);
+  }
+
+  // ---------------------------------------------------------- presenting
+
+  // While presenting, slides hidden in the slide show are passed over, as
+  // PowerPoint does. Before details.json arrives nothing is known hidden.
+  function hiddenInShow(number) {
+    var detail = current && current.detailText ? current.detailText[number] : null;
+    return !!(detail && detail.hidden);
+  }
+
+  // The nearest slide from `from` in `direction` that the show includes, or
+  // -1 when there is none.
+  function shownFrom(from, direction) {
+    for (var number = from; current && number >= 0 && number < current.count; number += direction) {
+      if (!presenting || !hiddenInShow(number)) return number;
+    }
+    return -1;
+  }
+
+  function step(direction) {
+    if (!current) return;
+    var target = shownFrom(current.slide + direction, direction);
+    if (target >= 0) go(target);
+  }
+
+  function goEnd(direction) {
+    if (!current) return;
+    var target = direction < 0 ? shownFrom(0, 1) : shownFrom(current.count - 1, -1);
+    if (target >= 0) go(target);
+  }
+
+  function setPresenting(on) {
+    presenting = on;
+    root.toggleAttribute("data-presenting", on);
+    if (on) {
+      closeSettings(false);
+      closeLinkDialog(false);
+      elements.stage.focus({ preventScroll: true });
+    }
+    layoutStage();
+  }
+
+  // F5 shows the deck from the first slide, Shift+F5 from the slide being
+  // read. The host makes the window cover the monitor and answers with
+  // "presenting"; Esc ends the show and the window comes back as it was.
+  function startPresenting(fromCurrent) {
+    if (!current || !current.count || presenting) return;
+    setPresenting(true);
+    post({ type: "present", on: true });
+    var start = fromCurrent ? current.slide : shownFrom(0, 1);
+    if (start >= 0 && start !== current.slide) showSlide(start);
+  }
+
+  function stopPresenting() {
+    if (!presenting) return;
+    setPresenting(false);
+    post({ type: "present", on: false });
   }
 
   // ---------------------------------------------------------- thumbnails
@@ -869,7 +959,7 @@
 
   function setControlsEnabled(enabled) {
     elements.findInput.disabled = !enabled;
-    [elements.zoomIn, elements.zoomOut, elements.zoomValue, elements.notesButton].forEach(function (button) {
+    [elements.zoomIn, elements.zoomOut, elements.zoomValue, elements.notesButton, elements.presentButton].forEach(function (button) {
       button.disabled = !enabled;
     });
   }
@@ -934,6 +1024,7 @@
   }
 
   function leaveDeck() {
+    stopPresenting();
     current = null;
     queue.forEach(function (job) { job.reject(stale()); });
     queue = [];
@@ -1128,6 +1219,10 @@
       case "fallback": receiveFallback(data); break;
       case "empty": receiveEmpty(data); break;
       case "status": showStatus(String(data.message || ""), data.tone); break;
+      case "presenting":
+        // The host ended the show (or could not start it).
+        if (data.on !== true && presenting) setPresenting(false);
+        break;
       default: break;
     }
   }
@@ -1212,17 +1307,26 @@
     { group: "group.reader", keys: "F1", label: "shortcut.settings",
       match: function (event) { return event.key === "F1" && !modifier(event) && !event.altKey; },
       run: function () { openSettings(false); } },
+    { group: "group.slides", keys: "F5", label: "shortcut.presentStart", present: true,
+      match: function (event) { return event.key === "F5" && !event.shiftKey && !modifier(event) && !event.altKey; },
+      run: function () { startPresenting(false); } },
+    { group: "group.slides", keys: "Shift+F5", label: "shortcut.presentHere", present: true,
+      match: function (event) { return event.key === "F5" && event.shiftKey && !modifier(event) && !event.altKey; },
+      run: function () { startPresenting(true); } },
+    { group: "group.slides", keys: "Esc", label: "shortcut.presentEnd", present: true,
+      match: function (event) { return event.key === "Escape" && presenting; },
+      run: stopPresenting },
     { group: "group.reader", keys: "Esc", label: "shortcut.closeSettings",
       match: function (event) { return event.key === "Escape" && !elements.settingsPanel.hidden; },
       run: function () { closeSettings(true); } },
     { group: "group.slides", keys: "key.arrowsNext", label: "shortcut.nextSlide",
-      match: slideKey(["ArrowRight", "ArrowDown", "PageDown", " "]), run: function () { go(current.slide + 1); } },
+      match: slideKey(["ArrowRight", "ArrowDown", "PageDown", " "]), run: function () { step(1); } },
     { group: "group.slides", keys: "key.arrowsPrevious", label: "shortcut.previousSlide",
-      match: slideKey(["ArrowLeft", "ArrowUp", "PageUp"]), run: function () { go(current.slide - 1); } },
+      match: slideKey(["ArrowLeft", "ArrowUp", "PageUp"]), run: function () { step(-1); } },
     { group: "group.slides", keys: "Home", label: "shortcut.firstSlide",
-      match: slideKey(["Home"]), run: function () { go(0); } },
+      match: slideKey(["Home"]), run: function () { goEnd(-1); } },
     { group: "group.slides", keys: "End", label: "shortcut.lastSlide",
-      match: slideKey(["End"]), run: function () { go(current.count - 1); } },
+      match: slideKey(["End"]), run: function () { goEnd(1); } },
     { group: "group.tabs", keys: "Ctrl+Tab", label: "shortcut.nextTab", available: tabsAvailable,
       match: function (event) { return event.ctrlKey && !event.shiftKey && event.key === "Tab" && enoughTabs(); },
       run: function () { cycleTab(1); } },
@@ -1324,6 +1428,9 @@
     elements.settingsPanel.querySelectorAll('input[name="settings-theme"]').forEach(function (input) {
       input.checked = input.value === currentTheme;
     });
+    elements.settingsPanel.querySelectorAll('input[name="settings-language"]').forEach(function (input) {
+      input.checked = input.value === languageSetting;
+    });
   }
 
   function placeSettingsPanel() {
@@ -1367,6 +1474,7 @@
   });
   elements.themeButton.addEventListener("click", cycleTheme);
   elements.notesButton.addEventListener("click", toggleNotes);
+  elements.presentButton.addEventListener("click", function () { startPresenting(false); });
   elements.zoomIn.addEventListener("click", function () { stepZoom(1); });
   elements.zoomOut.addEventListener("click", function () { stepZoom(-1); });
   elements.zoomValue.addEventListener("click", function () {
@@ -1401,6 +1509,9 @@
     if (link) {
       event.preventDefault();
       askToOpenLink(link.dataset.href || "");
+    } else if (presenting && event.button === 0) {
+      // A click moves the show on, as in PowerPoint.
+      step(1);
     }
   });
   elements.stage.addEventListener("keydown", function (event) {
@@ -1474,12 +1585,16 @@
     if (event.target.name === "settings-theme") {
       applyTheme(event.target.value);
       post({ type: "setTheme", theme: currentTheme });
+    } else if (event.target.name === "settings-language") {
+      setLanguage(event.target.value);
     }
   });
 
   document.addEventListener("keydown", function (event) {
     if (event.defaultPrevented || !elements.linkDialog.hidden) return;
     var entry = findShortcut(readerShortcuts, event);
+    // A show takes only the slide keys and Esc.
+    if (entry && presenting && entry.group !== "group.slides") entry = null;
     if (entry) {
       event.preventDefault();
       entry.run(event);

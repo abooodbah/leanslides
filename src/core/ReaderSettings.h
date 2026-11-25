@@ -119,4 +119,37 @@ inline Rgb ThemeCanvas(Theme theme, bool systemDark) {
     }
 }
 
+// The interface language: "auto" follows Windows, otherwise English,
+// Simplified Chinese or Japanese. Saved as Language.
+enum class Language { Auto, English, ChineseSimplified, Japanese };
+
+inline const char* LanguageName(Language language) {
+    switch (language) {
+        case Language::English:
+            return "en";
+        case Language::ChineseSimplified:
+            return "zh-CN";
+        case Language::Japanese:
+            return "ja";
+        default:
+            return "auto";
+    }
+}
+
+// A saved or page-requested name, ignoring ASCII case. Anything else,
+// including a name from a later version, gives Auto.
+inline Language ParseLanguage(std::string_view name) {
+    for (const Language language :
+         {Language::English, Language::ChineseSimplified, Language::Japanese}) {
+        if (EqualsIgnoringAsciiCase(name, LanguageName(language))) {
+            return language;
+        }
+    }
+    return Language::Auto;
+}
+
+inline bool IsLanguageName(std::string_view name) {
+    return ParseLanguage(name) != Language::Auto || EqualsIgnoringAsciiCase(name, "auto");
+}
+
 }  // namespace leanslides::settings
