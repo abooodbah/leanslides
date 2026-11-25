@@ -121,11 +121,17 @@ test("Shift+F5 and the Present button start the show, and the host can end it", 
   await showDeck(reader, smoke);
   await page.keyboard.press("ArrowRight");
   await waitForRendered(page, 1);
+  // A fixed zoom while reading does not carry into the show. One step from
+  // fit is 90% here; 100% would be 1280 px wide, the same as the window.
+  await page.keyboard.press("Control+=");
+  assert.equal(await page.textContent("#zoomValue"), "90%");
 
   await clearPosts(page);
   await page.keyboard.press("Shift+F5");
   assert.deepEqual(await posts(page, "present"), [{ type: "present", on: true }]);
   assert.equal(await shownSlide(page), 1, "Shift+F5 starts from the slide being read");
+  const frame = await page.$eval(".slide-frame", (node) => [node.getBoundingClientRect().width, node.getBoundingClientRect().height]);
+  assert.ok(Math.abs(frame[0] - 1280) < 1 || Math.abs(frame[1] - 800) < 1, `the show fits the slide (${frame})`);
   // The host leaves full screen (the window lost its monitor, say).
   await deliver(page, { type: "presenting", on: false });
   assert.equal(await page.getAttribute("html", "data-presenting"), null);
