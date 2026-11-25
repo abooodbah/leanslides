@@ -10,11 +10,22 @@
     />
     <title>LeanSlides</title>
     <link rel="stylesheet" href="/reader.css" />
+    <script src="/i18n.js" defer></script>
+    <script src="/geometry.js" defer></script>
+    <script src="/render.js" defer></script>
     <script src="/reader.js" defer></script>
   </head>
   <body>
-    <main id="stage" class="stage">
-      <p id="message" class="message">Opening</p>
-    </main>
+    <div id="notice" class="notice" role="note" hidden>
+      <p id="noticeText"></p>
+    </div>
+    <main id="stage" class="stage" aria-label="Slide"></main>
+    <section id="statePane" class="state" hidden>
+      <h1 id="stateTitle"></h1>
+      <p id="stateMessage"></p>
+    </section>
+    <footer class="status">
+      <span id="slideCounter" aria-live="polite"></span>
+    </footer>
   </body>
 </html>
