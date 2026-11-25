@@ -135,15 +135,25 @@ public:
 
     virtual std::size_t SlideCount() const = 0;
 
-    // The deck index as one JSON object, built once at open. Shape:
+    // The deck index as one JSON object, built at open without reading any
+    // slide. Shape:
     // {"ok":true,"kind":str,"sourceBytes":num,
     //  "slideWidth":num,"slideHeight":num,           (EMU)
-    //  "slides":[{"index":num,"hidden":bool,"title":str,"text":str,"notes":str}],
+    //  "slideCount":num,
     //  "features":[{"code":str,"count":num,"notDrawn":bool,"singular":str,"plural":str}],
     //  "properties":{"title":str,"creator":str}}
-    // "text" and "notes" are each slide's plain text, used for find, copy,
-    // and the notes panel; paragraphs are separated by "\n".
+    // "features" here counts what the package holds (charts, media,
+    // macros, ...), so the notice can show before any slide is read.
     virtual const std::string& IndexJson() const = 0;
+
+    // Reads every slide once for its plain text, built after the first slide
+    // is on screen. Shape:
+    // {"slides":[{"index":num,"hidden":bool,"title":str,"text":str,"notes":str}],
+    //  "features":[...]}   (the same feature shape; slide-level counts such
+    //                       as animations and transitions)
+    // "text" and "notes" are used for find, copy, and the notes panel;
+    // paragraphs are separated by "\n". Slides that fail to read have empty text.
+    virtual std::string DetailsJson() = 0;
 
     // One slide's resolved model (placeholders inherited from layout and
     // master, theme colours and fonts resolved), as described in

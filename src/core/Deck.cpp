@@ -15,12 +15,13 @@ public:
         index_ += FileKindName(result.kind);
         index_ += "\",\"sourceBytes\":";
         index_ += std::to_string(result.sourceBytes);
-        index_ += ",\"slideWidth\":0,\"slideHeight\":0,\"slides\":[],\"features\":[],"
+        index_ += ",\"slideWidth\":0,\"slideHeight\":0,\"slideCount\":0,\"features\":[],"
                   "\"properties\":{\"title\":\"\",\"creator\":\"\"}}";
     }
 
     std::size_t SlideCount() const override { return 0; }
     const std::string& IndexJson() const override { return index_; }
+    std::string DetailsJson() override { return "{\"slides\":[],\"features\":[]}"; }
     bool SlideJson(std::size_t, std::string& json, std::string& errorCode) override {
         json.clear();
         errorCode = "no-slide";

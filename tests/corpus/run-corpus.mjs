@@ -88,23 +88,30 @@ for (const file of manifest.files) {
       const report = JSON.parse(index.stdout.trim().split("\n")[0]);
       row.kind = report.kind;
       row.errorCode = report.errorCode ?? "";
-      row.slides = report.slides ? report.slides.length : "";
+      row.slides = report.slideCount ?? "";
       row.features = (report.features ?? []).map((f) => `${f.code} ${f.count}`).join(", ");
       row.ms = report.ms;
       if (row.errorCode !== (file.expectedErrorCode ?? "")) {
         row.status = `FAIL: expected "${file.expectedErrorCode ?? ""}"`;
-      } else if (report.ok && report.slides && report.slides.length > 0) {
+      } else if (report.ok && report.slideCount > 0) {
         const slides = run(inspect, ["--all-slides", "--time", path]);
         const slideFailure = failureOf(slides);
         const lines = slides.stdout.trim().split("\n").filter(Boolean);
         if (slideFailure) {
           row.status = `FAIL: slides ${slideFailure}`;
-        } else if (slides.status !== 0 || lines.length !== report.slides.length) {
-          row.status = `FAIL: ${lines.length} of ${report.slides.length} slides built (${slides.stderr.trim().split("\n")[0]})`;
+        } else if (slides.status !== 0 || lines.length !== report.slideCount) {
+          row.status = `FAIL: ${lines.length} of ${report.slideCount} slides built (${slides.stderr.trim().split("\n")[0]})`;
         } else {
+          // JSON.parse throws on a malformed slide model, which fails the row.
           const slideMs = lines.map((line) => JSON.parse(line).ms).reduce((a, b) => a + b, 0);
           row.ms = `${report.ms} + ${slideMs.toFixed(1)}`;
-          if (report.ms + slideMs > slowMilliseconds) {
+          const details = run(inspect, ["--details", path]);
+          const detailsFailure = failureOf(details);
+          const detailsReport = detailsFailure ? null : JSON.parse(details.stdout.trim());
+          if (detailsFailure || detailsReport.slides.length !== report.slideCount) {
+            row.status = `FAIL: details ${detailsFailure || `${detailsReport.slides.length} of ${report.slideCount} slides`}`;
+          }
+          if (!row.status.startsWith("FAIL") && report.ms + slideMs > slowMilliseconds) {
             row.status = "pass (slow)";
           }
         }

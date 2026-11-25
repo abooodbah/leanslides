@@ -21,10 +21,12 @@ target_compile_definitions(leanslides_vendor_config INTERFACE
 
 set(LEANSLIDES_CORE_SOURCES
   Cfb.cpp
+  Color.cpp
   Deck.cpp
   Opc.cpp
   SlideCore.cpp
   Xml.cpp
+  XmlUtil.cpp
   Zip.cpp)
 set(LEANSLIDES_VENDOR_SOURCES
   "${LEANSLIDES_THIRD_PARTY}/miniz/miniz.c"
