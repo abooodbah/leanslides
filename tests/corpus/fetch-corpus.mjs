@@ -18,7 +18,7 @@ const maximumBytes = 64 * 1024 * 1024;
 
 // Names are relative paths like "poi/sample.pptx" and must stay in the cache.
 function cachePath(name) {
-  if (!/^[A-Za-z0-9._-]+(\/[A-Za-z0-9._=&-]+)*$/.test(name) || name.split("/").includes("..")) {
+  if (!/^[A-Za-z0-9._-]+(\/[A-Za-z0-9._=&~-]+)*$/.test(name) || name.split("/").includes("..")) {
     throw new Error(`unsafe corpus name: ${name}`);
   }
   const target = resolve(cacheRoot, name);
