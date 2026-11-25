@@ -1546,7 +1546,16 @@ void LeanSlidesApp::CollectSmokeProbe() {
                     return host_json::GetUnsigned(values, key).value_or(0);
                 };
                 const unsigned slides = number("slides");
-                const bool success =
+                // Keys reach the page only when keyboard focus is inside the
+                // WebView, a child of the main window, not on the main window.
+                const HWND focus = GetFocus();
+                bool focusInPage = focus != nullptr && IsChild(window_, focus);
+                // Windows focuses the main window when it is activated again;
+                // the page must get it back.
+                SetFocus(window_);
+                const HWND refocused = GetFocus();
+                focusInPage = focusInPage && refocused != nullptr && IsChild(window_, refocused);
+                const bool success = focusInPage &&
                     host_json::GetString(values, "state").value_or("") == "ready" &&
                     slides >= 1 && number("text") > 0 && number("detailSlides") == slides &&
                     number("notes") >= 1 && number("pictureWidth") > 0 &&
@@ -1555,7 +1564,8 @@ void LeanSlidesApp::CollectSmokeProbe() {
                     host_json::GetString(values, "error").value_or("x").empty() &&
                     host_json::GetUnsigned(values, "offOrigin").value_or(1) == 0 &&
                     host_json::GetUnsigned(values, "csp").value_or(1) == 0;
-                CompleteSmoke(success, inner + " renderMs=" + std::to_string(smokeRenderMs_));
+                CompleteSmoke(success, inner + " focusInPage=" + (focusInPage ? "yes" : "no") +
+                                           " renderMs=" + std::to_string(smokeRenderMs_));
                 return S_OK;
             })
             .Get());
