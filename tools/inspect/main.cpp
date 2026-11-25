@@ -24,6 +24,7 @@ void PrintUsage() {
         "  leanslides-inspect [--time] FILE              deck index (JSON)\n"
         "  leanslides-inspect --slide N FILE             slide N's model (1-based)\n"
         "  leanslides-inspect --all-slides [--time] FILE every slide model, one per line\n"
+        "  leanslides-inspect --details [--time] FILE    every slide's title, text, and notes\n"
         "  leanslides-inspect --media ID --media-out OUT FILE\n"
         "\n"
         "--time adds the open time (and the slide build time) in milliseconds.\n",
@@ -51,6 +52,7 @@ std::string WithMs(const std::string& json, double milliseconds) {
 int main(int argc, char** argv) {
     bool timed = false;
     bool allSlides = false;
+    bool details = false;
     long slide = 0;
     std::string mediaId;
     std::string mediaOut;
@@ -59,6 +61,8 @@ int main(int argc, char** argv) {
         const std::string argument = argv[index];
         if (argument == "--time") {
             timed = true;
+        } else if (argument == "--details") {
+            details = true;
         } else if (argument == "--all-slides") {
             allSlides = true;
         } else if (argument == "--slide" && index + 1 < argc) {
@@ -105,6 +109,13 @@ int main(int argc, char** argv) {
         output.write(bytes.data(), static_cast<std::streamsize>(bytes.size()));
         Write(type);
         return output ? 0 : 1;
+    }
+
+    if (details) {
+        const auto detailsStart = std::chrono::steady_clock::now();
+        const std::string json = deck.DetailsJson();
+        Write(timed ? WithMs(json, Since(detailsStart)) : json);
+        return 0;
     }
 
     if (slide > 0 || allSlides) {
