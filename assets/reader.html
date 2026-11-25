@@ -16,16 +16,131 @@
     <script src="/reader.js" defer></script>
   </head>
   <body>
-    <div id="notice" class="notice" role="note" hidden>
-      <p id="noticeText"></p>
+    <header class="chrome" id="chrome">
+      <div class="topbar">
+        <div class="identity" role="group" data-i18n-label="app.currentDocument">
+          <span class="wordmark" aria-hidden="true">LS</span>
+          <span class="file-copy">
+            <strong id="fileName">LeanSlides</strong>
+            <span id="fileMeta" data-i18n="app.tagline"></span>
+          </span>
+        </div>
+
+        <div class="toolbar" role="toolbar" data-i18n-label="toolbar.label">
+          <label class="search-field doc-control" for="findInput">
+            <span class="visually-hidden" data-i18n="find.label"></span>
+            <input id="findInput" type="search" autocomplete="off" spellcheck="false" disabled />
+            <span id="findCount" aria-live="polite"></span>
+          </label>
+
+          <div class="zoom doc-control" role="group" data-i18n-label="zoom.label">
+            <button id="zoomOut" class="zoom-step" type="button">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10" /></svg>
+            </button>
+            <button id="zoomValue" class="zoom-value" type="button">100%</button>
+            <button id="zoomIn" class="zoom-step" type="button">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M8 3v10" /></svg>
+            </button>
+          </div>
+
+          <button id="notesButton" class="button button-ghost doc-control" type="button" aria-pressed="false" aria-controls="notesPanel"></button>
+          <button id="themeButton" class="button button-ghost theme-button" type="button"><span id="themeSwatch" class="theme-swatch" data-swatch="system" aria-hidden="true"></span><span id="themeLabel"></span></button>
+          <button id="settingsButton" class="button button-ghost button-icon" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="settingsPanel">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M2 4h6M11 4h3M2 8h2M7 8h7M2 12h7M12 12h2" />
+              <circle cx="9.5" cy="4" r="1.5" />
+              <circle cx="5.5" cy="8" r="1.5" />
+              <circle cx="10.5" cy="12" r="1.5" />
+            </svg>
+          </button>
+          <button id="editorButton" class="button button-secondary doc-control" type="button" hidden></button>
+          <button id="openButton" class="button button-primary-quiet" type="button"></button>
+        </div>
+      </div>
+
+      <div id="tabStrip" class="tab-strip" role="tablist" hidden></div>
+
+      <section id="notice" class="fidelity" hidden>
+        <div class="fidelity-row">
+          <svg class="fidelity-icon" viewBox="0 0 16 16" aria-hidden="true">
+            <circle cx="8" cy="8" r="6.25" />
+            <path d="M8 7.25v4M8 4.75v.5" />
+          </svg>
+          <p id="noticeText" class="fidelity-text"></p>
+          <div class="fidelity-actions">
+            <button id="noticeClose" class="icon-button" type="button">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" /></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <div id="readerPane" class="reader" hidden>
+      <nav id="thumbs" class="thumbs" data-i18n-label="thumbs.label">
+        <ol id="thumbList" class="thumb-list"></ol>
+      </nav>
+      <div class="viewer">
+        <main id="stage" class="stage" tabindex="0"></main>
+        <section id="notesPanel" class="notes" hidden>
+          <h2 class="notes-title" data-i18n="notes.label"></h2>
+          <div id="notesText" class="notes-text"></div>
+        </section>
+        <footer class="status">
+          <span id="slideCounter" aria-live="polite"></span>
+        </footer>
+      </div>
     </div>
-    <main id="stage" class="stage" aria-label="Slide"></main>
-    <section id="statePane" class="state" hidden>
-      <h1 id="stateTitle"></h1>
-      <p id="stateMessage"></p>
-    </section>
-    <footer class="status">
-      <span id="slideCounter" aria-live="polite"></span>
-    </footer>
+
+    <main id="statePane" class="state-pane">
+      <div class="state-content">
+        <p class="state-eyebrow" id="stateEyebrow">LeanSlides</p>
+        <h1 id="stateTitle"></h1>
+        <p id="stateMessage" class="state-message"></p>
+        <div class="state-actions">
+          <button id="stateEditorButton" class="button button-primary" type="button" hidden></button>
+          <button id="stateOpenButton" class="button button-primary" type="button"></button>
+        </div>
+        <section id="recentSection" class="recent" aria-labelledby="recentTitle" hidden>
+          <div class="recent-head">
+            <h2 id="recentTitle" data-i18n="state.recent"></h2>
+            <button id="clearRecent" class="link-button" type="button" data-i18n="state.clearRecent"></button>
+          </div>
+          <ul id="recentList" class="recent-list"></ul>
+        </section>
+      </div>
+    </main>
+
+    <div id="settingsPanel" class="settings-panel" role="dialog" aria-modal="false" aria-labelledby="settingsTitle" hidden>
+      <div class="settings-header">
+        <h2 id="settingsTitle" data-i18n="settings.title"></h2>
+        <button id="settingsClose" class="panel-button" type="button">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" /></svg>
+        </button>
+      </div>
+      <fieldset class="settings-group">
+        <legend data-i18n="settings.theme"></legend>
+        <label class="settings-choice"><input type="radio" name="settings-theme" value="system" /><span class="theme-swatch" data-swatch="system" aria-hidden="true"></span><span data-i18n="theme.system"></span></label>
+        <label class="settings-choice"><input type="radio" name="settings-theme" value="light" /><span class="theme-swatch" data-swatch="light" aria-hidden="true"></span><span data-i18n="theme.light"></span></label>
+        <label class="settings-choice"><input type="radio" name="settings-theme" value="dark" /><span class="theme-swatch" data-swatch="dark" aria-hidden="true"></span><span data-i18n="theme.dark"></span></label>
+        <label class="settings-choice"><input type="radio" name="settings-theme" value="dim" /><span class="theme-swatch" data-swatch="dim" aria-hidden="true"></span><span data-i18n="theme.dim"></span></label>
+        <label class="settings-choice"><input type="radio" name="settings-theme" value="dusk" /><span class="theme-swatch" data-swatch="dusk" aria-hidden="true"></span><span data-i18n="theme.dusk"></span></label>
+      </fieldset>
+      <h3 class="settings-label" data-i18n="settings.shortcuts"></h3>
+      <div id="shortcutList" class="shortcut-list"></div>
+    </div>
+
+    <div id="linkDialog" class="link-dialog" role="alertdialog" aria-modal="true" aria-labelledby="linkTitle" aria-describedby="linkTarget" hidden>
+      <h2 id="linkTitle" data-i18n="link.title"></h2>
+      <p id="linkTarget" class="link-target"></p>
+      <p class="link-message" data-i18n="link.message"></p>
+      <div class="link-actions">
+        <button id="linkCancel" class="button button-secondary" type="button" data-i18n="link.cancel"></button>
+        <button id="linkOpen" class="button button-primary" type="button" data-i18n="link.open"></button>
+      </div>
+    </div>
+
+    <div id="statusToast" class="status-toast" role="status" hidden></div>
+    <div id="liveStatus" class="visually-hidden" aria-live="polite"></div>
   </body>
 </html>

@@ -24,6 +24,7 @@ const CONTENT_TYPES = {
   ".js": "text/javascript; charset=utf-8",
   ".json": "application/json",
   ".png": "image/png",
+  ".woff2": "font/woff2",
 };
 
 // LEANSLIDES_CHROMIUM first, then Edge or Chrome where they usually live,
@@ -178,8 +179,11 @@ function answerDeck(state, url) {
     const media = readMedia(deck, id);
     if (deck.named.has(id) && !media) {
       // A slide names the picture but the core will not serve its bytes
-      // (for example a part that fails its CRC check).
-      state.unservable.push(`${path.basename(deck.file)}: ${id}`);
+      // (for example a part that fails its CRC check). The stage and a
+      // thumbnail may both ask for it; it is recorded once.
+      const name = `${path.basename(deck.file)}: ${id}`;
+      if (!state.unservable.includes(name)) state.unservable.push(name);
+      return { unservable: true };
     }
     return media && /^image\/(png|jpeg|gif|bmp)$/.test(media.type) ? media : null;
   }
@@ -234,10 +238,9 @@ export async function openReader(browser, { width = 1280, height = 800 } = {}) {
       state.offOrigin.push(url.href);
       return route.abort("blockedbyclient");
     }
-    const unservable = state.unservable.length;
     const answer = url.pathname.startsWith("/deck/") ? answerDeck(state, url) : answerAsset(url);
-    if (!answer) {
-      if (state.unservable.length === unservable) state.refused.push(url.pathname + url.search);
+    if (!answer || answer.unservable) {
+      if (!answer) state.refused.push(url.pathname + url.search);
       return route.fulfill({ status: 404, body: "" });
     }
     return route.fulfill({ status: 200, body: answer.body, contentType: answer.type });
