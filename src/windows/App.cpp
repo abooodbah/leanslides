@@ -435,7 +435,7 @@ void LeanSlidesApp::InitializeWebView() {
                 if (FAILED(result) || environment == nullptr) {
                     RetryWebViewOrFail(L"LeanSlides needs the Microsoft Edge WebView2 Runtime. "
                                        L"Install or repair WebView2, then try again.",
-                                       "failed");
+                                       "failed stage=environment");
                     return S_OK;
                 }
                 environment_ = environment;
@@ -455,7 +455,7 @@ void LeanSlidesApp::InitializeWebView() {
                             if (FAILED(controllerResult) || controller == nullptr) {
                                 RetryWebViewOrFail(
                                     L"Windows could not create LeanSlides's reader surface.",
-                                    "failed");
+                                    "failed stage=controller");
                                 return S_OK;
                             }
                             controller_ = controller;
@@ -475,7 +475,8 @@ void LeanSlidesApp::InitializeWebView() {
             })
             .Get());
     if (FAILED(startResult)) {
-        RetryWebViewOrFail(L"LeanSlides could not initialize the WebView2 Runtime.", "failed");
+        RetryWebViewOrFail(L"LeanSlides could not initialize the WebView2 Runtime.",
+                           "failed stage=start");
         return;
     }
     SetTimer(window_, kWebViewStartTimer, kWebViewStartTimeoutMs, nullptr);
@@ -489,9 +490,8 @@ void LeanSlidesApp::RetryWebViewOrFail(const wchar_t* message, const char* reaso
     }
     TraceTiming("webview-retry", std::string("reason=") + reason);
     onRecoveryFolder_ = true;
-    // Callbacks of the start given up on are dropped from here on. The new
-    // start runs from the message loop, not from inside a WebView2 callback.
-    ++webViewStart_;
+    // The new start runs from the message loop, not from inside a WebView2
+    // callback; it takes a new number, so the old start's callbacks are dropped.
     PostMessageW(window_, kRecreateWebViewMessage, 0, 0);
 }
 
