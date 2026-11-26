@@ -66,6 +66,7 @@ private:
     static constexpr UINT_PTR kSmokeTimer = 2;
     static constexpr UINT_PTR kExitAfterRenderTimer = 3;
     static constexpr UINT_PTR kSmokeProbeTimer = 4;
+    static constexpr UINT_PTR kWebViewStartTimer = 5;
     static constexpr UINT kFilePollIntervalMs = 500;
     static constexpr UINT kSmokeTimeoutMs = 18000;
     static constexpr UINT kOpenPendingMessage = WM_APP + 1;
@@ -88,6 +89,7 @@ private:
     void OpenDroppedFile(const std::wstring& path);
     void RecreateWebView();
     void HandleProcessFailed(COREWEBVIEW2_PROCESS_FAILED_KIND kind);
+    void RetryWebViewOrFail(const wchar_t* message, const char* reason);
     void SetMinimized(bool minimized);
     void Fail(const wchar_t* message);
 
@@ -174,6 +176,10 @@ private:
     bool themeChangedWhileMinimized_ = false;
     ULONGLONG recoveryWindowStart_ = 0;
     unsigned recoveriesInWindow_ = 0;
+    // Each WebView2 start has a number; a callback from an earlier start
+    // that arrives after a retry is dropped (WebViewStart.h).
+    unsigned webViewStart_ = 0;
+    bool onRecoveryFolder_ = false;
 
     ThemeMode theme_ = ThemeMode::System;
 

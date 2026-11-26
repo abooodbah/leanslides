@@ -35,6 +35,10 @@ jobs:
         shell: pwsh
         run: ctest --test-dir build/Release --output-on-failure
 
+      - name: Start beside a frozen or mismatched WebView2 browser
+        shell: pwsh
+        run: ./tests/hosts/Test-StartRecovery.ps1 -ExePath build/Release/LeanSlides.exe
+
       - name: Install Node.js
         uses: actions/setup-node@v7
         with:

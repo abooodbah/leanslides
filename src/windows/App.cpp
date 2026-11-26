@@ -3,6 +3,7 @@
 #include "ContextMenu.h"
 #include "Editor.h"
 #include "DeckUrl.h"
+#include "WebViewStart.h"
 #include "Platform.h"
 #include "core/SlideCore.h"
 #include "core/Links.h"
@@ -344,6 +345,11 @@ LRESULT LeanSlidesApp::HandleWindowMessage(UINT message, WPARAM wParam, LPARAM l
                 CompleteSmoke(false, "timed out before the reader reported a rendered document");
             } else if (wParam == kSmokeProbeTimer) {
                 CollectSmokeProbe();
+            } else if (wParam == kWebViewStartTimer) {
+                KillTimer(window_, kWebViewStartTimer);
+                RetryWebViewOrFail(L"LeanSlides's reader did not start. Close LeanSlides and "
+                                   L"open the file again.",
+                                   "timeout");
             } else if (wParam == kExitAfterRenderTimer) {
                 KillTimer(window_, kExitAfterRenderTimer);
                 DestroyWindow(window_);
@@ -375,6 +381,7 @@ LRESULT LeanSlidesApp::HandleWindowMessage(UINT message, WPARAM wParam, LPARAM l
             KillTimer(window_, kSmokeTimer);
             KillTimer(window_, kExitAfterRenderTimer);
             KillTimer(window_, kSmokeProbeTimer);
+            KillTimer(window_, kWebViewStartTimer);
             if (controller_ != nullptr) {
                 controller_->Close();
             }
@@ -395,9 +402,13 @@ void LeanSlidesApp::Fail(const wchar_t* message) {
 
 void LeanSlidesApp::InitializeWebView() {
     // One user-data folder per install. Every LeanSlides process on it starts
-    // with identical options, which WebView2 requires for a shared folder.
-    const std::filesystem::path userData =
-        std::filesystem::path(LocalAppDataDirectory()) / L"LeanSlides" / L"WebView2";
+    // with identical options, which WebView2 requires for a shared folder. A
+    // start that fails or stalls is retried once on a second folder
+    // (WebViewStart.h).
+    const unsigned start = ++webViewStart_;
+    const std::filesystem::path userData = WebViewFolder(
+        (std::filesystem::path(LocalAppDataDirectory()) / L"LeanSlides").wstring(),
+        onRecoveryFolder_);
     std::error_code ignored;
     std::filesystem::create_directories(userData, ignored);
 
@@ -417,20 +428,34 @@ void LeanSlidesApp::InitializeWebView() {
     const HRESULT startResult = CreateCoreWebView2EnvironmentWithOptions(
         nullptr, userData.c_str(), options.Get(),
         Callback<ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler>(
-            [this](HRESULT result, ICoreWebView2Environment* environment) -> HRESULT {
+            [this, start](HRESULT result, ICoreWebView2Environment* environment) -> HRESULT {
+                if (start != webViewStart_) {
+                    return S_OK;
+                }
                 if (FAILED(result) || environment == nullptr) {
-                    Fail(L"LeanSlides needs the Microsoft Edge WebView2 Runtime. Install or "
-                         L"repair WebView2, then try again.");
+                    RetryWebViewOrFail(L"LeanSlides needs the Microsoft Edge WebView2 Runtime. "
+                                       L"Install or repair WebView2, then try again.",
+                                       "failed stage=environment");
                     return S_OK;
                 }
                 environment_ = environment;
                 return environment_->CreateCoreWebView2Controller(
                     window_,
                     Callback<ICoreWebView2CreateCoreWebView2ControllerCompletedHandler>(
-                        [this](HRESULT controllerResult,
-                               ICoreWebView2Controller* controller) -> HRESULT {
+                        [this, start](HRESULT controllerResult,
+                                      ICoreWebView2Controller* controller) -> HRESULT {
+                            if (start != webViewStart_) {
+                                // A start given up on: its surface must not
+                                // sit over the one that replaced it.
+                                if (controller != nullptr) {
+                                    controller->Close();
+                                }
+                                return S_OK;
+                            }
                             if (FAILED(controllerResult) || controller == nullptr) {
-                                Fail(L"Windows could not create LeanSlides's reader surface.");
+                                RetryWebViewOrFail(
+                                    L"Windows could not create LeanSlides's reader surface.",
+                                    "failed stage=controller");
                                 return S_OK;
                             }
                             controller_ = controller;
@@ -450,8 +475,28 @@ void LeanSlidesApp::InitializeWebView() {
             })
             .Get());
     if (FAILED(startResult)) {
-        Fail(L"LeanSlides could not initialize the WebView2 Runtime.");
+        RetryWebViewOrFail(L"LeanSlides could not initialize the WebView2 Runtime.",
+                           "failed stage=start");
+        return;
     }
+    if (!onRecoveryFolder_) {
+        SetTimer(window_, kWebViewStartTimer, kWebViewStartTimeoutMs, nullptr);
+    }
+}
+
+void LeanSlidesApp::RetryWebViewOrFail(const wchar_t* message, const char* reason) {
+    KillTimer(window_, kWebViewStartTimer);
+    if (NextWebViewStartStep(onRecoveryFolder_) == WebViewStartStep::GiveUp) {
+        Fail(message);
+        return;
+    }
+    TraceTiming("webview-retry", std::string("reason=") + reason);
+    onRecoveryFolder_ = true;
+    // Callbacks of the abandoned start are dropped from here on, also those
+    // that arrive before the new start runs. The new start runs from the
+    // message loop, not from inside a WebView2 callback.
+    ++webViewStart_;
+    PostMessageW(window_, kRecreateWebViewMessage, 0, 0);
 }
 
 void LeanSlidesApp::ResizeWebView() {
@@ -1282,6 +1327,7 @@ void LeanSlidesApp::HandleWebMessage(ICoreWebView2WebMessageReceivedEventArgs* a
     }
 
     if (*type == "ready") {
+        KillTimer(window_, kWebViewStartTimer);
         TraceTiming("webview-ready");
         readerReady_ = true;
         SendHost();
