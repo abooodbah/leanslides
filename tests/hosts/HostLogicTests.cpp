@@ -297,7 +297,7 @@ void TestHooks() {
 // which sits inside the first folder so the uninstaller removes both.
 void TestWebViewStart() {
     namespace wh = leanslides::windows_host;
-    Check(wh::kWebViewStartTimeoutMs == 10000, "the start deadline is 10 s");
+    Check(wh::kWebViewStartTimeoutMs == 20000, "the start deadline is 20 s");
     Check(wh::NextWebViewStartStep(false) == wh::WebViewStartStep::RetryOnRecoveryFolder,
           "a first start that fails is retried on the recovery folder");
     Check(wh::NextWebViewStartStep(true) == wh::WebViewStartStep::GiveUp,

@@ -10,13 +10,18 @@
 // fails, or that has not reported "ready" after kWebViewStartTimeoutMs, is
 // tried once more on a second folder inside the first. The uninstaller removes
 // the first folder with everything in it (installer/uninstall.ps1).
+//
+// The deadline sits between a slow healthy start and WebView2's own limit: a
+// first start on a new profile took 8.9 s on a CI runner, and WebView2 gave up
+// on a stopped browser after about 41 s. The start on the second folder has no
+// deadline; it may be a first start too, and the window waits for it.
 
 #include <string>
 #include <string_view>
 
 namespace leanslides::windows_host {
 
-constexpr unsigned kWebViewStartTimeoutMs = 10000;
+constexpr unsigned kWebViewStartTimeoutMs = 20000;
 constexpr std::wstring_view kWebViewFolderName = L"WebView2";
 constexpr std::wstring_view kWebViewRecoveryFolderName = L"Recovery";
 

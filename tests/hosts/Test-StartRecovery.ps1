@@ -7,7 +7,7 @@ param(
 
 # Starts LeanSlides in the two states where a WebView2 browser on the shared
 # user-data folder (%LOCALAPPDATA%\LeanSlides\WebView2) cannot serve a new
-# window, and requires the new window to render within 25 s anyway:
+# window, and requires the new window to render within 32 s anyway:
 #
 #   frozen    the browser of an open LeanSlides is suspended, then that
 #             LeanSlides is ended, so the browser stays alive and silent
@@ -21,8 +21,8 @@ param(
 #
 # Without the retry, the frozen launch showed a blank window for 41 s before
 # WebView2 gave up on that browser, and the mismatch launch stopped at an
-# error box, so 25 s (the 10 s start deadline and a start on a new folder)
-# tells the two builds apart.
+# error box. With it, the frozen launch renders about 1 s after the 20 s start
+# deadline, so 32 s tells the two builds apart.
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
@@ -164,10 +164,10 @@ function Get-Count([string]$Trace, [string]$EventName) {
     return [regex]::Matches($Trace, ('(?m)^LEANSLIDES_TIMING {0} ' -f [regex]::Escape($EventName))).Count
 }
 
-# 1. Healthy: rendered, no retry, and still no retry after the 10 s start
+# 1. Healthy: rendered, no retry, and still no retry after the 20 s start
 #    deadline has passed while the window stays open.
 if ($Cases -contains 'healthy') {
-    $trace = Invoke-Launch 'healthy' 11000 45
+    $trace = Invoke-Launch 'healthy' 21000 55
     Assert-True ($trace -notmatch 'webview-retry') "healthy: a start that worked was retried.`n$trace"
     Write-Pass ('a healthy start renders and is not retried ({0})' -f (Get-Times $trace))
 }
@@ -185,7 +185,7 @@ if ($Cases -contains 'frozen') {
         # Once the retry has rendered, the frozen browser is ended while the
         # window stays open: the abandoned start then answers, and its
         # surface must be closed, not shown as a second reader.
-        $trace = Invoke-Launch 'frozen' 4000 25 { Start-Sleep -Milliseconds 300; Stop-Tree $frozen }
+        $trace = Invoke-Launch 'frozen' 4000 32 { Start-Sleep -Milliseconds 300; Stop-Tree $frozen }
         Assert-True ($trace -match '(?m)^LEANSLIDES_TIMING webview-retry \d+ reason=timeout') "frozen: no timed-out retry in the trace.`n$trace"
         Assert-True ((Get-Count $trace 'webview-ready') -eq 1) "frozen: the abandoned start loaded a second reader.`n$trace"
         Write-Pass ('a start beside a frozen browser retries and renders ({0})' -f (Get-Times $trace))
@@ -200,7 +200,7 @@ if ($Cases -contains 'mismatch') {
     $holder = Start-Reader @('--trace-timing', '--exit-after-render=600000') @{ LEANSLIDES_BROWSER_PROFILE = 'gpu' }
     try {
         Assert-True (Wait-Trace $holder 'rendered' 45) 'mismatch: the first window did not render.'
-        $trace = Invoke-Launch 'mismatch' 1500 25
+        $trace = Invoke-Launch 'mismatch' 1500 32
         Assert-True ($trace -match '(?m)^LEANSLIDES_TIMING webview-retry \d+ reason=failed stage=controller') "mismatch: no retry after the reader surface failed.`n$trace"
         Write-Pass ('a start beside a browser with other arguments retries and renders ({0})' -f (Get-Times $trace))
     } finally {

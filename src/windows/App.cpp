@@ -479,7 +479,9 @@ void LeanSlidesApp::InitializeWebView() {
                            "failed stage=start");
         return;
     }
-    SetTimer(window_, kWebViewStartTimer, kWebViewStartTimeoutMs, nullptr);
+    if (!onRecoveryFolder_) {
+        SetTimer(window_, kWebViewStartTimer, kWebViewStartTimeoutMs, nullptr);
+    }
 }
 
 void LeanSlidesApp::RetryWebViewOrFail(const wchar_t* message, const char* reason) {
