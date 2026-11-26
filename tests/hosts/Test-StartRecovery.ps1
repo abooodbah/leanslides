@@ -117,19 +117,31 @@ function Wait-Trace([System.Diagnostics.Process]$Process, [string]$EventName, [i
     return $false
 }
 
-# A launch that closes itself after it renders. Returns its trace, or throws
-# with what it printed when it does not finish in time.
-function Invoke-Launch([string]$Label, [int]$ExitAfterMs, [int]$TimeoutSeconds) {
+# A launch that closes itself after it renders. OnRendered runs once, when the
+# launch prints "rendered". Returns its trace, or throws with what it printed
+# when it does not finish in time.
+function Invoke-Launch([string]$Label, [int]$ExitAfterMs, [int]$TimeoutSeconds, [scriptblock]$OnRendered = $null) {
     $process = Start-Reader @('--trace-timing', "--exit-after-render=$ExitAfterMs")
-    $output = $process.StandardOutput.ReadToEndAsync()
-    if (-not $process.WaitForExit($TimeoutSeconds * 1000)) {
-        Stop-Launch $process
-        $null = $output.Wait(5000)
-        $printed = if ($output.IsCompleted) { $output.Result.Trim() } else { '(nothing)' }
-        throw "$Label`: the launch did not render and close within $TimeoutSeconds s. It printed:`n$printed"
+    $lines = [System.Collections.Generic.List[string]]::new()
+    $deadline = [DateTime]::UtcNow.AddSeconds($TimeoutSeconds)
+    $pending = $process.StandardOutput.ReadLineAsync()
+    $ended = $false
+    while ([DateTime]::UtcNow -lt $deadline) {
+        if (-not $pending.Wait(250)) { continue }
+        $line = $pending.Result
+        if ($null -eq $line) { $ended = $true; break }
+        $lines.Add($line)
+        if ($null -ne $OnRendered -and $line -match '^LEANSLIDES_TIMING rendered ') {
+            & $OnRendered
+            $OnRendered = $null
+        }
+        $pending = $process.StandardOutput.ReadLineAsync()
     }
-    $null = $output.Wait(5000)
-    $trace = $output.Result
+    $trace = ($lines -join "`n") + "`n"
+    if (-not $ended -or -not $process.WaitForExit(10000)) {
+        Stop-Launch $process
+        throw "$Label`: the launch did not render and close within $TimeoutSeconds s. It printed:`n$trace"
+    }
     Assert-True ($process.ExitCode -eq 0) "$Label`: the launch exited with $($process.ExitCode)."
     Assert-True ($trace -match '(?m)^LEANSLIDES_TIMING rendered ') "$Label`: the launch closed without rendering.`n$trace"
     return $trace
@@ -137,13 +149,19 @@ function Invoke-Launch([string]$Label, [int]$ExitAfterMs, [int]$TimeoutSeconds) 
 
 function Write-Pass([string]$Message) { Write-Host ('PASS ' + $Message) }
 
-# "retry at 10021 ms, rendered at 11873 ms" from a launch's trace.
+# "webview-retry at 10021 ms (reason=timeout), rendered at 10380 ms" from a
+# launch's trace.
 function Get-Times([string]$Trace) {
     $parts = @()
-    foreach ($eventName in 'webview-retry', 'rendered') {
-        if ($Trace -match ('(?m)^LEANSLIDES_TIMING {0} (\d+)' -f $eventName)) { $parts += ('{0} at {1} ms' -f $eventName, $Matches[1]) }
+    if ($Trace -match '(?m)^LEANSLIDES_TIMING webview-retry (\d+) (.*)$') {
+        $parts += ('webview-retry at {0} ms ({1})' -f $Matches[1], $Matches[2].Trim())
     }
+    if ($Trace -match '(?m)^LEANSLIDES_TIMING rendered (\d+)') { $parts += ('rendered at {0} ms' -f $Matches[1]) }
     return ($parts -join ', ')
+}
+
+function Get-Count([string]$Trace, [string]$EventName) {
+    return [regex]::Matches($Trace, ('(?m)^LEANSLIDES_TIMING {0} ' -f [regex]::Escape($EventName))).Count
 }
 
 # 1. Healthy: rendered, no retry, and still no retry after the 10 s start
@@ -164,13 +182,17 @@ if ($Cases -contains 'frozen') {
         Assert-True ($frozen.Count -gt 0) 'frozen: the first window has no WebView2 processes.'
         foreach ($id in $frozen) { $null = [StartRecoveryNative]::Suspend($id) }
         Stop-Process -Id $holder.Id -Force
-        $trace = Invoke-Launch 'frozen' 1500 25
+        # Once the retry has rendered, the frozen browser is ended while the
+        # window stays open: the abandoned start then answers, and its
+        # surface must be closed, not shown as a second reader.
+        $trace = Invoke-Launch 'frozen' 4000 25 { Start-Sleep -Milliseconds 300; Stop-Tree $frozen }
         Assert-True ($trace -match '(?m)^LEANSLIDES_TIMING webview-retry \d+ reason=timeout') "frozen: no timed-out retry in the trace.`n$trace"
+        Assert-True ((Get-Count $trace 'webview-ready') -eq 1) "frozen: the abandoned start loaded a second reader.`n$trace"
         Write-Pass ('a start beside a frozen browser retries and renders ({0})' -f (Get-Times $trace))
     } finally {
         Stop-Tree $frozen
         Stop-Launch $holder
-}
+    }
 }
 
 # 3. A browser started with other arguments on the shared folder.
@@ -179,9 +201,9 @@ if ($Cases -contains 'mismatch') {
     try {
         Assert-True (Wait-Trace $holder 'rendered' 45) 'mismatch: the first window did not render.'
         $trace = Invoke-Launch 'mismatch' 1500 25
-        Assert-True ($trace -match '(?m)^LEANSLIDES_TIMING webview-retry \d+ reason=failed') "mismatch: no failed-start retry in the trace.`n$trace"
+        Assert-True ($trace -match '(?m)^LEANSLIDES_TIMING webview-retry \d+ reason=failed stage=controller') "mismatch: no retry after the reader surface failed.`n$trace"
         Write-Pass ('a start beside a browser with other arguments retries and renders ({0})' -f (Get-Times $trace))
     } finally {
         Stop-Launch $holder
-}
+    }
 }
