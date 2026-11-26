@@ -490,8 +490,10 @@ void LeanSlidesApp::RetryWebViewOrFail(const wchar_t* message, const char* reaso
     }
     TraceTiming("webview-retry", std::string("reason=") + reason);
     onRecoveryFolder_ = true;
-    // The new start runs from the message loop, not from inside a WebView2
-    // callback; it takes a new number, so the old start's callbacks are dropped.
+    // Callbacks of the abandoned start are dropped from here on, also those
+    // that arrive before the new start runs. The new start runs from the
+    // message loop, not from inside a WebView2 callback.
+    ++webViewStart_;
     PostMessageW(window_, kRecreateWebViewMessage, 0, 0);
 }
 
