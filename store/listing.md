@@ -6,7 +6,7 @@ Paste each field into Partner Center > your app > Submission > Store listings, o
 
 - Product name (reserve this exact name): LeanSlides. The MSIX manifest DisplayName is set to it, and the executable and window title use the same name. It is the same in every language.
 - Publisher display name: Lean Apps Studio
-- Version in this pack: 0.1.0 (package version 0.1.0.0)
+- Version in this pack: 0.1.1 (package version 0.1.1.0)
 - File types it opens: presentations (.pptx, .ppsx, .potx) and macro-enabled presentations (.pptm, .ppsm, .potm), whose macros never run
 - The name, short title and search terms must not contain another vendor's product name. None of the values below do.
 
