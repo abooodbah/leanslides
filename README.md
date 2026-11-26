@@ -2,7 +2,7 @@
 
 Open a .pptx without an office suite. LeanSlides shows the slides, presents
 them full screen, never runs macros, and never fetches anything the file
-points to. MIT licensed, no telemetry. The 0.1.0 Windows download is a ZIP of
+points to. MIT licensed, no telemetry. The 0.1.1 Windows download is a ZIP of
 about 0.9 MB.
 
 [Website](https://abooodbah.github.io/leanslides/) · [Releases](https://github.com/abooodbah/leanslides/releases) · [Releases feed (Atom)](https://github.com/abooodbah/leanslides/releases.atom) · [All Lean apps](https://abooodbah.github.io/)
@@ -16,7 +16,7 @@ of the Lean apps, small read-only viewers with the same look:
 
 ## Install
 
-Download `LeanSlides-v0.1.0-windows-x64.zip` from the
+Download `LeanSlides-v0.1.1-windows-x64.zip` from the
 [latest release](https://github.com/abooodbah/leanslides/releases/latest).
 It runs on Windows 10 and 11, x64. LeanSlides uses the Microsoft Edge WebView2
 Runtime that Windows already has; it does not bundle a browser.
@@ -39,7 +39,7 @@ unknown-publisher or SmartScreen warning. Compare the ZIP with the `.sha256`
 file from the same release, and check where it was built:
 
 ```powershell
-gh attestation verify LeanSlides-v0.1.0-windows-x64.zip --repo abooodbah/leanslides
+gh attestation verify LeanSlides-v0.1.1-windows-x64.zip --repo abooodbah/leanslides
 ```
 
 ## What it does
@@ -183,7 +183,7 @@ ctest --test-dir build\Release --output-on-failure
 ```
 
 `scripts\build.ps1` builds, runs the tests, and stages the release payload in
-`dist\`; `scripts\package-release.ps1 -Version 0.1.0` makes the ZIP and its
+`dist\`; `scripts\package-release.ps1 -Version 0.1.1` makes the ZIP and its
 `.sha256` file from it.
 
 The core in `src/core` is portable C++17 and also builds on Linux:
