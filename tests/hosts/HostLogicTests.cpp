@@ -9,6 +9,7 @@
 #include "windows/EditorChoice.h"
 #include "windows/HostJson.h"
 #include "windows/TestHooks.h"
+#include "windows/WebViewStart.h"
 
 #include <cstdlib>
 #include <iostream>
@@ -292,6 +293,23 @@ void TestHooks() {
           "trace line shape");
 }
 
+// A start that fails or times out is tried once more on the recovery folder,
+// which sits inside the first folder so the uninstaller removes both.
+void TestWebViewStart() {
+    namespace wh = leanslides::windows_host;
+    Check(wh::kWebViewStartTimeoutMs == 10000, "the start deadline is 10 s");
+    Check(wh::NextWebViewStartStep(false) == wh::WebViewStartStep::RetryOnRecoveryFolder,
+          "a first start that fails is retried on the recovery folder");
+    Check(wh::NextWebViewStartStep(true) == wh::WebViewStartStep::GiveUp,
+          "a start on the recovery folder that fails is not retried");
+    Check(wh::WebViewFolder(L"C:\\Users\\a\\AppData\\Local\\LeanSlides", false) ==
+              L"C:\\Users\\a\\AppData\\Local\\LeanSlides\\WebView2",
+          "the first start uses LeanSlides\\WebView2");
+    Check(wh::WebViewFolder(L"C:\\Users\\a\\AppData\\Local\\LeanSlides\\", true) ==
+              L"C:\\Users\\a\\AppData\\Local\\LeanSlides\\WebView2\\Recovery",
+          "the retry uses LeanSlides\\WebView2\\Recovery");
+}
+
 // Context menus keep copy and editing items only; nothing that fetches.
 void TestContextMenu() {
     namespace wh = leanslides::windows_host;
@@ -406,6 +424,7 @@ int main() {
     TestReaderSettings();
     TestLanguages();
     TestHooks();
+    TestWebViewStart();
     TestContextMenu();
     TestEditorOrder();
     TestQuoting();
