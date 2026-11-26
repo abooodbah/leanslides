@@ -103,14 +103,14 @@ function Start-Reader([string[]]$Flags, [hashtable]$Environment = @{}) {
 }
 
 # Reads trace lines until one names the event, or the time is up.
-function Wait-Event([System.Diagnostics.Process]$Process, [string]$Event, [int]$Seconds) {
+function Wait-Trace([System.Diagnostics.Process]$Process, [string]$EventName, [int]$Seconds) {
     $deadline = [DateTime]::UtcNow.AddSeconds($Seconds)
     $pending = $Process.StandardOutput.ReadLineAsync()
     while ([DateTime]::UtcNow -lt $deadline) {
         if ($pending.Wait(250)) {
             $line = $pending.Result
             if ($null -eq $line) { return $false }
-            if ($line -match ('^LEANSLIDES_TIMING {0} ' -f [regex]::Escape($Event))) { return $true }
+            if ($line -match ('^LEANSLIDES_TIMING {0} ' -f [regex]::Escape($EventName))) { return $true }
             $pending = $Process.StandardOutput.ReadLineAsync()
         }
     }
@@ -137,12 +137,21 @@ function Invoke-Launch([string]$Label, [int]$ExitAfterMs, [int]$TimeoutSeconds) 
 
 function Write-Pass([string]$Message) { Write-Host ('PASS ' + $Message) }
 
+# "retry at 10021 ms, rendered at 11873 ms" from a launch's trace.
+function Get-Times([string]$Trace) {
+    $parts = @()
+    foreach ($eventName in 'webview-retry', 'rendered') {
+        if ($Trace -match ('(?m)^LEANSLIDES_TIMING {0} (\d+)' -f $eventName)) { $parts += ('{0} at {1} ms' -f $eventName, $Matches[1]) }
+    }
+    return ($parts -join ', ')
+}
+
 # 1. Healthy: rendered, no retry, and still no retry after the 10 s start
 #    deadline has passed while the window stays open.
 if ($Cases -contains 'healthy') {
     $trace = Invoke-Launch 'healthy' 11000 45
     Assert-True ($trace -notmatch 'webview-retry') "healthy: a start that worked was retried.`n$trace"
-    Write-Pass 'a healthy start renders and is not retried'
+    Write-Pass ('a healthy start renders and is not retried ({0})' -f (Get-Times $trace))
 }
 
 # 2. Frozen browser on the shared folder.
@@ -150,14 +159,14 @@ if ($Cases -contains 'frozen') {
     $holder = Start-Reader @('--trace-timing', '--exit-after-render=600000')
     $frozen = @()
     try {
-        Assert-True (Wait-Event $holder 'rendered' 45) 'frozen: the first window did not render.'
+        Assert-True (Wait-Trace $holder 'rendered' 45) 'frozen: the first window did not render.'
         $frozen = @(Get-Tree $holder.Id | Where-Object { $_ -ne $holder.Id })
         Assert-True ($frozen.Count -gt 0) 'frozen: the first window has no WebView2 processes.'
         foreach ($id in $frozen) { $null = [StartRecoveryNative]::Suspend($id) }
         Stop-Process -Id $holder.Id -Force
         $trace = Invoke-Launch 'frozen' 1500 25
         Assert-True ($trace -match '(?m)^LEANSLIDES_TIMING webview-retry \d+ reason=timeout') "frozen: no timed-out retry in the trace.`n$trace"
-        Write-Pass 'a start beside a frozen browser retries and renders'
+        Write-Pass ('a start beside a frozen browser retries and renders ({0})' -f (Get-Times $trace))
     } finally {
         Stop-Tree $frozen
         Stop-Launch $holder
@@ -168,10 +177,10 @@ if ($Cases -contains 'frozen') {
 if ($Cases -contains 'mismatch') {
     $holder = Start-Reader @('--trace-timing', '--exit-after-render=600000') @{ LEANSLIDES_BROWSER_PROFILE = 'gpu' }
     try {
-        Assert-True (Wait-Event $holder 'rendered' 45) 'mismatch: the first window did not render.'
+        Assert-True (Wait-Trace $holder 'rendered' 45) 'mismatch: the first window did not render.'
         $trace = Invoke-Launch 'mismatch' 1500 25
         Assert-True ($trace -match '(?m)^LEANSLIDES_TIMING webview-retry \d+ reason=failed') "mismatch: no failed-start retry in the trace.`n$trace"
-        Write-Pass 'a start beside a browser with other arguments retries and renders'
+        Write-Pass ('a start beside a browser with other arguments retries and renders ({0})' -f (Get-Times $trace))
     } finally {
         Stop-Launch $holder
 }
